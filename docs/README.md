@@ -1,4 +1,4 @@
-# DuPage Area Project
+# DuPage Community Area Project
 
 ## Contact
 Robert Dzurko<br/>
