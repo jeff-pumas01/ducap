@@ -1,0 +1,37 @@
+*{font-family:Ubuntu;}
+
+body {
+	margin-bottom: 55px;
+}
+
+.form {
+	width: 60%;
+}
+
+.logo {
+	margin-top: 30px;
+}
+
+@media (min-width: 250px) {
+	.form250 {
+		width: 100%;
+	}
+}
+
+@media (min-width: 250px) {
+.login{
+    width:280px;
+}}
+
+@media (min-width: 250px) {
+.volunteer{
+	background-color:#e5e5e5;
+	padding-top: 10px;
+	padding-bottom:20px;
+	width:55%
+}}
+
+@media (min-width: 250px) {
+.header{
+	width:55%
+}}

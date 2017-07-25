@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<center>
+   <head >
+      <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+      <title >Form Page: VolunteerApplication</title>
+      <meta name='generator' content='Simfatic Forms 4.0.12.416'/>
+      <script src='scripts/jquery-1.7.2.min.js' type='text/javascript'></script>
+      <script src='scripts/jquery.sim.utils.js' type='text/javascript'></script>
+      <script src='scripts/sfm-png-fix.js' type='text/javascript'></script>
+      <script src='scripts/sessvars.js' type='text/javascript'></script>
+      <script src='scripts/jquery.sim.formsave.js' type='text/javascript'></script>
+      <script src='scripts/sfm_validatorv7.js' type='text/javascript'></script>
+      <link rel='stylesheet' type='text/css' href='style/VolunteerApplication.css?r=%sfm_css_rand%'/>
+   </head>
+   <body id='sfm_VolunteerApplication_body' onload='try{window.parent.scroll(0,0);}catch(e){}'>
+<!-- Custom Header Start -->
+<?php
+
+
+
+	include('php/classes/DB.class.php');
+	include('php/header.php');
+
+
+
+?>
+<!-- Custom Header End -->
+
+      <form id='VolunteerApplication' class='sfm_form' method='post' action='%sfm_self_script%' accept-charset='UTF-8'>
+         <div id='VolunteerApplication_errorloc' class='error_strings' style='width:919px;text-align:left'>%sfm_error_display_loc%</div>
+         <div id='VolunteerApplication_outer_div' class='form_outer_div' style='width:919px;height:913px'>
+            <div style='position:relative' id='VolunteerApplication_inner_div'>
+               <input type='hidden' name='sfm_form_page_num' value='1'/>
+               <input type='hidden' name='%_sfm_form_id_iput_var_%' value='%_sfm_form_id_iput_value_%'/>
+               <input type='text' name='tb7ca3a15945318bd16a6' id='tb7ca3a15945318bd16a6'/>
+               <div id='heading4_container' class='form_subheading'>
+                  <h2 id='heading4' class='form_subheading'>Medical Release</h2>
+               </div>
+               <div id='label13_container'>
+                  <div id='label13'>AUTHORIZATION FOR TREATMENT OR EMERGENCY CARE</div>
+               </div>
+               <div id='label15_container'>
+                  <div id='label15'>I hereby give permission to the medical personnel selected by DuCAP personnel to order X-rays, routine tests, treatment, and necessary transportation for my child or children listed/registered. In the event I cannot be reached in an emergency, I hereby give permission to the physician selected by DuCAP personnel to secure and administer treatment, including hospitalization, for my child or children listed/registered. The completed forms will be photocopied.<br /><br /><br />I release, waive, discharge and covenant not to sue DuCAP, its departments, their respective administrators, directors, agents, coaches, and other employees of the organization, other participants, sponsoring agencies, sponsors, advertisers and if applicable, owners and leasers of premises used to conduct the event, all of which are hereinafter referred to as “releases”, from any and all liability to the participant, his or her heirs and next of kin for any and all claims, demands, medical bills, losses or damages on account of injury, including death or damage to property, caused or alleged to be caused in whole or in part by the negligence of the releases or otherwise.</div>
+               </div>
+               <div id='label34_container' class='sfm_form_label'>
+                  <label id='label34'>Volunteer Name:</label>
+               </div>
+               <div id='initial1_container'>
+                  <input type='text' name='initial1' id='initial1' value='%initial1%' size='20' class='sfm_textbox'/>
+               </div>
+               <div id='heading5_container' class='form_subheading'>
+                  <h2 id='heading5' class='form_subheading'>Photography Release</h2>
+               </div>
+               <div id='label23_container'>
+                  <div id='label23'>I authorize the Illinois Department of Human services, any Affiliate or Sponsor/Partner of DuCAP, and the local DuCAP Program operators to photograph my child/children listed/registered for means of publication purposes. Photos might be used in various brochures and publications describing and promoting the program in a positive way. The photos will not be used in any illegal misrepresentation of my child/children listed/registered.</div>
+               </div>
+               <div id='label35_container' class='sfm_form_label'>
+                  <label id='label35'>Volunteer Name:</label>
+               </div>
+               <div id='initial2_container'>
+                  <input type='text' name='initial2' id='initial2' value='%initial2%' size='20' class='sfm_textbox'/>
+               </div>
+               <div id='heading6_container' class='form_subheading'>
+                  <h2 id='heading6' class='form_subheading'>Background Investigation</h2>
+               </div>
+               <div id='label37_container' class='sfm_form_label'>
+                  <label id='label37'>Volunteer Name:</label>
+               </div>
+               <div id='label36_container'>
+                  <div id='label36'>I understand and give permission for DuCAP to conduct a criminal Background Investigation on me.</div>
+               </div>
+               <div id='initial3_container'>
+                  <input type='text' name='initial3' id='initial3' value='%initial3%' size='20' class='sfm_textbox'/>
+               </div>
+               <div id='label38_container'>
+                  <div id='label38'>My signature below certifies that all information I have provided in connection with this application is true, accurate and complete to the best of my knowledge.</div>
+               </div>
+               <div id='label39_container' class='sfm_form_label'>
+                  <label id='label39'>Volunteer Name:</label>
+               </div>
+               <div id='initial4_container'>
+                  <input type='text' name='initial4' id='initial4' value='%initial4%' size='20' class='sfm_textbox'/>
+               </div>
+               <div id='sfm_next_page1_container' class='loading_div'>
+                  <input type='image' name='sfm_next_page1' id='VolunteerApplication_sfm_next_page1_img' src='images/VolunteerApplication-sfm_next_page1-0.png' alt='Next &gt;&gt;'/>
+               </div>
+               <div id='sfm_prev_page_container' class='loading_div'>
+                  <input type='image' name='sfm_prev_page' id='VolunteerApplication_sfm_prev_page_img' src='images/VolunteerApplication-sfm_prev_page-0.png' alt='&lt;&lt; Prev'/>
+               </div>
+               <div id='sfm_save_n_close1_container' class='loading_div'>
+                  <input type='image' name='sfm_save_n_close' id='VolunteerApplication_sfm_save_n_close1_img' src='images/VolunteerApplication-sfm_save_n_close1-0.png' alt='Save and Close'/>
+               </div>
+               <div id='PageProgress1_container' class='progress_box_container'>
+                  <div id='PageProgress1_inner_box' class='progress_box'></div>
+                  <div id='PageProgress1_textbox'>Progress: %sfm_page_progress_perc%%%</div>
+               </div>
+            </div>
+         </div>
+      </form>
+      <script type='text/javascript'>
+// <![CDATA[
+$(function()
+{
+   sfm_init_default_text("VolunteerApplication","initial1","Jane Doe");
+   sfm_init_default_text("VolunteerApplication","initial2","Jane Doe");
+   sfm_init_default_text("VolunteerApplication","initial3","Jane Doe");
+   sfm_init_default_text("VolunteerApplication","initial4","Jane Doe");
+   sfm_show_loading_on_formsubmit('VolunteerApplication','VolunteerApplication_sfm_next_page1_img');
+   sfm_init_special_action_button('VolunteerApplication','VolunteerApplication_sfm_prev_page_img','sfm_prev_page');
+   sfm_show_loading_on_formsubmit('VolunteerApplication','VolunteerApplication_sfm_prev_page_img');
+   sfm_init_special_action_button('VolunteerApplication','VolunteerApplication_sfm_save_n_close1_img','sfm_save_n_close');
+   sfm_show_loading_on_formsubmit('VolunteerApplication','VolunteerApplication_sfm_save_n_close1_img');
+});
+sfm_fix_png("VolunteerApplication_sfm_next_page1_img","images/spacer.gif");
+sfm_fix_png("VolunteerApplication_sfm_prev_page_img","images/spacer.gif");
+sfm_fix_png("VolunteerApplication_sfm_save_n_close1_img","images/spacer.gif");
+$(window).load(function()
+{
+ var w = $('form#VolunteerApplication #PageProgress1_container').width() - 2 *2;
+ $('form#VolunteerApplication #PageProgress1_inner_box').width(( w * %sfm_page_progress_perc%)/100);
+}
+);
+$('form#VolunteerApplication').simSaveForm();
+
+// ]]>
+      </script>
+      <script type='text/javascript'>
+// <![CDATA[
+var VolunteerApplicationValidator = new Validator("VolunteerApplication");
+VolunteerApplicationValidator.addValidation("initial1",{required:true,message:"Please fill in initial1"} );
+VolunteerApplicationValidator.addValidation("initial1",{alpha:true,message:"The input for initial1 should be a valid alphabetic value"} );
+VolunteerApplicationValidator.addValidation("initial2",{required:true,message:"Please fill in initial2"} );
+VolunteerApplicationValidator.addValidation("initial2",{alpha:true,message:"The input for initial2 should be a valid alphabetic value"} );
+VolunteerApplicationValidator.addValidation("initial3",{required:true,message:"Please fill in initial3"} );
+VolunteerApplicationValidator.addValidation("initial3",{alpha:true,message:"The input for initial3 should be a valid alphabetic value"} );
+VolunteerApplicationValidator.addValidation("initial4",{required:true,message:"Please fill in initial4"} );
+VolunteerApplicationValidator.addValidation("initial4",{alpha:true,message:"The input for initial4 should be a valid alphabetic value"} );
+
+// ]]>
+      </script>
+   
+<!-- Custom Footer Start -->
+					<?php
+
+//Include footer html
+include('php/footer.php');
+
+?>
+<!-- Custom Footer End -->
+</body>
+</center>
+</html>

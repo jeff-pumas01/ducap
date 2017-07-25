@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html >
+   <head >
+      <title ></title>
+      <meta content="text/html; charset=utf-8" http-equiv='Content-Type'/>
+      <style type='text/css'>body,td{font-family:Arial;font-size :12px;}</style>
+      <meta name='GENERATOR' content='MSHTML 11.00.9600.16428'/>
+   </head>
+   <body style='BACKGROUND-COLOR: #e5e5e5'>
+<!-- Custom Header Start -->
+<?php
+
+
+
+	include('php/classes/DB.class.php');
+	include('php/header.php');
+
+
+
+?>
+<!-- Custom Header End -->
+
+      <center >
+         <div class='sfm_table_container'>
+            <p class='center-block' style='BOX-SIZING: border-box; FONT-SIZE: 14px; FONT-FAMILY: Ubuntu; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: normal; COLOR: rgb(51,51,51); FONT-STYLE: normal; MARGIN: 0px auto 10px; ORPHANS: 2; WIDOWS: 2; DISPLAY: block; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px'>
+               <font face='Arial Baltic'>Thank you for your application.&nbsp;Click </font>
+               <a style='BOX-SIZING: border-box; TEXT-DECORATION: underline; FONT-FAMILY: Ubuntu; COLOR: rgb(35,82,124); OUTLINE-WIDTH: 0px; OUTLINE-STYLE: none; OUTLINE-COLOR: invert; BACKGROUND-COLOR: transparent' href='http://cs.lewisu.edu/~syedahasan/login.php'>
+                  <font face='Arial Baltic'>here</font>
+               </a>
+               <font face='Arial Baltic'>To Login</font>
+            </p>
+            <div class='sfm_table_container'>
+               <h3 >Page 1</h3>
+               <table height='775' cellSpacing='0' cellPadding='5' width='270'>
+                  <tbody >
+                     <tr >
+                        <td class='FieldName'>First Name</td>
+                        <td class='FieldValue'>%first_name%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Last Name</td>
+                        <td class='FieldValue'>%last_name%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Address</td>
+                        <td class='FieldValue'>%Address%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Apt.</td>
+                        <td class='FieldValue'>%apt_num%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>State</td>
+                        <td class='FieldValue'>%State%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>City</td>
+                        <td class='FieldValue'>%City%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>ZipCode</td>
+                        <td class='FieldValue'>%ZipCode%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Home Number</td>
+                        <td class='FieldValue'>%homeNumber%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Work Number</td>
+                        <td class='FieldValue'>%workNumber%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Mobile Number</td>
+                        <td class='FieldValue'>%mobileNumber%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Email</td>
+                        <td class='FieldValue'>%Email%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Date of Birth</td>
+                        <td class='FieldValue'>%DateofBirth%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>other Interest</td>
+                        <td class='FieldValue'>%otherInterest%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Area of Interest</td>
+                        <td class='FieldValue'>%areaofInterest%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Start Date</td>
+                        <td class='FieldValue'>%startDate%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Total Volunteer Hours</td>
+                        <td class='FieldValue'>%totalHours%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Monday</td>
+                        <td class='FieldValue'>%Monday%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Tuesday</td>
+                        <td class='FieldValue'>%Tuesday%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Wednesday</td>
+                        <td class='FieldValue'>%Wednesday%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Thursday</td>
+                        <td class='FieldValue'>%Thursday%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Friday</td>
+                        <td class='FieldValue'>%Friday%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Sat/Sun</td>
+                        <td class='FieldValue'>%satSun%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Emergency Name</td>
+                        <td class='FieldValue'>%ecName%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Emergency Relation</td>
+                        <td class='FieldValue'>%ec_relation%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Emergency Address</td>
+                        <td class='FieldValue'>%ecAddress%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Emergency apt</td>
+                        <td class='FieldValue'>%ec_apt%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Emergency zip</td>
+                        <td class='FieldValue'>%ec_zip%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Emergency state</td>
+                        <td class='FieldValue'>%ec_state%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Emergency city</td>
+                        <td class='FieldValue'>%ec_city%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Emergency work</td>
+                        <td class='FieldValue'>%ec_work%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Emergency phone</td>
+                        <td class='FieldValue'>%ec_phone%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Emergency mobile</td>
+                        <td class='FieldValue'>%ec_mobile%</td>
+                     </tr>
+                  </tbody>
+               </table>
+               <h3 >Page 2</h3>
+               <table cellSpacing='0' cellPadding='5'>
+                  <tbody >
+                     <tr >
+                        <td class='FieldName'>Initial #1</td>
+                        <td class='FieldValue'>%initial1%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Initial #2</td>
+                        <td class='FieldValue'>%initial2%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Initial #3</td>
+                        <td class='FieldValue'>%initial3%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Initial #4</td>
+                        <td class='FieldValue'>%initial4%</td>
+                     </tr>
+                  </tbody>
+               </table>
+               <h3 >Page 3</h3>
+               <table cellSpacing='0' cellPadding='5'>
+                  <tbody >
+                     <tr >
+                        <td class='FieldName'>SSN #</td>
+                        <td class='FieldValue'>%SSN%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Full Name Auth</td>
+                        <td class='FieldValue'>%fullNameAuth%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Driver's State</td>
+                        <td class='FieldValue'>%drivers_state%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Driver's D.O.B</td>
+                        <td class='FieldValue'>%dob%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>License Number</td>
+                        <td class='FieldValue'>%drivers%</td>
+                     </tr>
+                  </tbody>
+               </table>
+               <h4 >More Info:</h4>
+               <table cellSpacing='0' cellPadding='5'>
+                  <tbody >
+                     <tr >
+                        <td class='FieldName'>This form was submitted at:</td>
+                        <td class='FieldValue'>%_sfm_form_submision_time_%</td>
+                     </tr>
+                     <tr >
+                        <td class='FieldName'>Visitor's IP Address</td>
+                        <td class='FieldValue'>%_sfm_visitor_ip_%</td>
+                     </tr>
+                     <tr ></tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </center>
+   
+<!-- Custom Footer Start -->
+					<?php
+
+//Include footer html
+include('php/footer.php');
+
+?>
+<!-- Custom Footer End -->
+</body>
+</html>

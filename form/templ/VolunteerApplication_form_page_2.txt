@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+   <head >
+   <center>
+      <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+      <title >Form Page: VolunteerApplication</title>
+      <meta name='generator' content='Simfatic Forms 4.0.12.416'/>
+      <script src='scripts/jquery-1.7.2.min.js' type='text/javascript'></script>
+      <script src='scripts/jquery-ui-1.8.18.custom.min.js' type='text/javascript'></script>
+      <script src='scripts/globalize.js' type='text/javascript'></script>
+      <script src='scripts/jquery.sim.number.js' type='text/javascript'></script>
+      <script src='scripts/jquery.sim.utils.js' type='text/javascript'></script>
+      <script src='scripts/jquery-ui-1.8.21.custom.date.min.js' type='text/javascript'></script>
+      <script src='scripts/moment.js' type='text/javascript'></script>
+      <script src='scripts/sfm_calendar.js' type='text/javascript'></script>
+      <script src='scripts/sfm-png-fix.js' type='text/javascript'></script>
+      <script src='scripts/sessvars.js' type='text/javascript'></script>
+      <script src='scripts/jquery.sim.formsave.js' type='text/javascript'></script>
+      <script src='scripts/sfm_validatorv7.js' type='text/javascript'></script>
+      <link rel='stylesheet' type='text/css' href='style/jquery-ui-1.8.16.css'/>
+      <link rel='stylesheet' type='text/css' href='style/VolunteerApplication.css?r=%sfm_css_rand%'/>
+   </head>
+   <body id='sfm_VolunteerApplication_body' onload='try{window.parent.scroll(0,0);}catch(e){}'>
+<!-- Custom Header Start -->
+<?php
+
+
+
+	include('php/classes/DB.class.php');
+	include('php/header.php');
+
+
+
+?>
+<!-- Custom Header End -->
+
+      <form id='VolunteerApplication' class='sfm_form' method='post' action='%sfm_self_script%' accept-charset='UTF-8'>
+         <div id='VolunteerApplication_errorloc' class='error_strings' style='width:919px;text-align:left'>%sfm_error_display_loc%</div>
+         <div id='VolunteerApplication_outer_div' class='form_outer_div' style='width:919px;height:800px'>
+            <div style='position:relative' id='VolunteerApplication_inner_div'>
+               <input type='hidden' name='sfm_form_submitted' value='yes'/>
+               <input type='hidden' name='sfm_form_page_num' value='2'/>
+               <input type='hidden' name='%_sfm_form_id_iput_var_%' value='%_sfm_form_id_iput_value_%'/>
+               <input type='text' name='tb7ca3a15945318bd16a6' id='tb7ca3a15945318bd16a6'/>
+               <div id='PageTitle_container' class='page_heading'>
+                  <h2 id='PageTitle' class='page_heading'></h2>
+               </div>
+               <div id='heading7_container' class='form_subheading'>
+                  <h2 id='heading7' class='form_subheading'>NOTICE TO VOLUNTEERS REGARDING BACKGROUND INVESTIGATION</h2>
+               </div>
+               <div id='label40_container'>
+                  <div id='label40'>I understand that a consumer report (background screening report) and/or an investigative consumer report (reference checks and/or interviews) that may include information from public or private sources regarding my character, driving records, criminal history, court records (both civil and criminal), qualifications and experience, work habits, and/or other information relevant to my volunteer service may be obtained in connection with my application as a volunteer with DuPage County Area Project.<br /><br /><br />I understand that, if I am approved for volunteer service by DuPage County Area Project, this background check authorization will be kept on file and may be used at any time during my service to procure further information when, in the judgment of DuPage County Area Project, such may be necessary.<br /><br /><br />I hereby release and discharge to the extent permitted by law, DuPage County Area Project, its employees, any individual or agency obtaining information for DuPage County Area Project, and any personal or professional reference, from any and all claims, damages, losses, liabilities, costs, or other expenses arising from the retrieving, reporting and/or disclosure of information in connection with this background investigation.<br /><br /><br />I understand that I am volunteering my services and declare in no way shall I be considered an employee or subcontractor or independent contractor of DuPage County Area Project.<br /><br /><br />By signing below, I, , have read, understand and consent to the above. I further authorize that a photographic copy or a telephonic facsimile of this document shall be valid for purposes present and future. My signature below certifies that all information I have provided in connection with this background check is true, accurate and complete to the best of my knowledge.</div>
+               </div>
+               <div id='label41_container'>
+                  <div id='label41'>AUTHORIZATION</div>
+               </div>
+               <div id='label42_container' class='sfm_form_label'>
+                  <label id='label42'>Full Name:</label>
+               </div>
+               <div id='label43_container' class='sfm_form_label'>
+                  <label id='label43'>Social Security Number:</label>
+               </div>
+               <div id='SSN_container'>
+                  <input type='text' name='SSN' id='SSN' value='%SSN%'/>
+                  <input type='text' name='sfm_SSN_parsed' id='sfm_SSN_parsed' tabindex='-1' style='display:none'/>
+               </div>
+               <div id='fullNameAuth_container'>
+                  <input type='text' name='fullNameAuth' id='fullNameAuth' value='%fullNameAuth%' size='20' class='sfm_textbox'/>
+               </div>
+               <div id='label44_container' class='sfm_form_label'>
+                  <label id='label44'>Date Of Birth:</label>
+               </div>
+               <div id='label45_container' class='sfm_form_label'>
+                  <label id='label45'>Driver's License Number:</label>
+               </div>
+               <div id='label46_container' class='sfm_form_label'>
+                  <label id='label46'>Drivers License State:</label>
+               </div>
+               <div id='drivers_state_container'>
+                  <select name='drivers_state' id='drivers_state' size='1'>
+                     <option value='000' %b8302ed4588e31db307913712358eec8%>Select state</option>
+                     <option value='Alabama' %d331fa9fa91b6458bb994ad25df4d299%>Alabama</option>
+                     <option value='Alaska' %84aeae71587c857b1b418150a387fc9a%>Alaska</option>
+                     <option value='Arizona' %f5f0f0ba3820445a62d3c680840f54c5%>Arizona</option>
+                     <option value='Arkansas' %9bafa778d5a5e1f802339444acd1afe7%>Arkansas</option>
+                     <option value='California' %b955d227897626aeda52f8eb48fc138b%>California</option>
+                     <option value='Colorado' %e3a621cb8862c4d7746c98319a1fa806%>Colorado</option>
+                     <option value='Connecticut' %8e0ba68493220a151020690ecda0ed2d%>Connecticut</option>
+                     <option value='Delaware' %a23de91b6fc018cc95f2961af08bb24b%>Delaware</option>
+                     <option value='Florida' %828f2165f3e4ce47094a60da785c3073%>Florida</option>
+                     <option value='Georgia' %290e0eacb41c3a06f39bc08d50208e3f%>Georgia</option>
+                     <option value='Hawaii' %67d6da8126605995f20e76d669d1f24b%>Hawaii</option>
+                     <option value='Idaho' %737efd8082792b3bbc3e0361bfb34ef0%>Idaho</option>
+                     <option value='Illinois' %f9998e0b33793c5efb37cc7fa0b9f66d%>Illinois</option>
+                     <option value='Indiana' %4307d53614b17f9a2e11b2e7d0a7bde9%>Indiana</option>
+                     <option value='Iowa' %02db80c7c18202a98c1d6de8880d9c93%>Iowa</option>
+                     <option value='Kansas' %bbc9ce75570c7847d87591311d7c1587%>Kansas</option>
+                     <option value='Kentucky' %58bd9146c35dc6b2e661a192a5bab798%>Kentucky</option>
+                     <option value='Louisiana' %d06ce13a0475d64f407265897c696a5c%>Louisiana</option>
+                     <option value='Maine' %85672b83c93d8979de7fa4acacc9fd0a%>Maine</option>
+                     <option value='Maryland' %46b44cad1b353f0df312fadd6947aae7%>Maryland</option>
+                     <option value='Massachusetts' %953eb0aab4d402e5c05e1ce1e11838d3%>Massachusetts</option>
+                     <option value='Michigan' %4ad832a02bebca68753b2ee3fec6623e%>Michigan</option>
+                     <option value='Minnesota' %e044b17ff19a36d1d451cbb678fcfd8c%>Minnesota</option>
+                     <option value='Mississippi' %90ddbad40b9570e2fe4472c24c13c806%>Mississippi</option>
+                     <option value='Missouri' %cdd6cb8ec68ba2eefc6a876039e34c9e%>Missouri</option>
+                     <option value='Montana' %a760c1b3d453d8828bdccd3241bcef20%>Montana</option>
+                     <option value='Nebraska' %99c8ebc5dc07c2bdac60e17164e8784e%>Nebraska</option>
+                     <option value='Nevada' %e5f361b6a891fa13681e888ccba24661%>Nevada</option>
+                     <option value='New_Hampshire' %23cd1f01d2766815ef25a47c9a958fa4%>New Hampshire</option>
+                     <option value='New_Jersey' %13f8077d7b3cfe2021b657915b4681d0%>New Jersey</option>
+                     <option value='New_Mexico' %6325031ea154808a96bbcf30c6a4354f%>New Mexico</option>
+                     <option value='New_York' %add931d48bfc7551e2faac15472d95bb%>New York</option>
+                     <option value='North_Carolina' %e8070cd9305426dfec68052307da3041%>North Carolina</option>
+                     <option value='North_Dakota' %4547f3bcc36abe177a8e93e935116b50%>North Dakota</option>
+                     <option value='Ohio' %53db308c8161e1232516b234b24cca93%>Ohio</option>
+                     <option value='Oklahoma' %8963e837e8821f874ec357dfe5134fcb%>Oklahoma</option>
+                     <option value='Oregon' %04abbebae964b011faafefc4cf160f7d%>Oregon</option>
+                     <option value='Pennsylvania' %dcaaa8afdb3a926a09c38ff743fa2b0e%>Pennsylvania</option>
+                     <option value='Rhode_Island' %dee7fa249dd3da52a1b8c0fb8e291405%>Rhode Island</option>
+                     <option value='South_Carolina' %8ba306d3e8ac1a19e59c40b7cdbe941a%>South Carolina</option>
+                     <option value='South_Dakota' %7fd08c4e371cfb0e133fa6147684c093%>South Dakota</option>
+                     <option value='Tennessee' %f4bed98b293afbb4a4bd9b0507a78fc2%>Tennessee</option>
+                     <option value='Texas' %3952a4f40b923f5a7de1becd71955fc8%>Texas</option>
+                     <option value='Utah' %a8aa14e565f8b49bc442dbff0ce82dae%>Utah</option>
+                     <option value='Vermont' %24d5a108b9beb7808cc0698af8862f2a%>Vermont</option>
+                     <option value='Virginia' %7d6a406d0509d23c37e1229dab631f5d%>Virginia</option>
+                     <option value='Washington' %aa7973e4b263ff1f15d0b7d9072e7209%>Washington</option>
+                     <option value='Virginia' %7d6a406d0509d23c37e1229dab631f5d%>West</option>
+                     <option value='Wisconsin' %fd5f3e802a5601b3b8c068001dc24970%>Wisconsin</option>
+                     <option value='Wyoming' %5d538ada5defaa81e832e0541c2fc7a8%>Wyoming</option>
+                  </select>
+               </div>
+               <div class='sfm_element_container' id='dob_container'>
+                  <input type='text' name='dob' id='dob' value='%dob%'/>
+                  <input type='text' name='sfm_dob_parsed' id='sfm_dob_parsed' tabindex='-1' style='display:none'/>
+                  <div id='dob_image_container'>
+                     <img id='dob_image' class='sfm_datepicker_icon' src='images/date-picker.gif' width='20' height='20' alt='Click here to open the date picker'/>
+                  </div>
+               </div>
+               <div id='drivers_container'>
+                  <input type='text' name='drivers' id='drivers' value='%drivers%' size='20' class='sfm_textbox'/>
+               </div>
+               <div id='sfm_next_page2_container' class='loading_div'>
+                  <input type='image' name='sfm_next_page2' id='VolunteerApplication_sfm_next_page2_img' src='images/VolunteerApplication-sfm_next_page2-0.png' alt='Next &gt;&gt;'/>
+               </div>
+               <div id='sfm_prev_page1_container' class='loading_div'>
+                  <input type='image' name='sfm_prev_page' id='VolunteerApplication_sfm_prev_page1_img' src='images/VolunteerApplication-sfm_prev_page1-0.png' alt='&lt;&lt; Prev'/>
+               </div>
+               <div id='sfm_save_n_close2_container' class='loading_div'>
+                  <input type='image' name='sfm_save_n_close' id='VolunteerApplication_sfm_save_n_close2_img' src='images/VolunteerApplication-sfm_save_n_close2-0.png' alt='Save and Close'/>
+               </div>
+               <div id='PageProgress2_container' class='progress_box_container'>
+                  <div id='PageProgress2_inner_box' class='progress_box'></div>
+                  <div id='PageProgress2_textbox'>Progress: %sfm_page_progress_perc%%%</div>
+               </div>
+            </div>
+         </div>
+      </form>
+      <script type='text/javascript'>
+// <![CDATA[
+$(function()
+{
+   new sfm_number_field('SSN','VolunteerApplication',{mirror:'sfm_SSN_parsed'});
+   sfm_init_default_text("VolunteerApplication","fullNameAuth","Full Name");
+   new sfm_calendar({input_id:"dob",image_id:"dob_image",form_id:"VolunteerApplication",mirror:"sfm_dob_parsed"})
+   sfm_init_default_text("VolunteerApplication","drivers","Driver's License Number");
+   sfm_show_loading_on_formsubmit('VolunteerApplication','VolunteerApplication_sfm_next_page2_img');
+   sfm_init_special_action_button('VolunteerApplication','VolunteerApplication_sfm_prev_page1_img','sfm_prev_page');
+   sfm_show_loading_on_formsubmit('VolunteerApplication','VolunteerApplication_sfm_prev_page1_img');
+   sfm_init_special_action_button('VolunteerApplication','VolunteerApplication_sfm_save_n_close2_img','sfm_save_n_close');
+   sfm_show_loading_on_formsubmit('VolunteerApplication','VolunteerApplication_sfm_save_n_close2_img');
+});
+sfm_fix_png("VolunteerApplication_sfm_next_page2_img","images/spacer.gif");
+sfm_fix_png("VolunteerApplication_sfm_prev_page1_img","images/spacer.gif");
+sfm_fix_png("VolunteerApplication_sfm_save_n_close2_img","images/spacer.gif");
+$(window).load(function()
+{
+ var w = $('form#VolunteerApplication #PageProgress2_container').width() - 2 *2;
+ $('form#VolunteerApplication #PageProgress2_inner_box').width(( w * %sfm_page_progress_perc%)/100);
+}
+);
+$('form#VolunteerApplication').simSaveForm();
+
+// ]]>
+      </script>
+      <script type='text/javascript'>
+// <![CDATA[
+var VolunteerApplicationValidator = new Validator("VolunteerApplication");
+VolunteerApplicationValidator.addValidation("SSN",{numeric:true,message:"The input for  should be a valid numeric value"} );
+VolunteerApplicationValidator.addValidation("SSN",{required:true,message:"Please fill in SSN"} );
+VolunteerApplicationValidator.addValidation("fullNameAuth",{required:true,message:"Please fill in fullNameAuth"} );
+VolunteerApplicationValidator.addValidation("drivers_state",{dontselect:"000",message:"Please select an option for drivers_state"} );
+VolunteerApplicationValidator.addValidation("dob",{required:true,message:"Please fill in dob"} );
+VolunteerApplicationValidator.addValidation("drivers",{required:true,message:"Please fill in drivers"} );
+
+// ]]>
+      </script>
+   
+<!-- Custom Footer Start -->
+					<?php
+
+//Include footer html
+include('php/footer.php');
+
+?>
+<!-- Custom Footer End -->
+</body>
+</center>
+</html>

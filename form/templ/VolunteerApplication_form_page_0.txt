@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+   <head >
+   <center>
+      <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+      <title >Form Page: VolunteerApplication</title>
+      <meta name='generator' content='Simfatic Forms 4.0.12.416'/>
+      <script src='scripts/jquery-1.7.2.min.js' type='text/javascript'></script>
+      <script src='scripts/jquery-ui-1.8.18.custom.min.js' type='text/javascript'></script>
+      <script src='scripts/globalize.js' type='text/javascript'></script>
+      <script src='scripts/jquery.sim.number.js' type='text/javascript'></script>
+      <script src='scripts/jquery.sim.utils.js' type='text/javascript'></script>
+      <script src='scripts/jquery-ui-1.8.21.custom.date.min.js' type='text/javascript'></script>
+      <script src='scripts/moment.js' type='text/javascript'></script>
+      <script src='scripts/sfm_calendar.js' type='text/javascript'></script>
+      <script src='scripts/sfm-png-fix.js' type='text/javascript'></script>
+      <script src='scripts/sessvars.js' type='text/javascript'></script>
+      <script src='scripts/jquery.sim.formsave.js' type='text/javascript'></script>
+      <script src='scripts/sfm_validatorv7.js' type='text/javascript'></script>
+      <link rel='stylesheet' type='text/css' href='style/jquery-ui-1.8.16.css'/>
+      <link rel='stylesheet' type='text/css' href='style/VolunteerApplication.css?r=%sfm_css_rand%'/>
+   </head>
+   <body id='sfm_VolunteerApplication_body' onload='try{window.parent.scroll(0,0);}catch(e){}'>
+<!-- Custom Header Start -->
+<?php
+
+
+
+	include('php/classes/DB.class.php');
+	include('php/header.php');
+
+
+
+?>
+<!-- Custom Header End -->
+
+      <form id='VolunteerApplication' class='sfm_form' method='post' action='%sfm_self_script%' accept-charset='UTF-8'>
+         <div id='VolunteerApplication_errorloc' class='error_strings' style='width:919px;text-align:left'>%sfm_error_display_loc%</div>
+         <div id='VolunteerApplication_outer_div' class='form_outer_div' style='width:919px;height:1335px'>
+            <div style='position:relative' id='VolunteerApplication_inner_div'>
+               <input type='hidden' name='sfm_form_page_num' value='0'/>
+               <input type='hidden' name='%_sfm_form_id_iput_var_%' value='%_sfm_form_id_iput_value_%'/>
+               <input type='text' name='tb7ca3a15945318bd16a6' id='tb7ca3a15945318bd16a6'/>
+               <div id='heading3_container' class='form_subheading'>
+                  <h2 id='heading3' class='form_subheading'>General Information</h2>
+               </div>
+               <div id='label1_container' class='sfm_form_label'>
+                  <label id='label1' for='first_name'>First Name:</label>
+               </div>
+               <div id='label2_container' class='sfm_form_label'>
+                  <label id='label2' for='last_name'>Last Name:</label>
+               </div>
+               <div id='label3_container' class='sfm_form_label'>
+                  <label id='label3' for='Address'>Address:</label>
+               </div>
+               <div id='label4_container' class='sfm_form_label'>
+                  <label id='label4'>Apartment Number:</label>
+               </div>
+               <div id='label5_container' class='sfm_form_label'>
+                  <label id='label5' for='City'>City:</label>
+               </div>
+               <div id='label7_container' class='sfm_form_label'>
+                  <label id='label7'>Zip Code:<br /></label>
+               </div>
+               <div id='label6_container' class='sfm_form_label'>
+                  <label id='label6' for='State'>State:</label>
+               </div>
+               <div id='label8_container' class='sfm_form_label'>
+                  <label id='label8'>Home Number:</label>
+               </div>
+               <div id='label9_container' class='sfm_form_label'>
+                  <label id='label9' for='workNumber'>Work Number:</label>
+               </div>
+               <div id='label10_container' class='sfm_form_label'>
+                  <label id='label10' for='mobileNumber'>Mobile Number:</label>
+               </div>
+               <div id='label11_container' class='sfm_form_label'>
+                  <label id='label11' for='Email'>Email Address:</label>
+               </div>
+               <div id='label12_container' class='sfm_form_label'>
+                  <label id='label12'>Date of Birth:</label>
+               </div>
+               <div id='heading_container' class='form_subheading'>
+                  <h2 id='heading' class='form_subheading'>Areas of Interest</h2>
+               </div>
+               <div id='label14_container'>
+                  <div id='label14'>Check all that apply.</div>
+               </div>
+               <div id='heading1_container' class='form_subheading'>
+                  <h2 id='heading1' class='form_subheading'>Hours of Availability</h2>
+               </div>
+               <div id='label16_container' class='sfm_form_label'>
+                  <label id='label16' for='startDate'>Date Available to Start:</label>
+               </div>
+               <div id='label47_container' class='sfm_form_label'>
+                  <label id='label47'>Total Volunteer Hours</label>
+               </div>
+               <div id='totalHours_container'>
+                  <input type='text' name='totalHours' id='totalHours' value='%totalHours%'/>
+                  <input type='text' name='sfm_totalHours_parsed' id='sfm_totalHours_parsed' tabindex='-1' style='display:none'/>
+               </div>
+               <div id='label17_container' class='sfm_form_label'>
+                  <label id='label17' for='Monday'>Monday</label>
+               </div>
+               <div id='label18_container' class='sfm_form_label'>
+                  <label id='label18' for='Tuesday'>Tuesday</label>
+               </div>
+               <div id='label19_container' class='sfm_form_label'>
+                  <label id='label19' for='Wednesday'>Wednesday</label>
+               </div>
+               <div id='label20_container' class='sfm_form_label'>
+                  <label id='label20' for='Thursday'>Thursday</label>
+               </div>
+               <div id='label21_container' class='sfm_form_label'>
+                  <label id='label21'>Friday</label>
+               </div>
+               <div id='label22_container' class='sfm_form_label'>
+                  <label id='label22' for='satSun'>Saturday / Sunday</label>
+               </div>
+               <div id='heading2_container' class='form_subheading'>
+                  <h2 id='heading2' class='form_subheading'>Emergency Contact Person</h2>
+               </div>
+               <div id='label24_container' class='sfm_form_label'>
+                  <label id='label24'>Full Name:</label>
+               </div>
+               <div id='label25_container' class='sfm_form_label'>
+                  <label id='label25'>Relationship:</label>
+               </div>
+               <div id='label26_container' class='sfm_form_label'>
+                  <label id='label26' for='ecAddress'>Address:</label>
+               </div>
+               <div id='label27_container' class='sfm_form_label'>
+                  <label id='label27'>Apartment Number:</label>
+               </div>
+               <div id='label29_container' class='sfm_form_label'>
+                  <label id='label29'>Zip Code:<br /></label>
+               </div>
+               <div id='label28_container' class='sfm_form_label'>
+                  <label id='label28' for='City'>City:</label>
+               </div>
+               <div id='label30_container' class='sfm_form_label'>
+                  <label id='label30' for='State'>State:</label>
+               </div>
+               <div id='label32_container' class='sfm_form_label'>
+                  <label id='label32' for='workNumber'>Work Number:</label>
+               </div>
+               <div id='label31_container' class='sfm_form_label'>
+                  <label id='label31'>Home Number:</label>
+               </div>
+               <div id='label33_container' class='sfm_form_label'>
+                  <label id='label33'>Mobile Number:</label>
+               </div>
+               <div id='PageProgress_container' class='progress_box_container'>
+                  <div id='PageProgress_inner_box' class='progress_box'></div>
+                  <div id='PageProgress_textbox'>Progress: %sfm_page_progress_perc%%%</div>
+               </div>
+               <div id='first_name_container'>
+                  <input type='text' name='first_name' id='first_name' value='%first_name%' size='20' tabindex='1' class='sfm_textbox'/>
+               </div>
+               <div id='last_name_container'>
+                  <input type='text' name='last_name' id='last_name' value='%last_name%' size='20' tabindex='2' class='sfm_textbox'/>
+               </div>
+               <div id='Address_container'>
+                  <input type='text' name='Address' id='Address' value='%Address%' size='20' tabindex='3' class='sfm_textbox'/>
+               </div>
+               <div id='apt_num_container'>
+                  <input type='text' name='apt_num' id='apt_num' value='%apt_num%' size='20' tabindex='4' class='sfm_textbox'/>
+               </div>
+               <div id='City_container'>
+                  <input type='text' name='City' id='City' value='%City%' size='20' tabindex='5' class='sfm_textbox'/>
+               </div>
+               <div id='State_container'>
+                  <select name='State' id='State' size='1' tabindex='6'>
+                     <option value='000' %ae9435a257cf130b1c0b7ea11eb54696%>Select state</option>
+                     <option value='Alabama' %f525f501c70a4196ff364fe8f51a6dc9%>Alabama</option>
+                     <option value='Alaska' %535523726548d4a94f77ac99084c37d7%>Alaska</option>
+                     <option value='Arizona' %f2578f0a6d36357f68343a4943378df2%>Arizona</option>
+                     <option value='Arkansas' %13b09a347b43eb83a4c70b90144f5bf0%>Arkansas</option>
+                     <option value='California' %f63ef10683eeaf00c83eab3752a08e99%>California</option>
+                     <option value='Colorado' %e5a42613836b7618ebf98ee26dec2892%>Colorado</option>
+                     <option value='Connecticut' %adf767c5d0c8ea6148a596d757b8b0f5%>Connecticut</option>
+                     <option value='Delaware' %e0abe6078e25638049985d9ff815e141%>Delaware</option>
+                     <option value='Florida' %ed95c9cba93b22e27ffe2cf42dd26da2%>Florida</option>
+                     <option value='Georgia' %2eec6266d48d7130c920a916df40729f%>Georgia</option>
+                     <option value='Hawaii' %d2530f46f76d7e90f8a8159dbf2bb26c%>Hawaii</option>
+                     <option value='Idaho' %001e09aaa0cceb11a3f8d02281c44fa7%>Idaho</option>
+                     <option value='Illinois' %233a64568993e378d4cbc59ed327aadb%>Illinois</option>
+                     <option value='Indiana' %1c34f65ebdc09d4cd653c94ba2f3aa37%>Indiana</option>
+                     <option value='Iowa' %c3e558577f2d5127631b388d699ba31b%>Iowa</option>
+                     <option value='Kansas' %b475cbba69e1dec253a5d5b3f1a01439%>Kansas</option>
+                     <option value='Kentucky' %5ba9097263964dfee13219c6e57a16f7%>Kentucky</option>
+                     <option value='Louisiana' %973964713e4f5518fc835ba1523523fa%>Louisiana</option>
+                     <option value='Maine' %e3d2a47c929002e6be720bc3015a00c0%>Maine</option>
+                     <option value='Maryland' %6ebf70b5474477137fc4adb8db3d483b%>Maryland</option>
+                     <option value='Massachusetts' %4ff3a6937bf302be9b599e3adebd05e0%>Massachusetts</option>
+                     <option value='Michigan' %295f92fde957a5c5f40fc3d00f716cf7%>Michigan</option>
+                     <option value='Minnesota' %0300b03a72287954eddacc5dafc0fa20%>Minnesota</option>
+                     <option value='Mississippi' %2d54acea254843f0de2d930898515db0%>Mississippi</option>
+                     <option value='Missouri' %00dacdbb30ca57239807517e8881a1d6%>Missouri</option>
+                     <option value='Montana' %e3f9ff5df108589cd87b8ead5c64e721%>Montana</option>
+                     <option value='Nebraska' %0972dd1602fb3275dbbb9392897095ce%>Nebraska</option>
+                     <option value='Nevada' %5508f5f4480ec2ba90f77f96eba995c2%>Nevada</option>
+                     <option value='New_Hampshire' %853a6ee9f992396b8ac77868087a9cd3%>New Hampshire</option>
+                     <option value='New_Jersey' %4238a284b4ddfa16eacd8c800be663eb%>New Jersey</option>
+                     <option value='New_Mexico' %318c206158722b5c002becafff857980%>New Mexico</option>
+                     <option value='New_York' %5b0a25ea205271985583ccd953c1a7b9%>New York</option>
+                     <option value='North_Carolina' %b829426475f7f08e6e21a4ed6d54061b%>North Carolina</option>
+                     <option value='North_Dakota' %2e2a797b7a237322330c486371978e0b%>North Dakota</option>
+                     <option value='Ohio' %ef3b136a56469733474168808d6fcb23%>Ohio</option>
+                     <option value='Oklahoma' %fc955d90ffa3f708a43ab93d2229bec0%>Oklahoma</option>
+                     <option value='Oregon' %e1898d74b4f23834f28e675e50e756c5%>Oregon</option>
+                     <option value='Pennsylvania' %f91393aa88a96fb6a754c7f2de1bdc23%>Pennsylvania</option>
+                     <option value='Rhode_Island' %3b9565935c0ea87ac23a56a1f80ed967%>Rhode Island</option>
+                     <option value='South_Carolina' %c764089c3a6e0215ea070f1e89f265fe%>South Carolina</option>
+                     <option value='South_Dakota' %8d699c0a4373a81a77285926bc092cb1%>South Dakota</option>
+                     <option value='Tennessee' %4ca2300fe8102069ffd3458d8c788f4f%>Tennessee</option>
+                     <option value='Texas' %1b2cb01ff713474ddc4c23654119b8d7%>Texas</option>
+                     <option value='Utah' %5b7a02207b089289317a9aac21655fad%>Utah</option>
+                     <option value='Vermont' %d6b99d4f9d5f07f1cb2fbcc2432e16ff%>Vermont</option>
+                     <option value='Virginia' %ab91874147806db746814598b88402cf%>Virginia</option>
+                     <option value='Washington' %1ace14936747a996e65401bad1e9522c%>Washington</option>
+                     <option value='Virginia' %ab91874147806db746814598b88402cf%>West</option>
+                     <option value='Wisconsin' %295963b2b217ab6797a60a4fec5d52a9%>Wisconsin</option>
+                     <option value='Wyoming' %6ece0e1cdc9a9d8f6033e890fba9631e%>Wyoming</option>
+                  </select>
+               </div>
+               <div id='ZipCode_container'>
+                  <input type='text' name='ZipCode' id='ZipCode' value='%ZipCode%' size='20' tabindex='7' class='sfm_textbox'/>
+               </div>
+               <div id='homeNumber_container'>
+                  <input type='text' name='homeNumber' id='homeNumber' value='%homeNumber%' size='20' tabindex='8' class='sfm_textbox'/>
+               </div>
+               <div id='mobileNumber_container'>
+                  <input type='text' name='mobileNumber' id='mobileNumber' value='%mobileNumber%' size='20' tabindex='9' class='sfm_textbox'/>
+               </div>
+               <div id='workNumber_container'>
+                  <input type='text' name='workNumber' id='workNumber' value='%workNumber%' size='20' tabindex='10' class='sfm_textbox'/>
+               </div>
+               <div id='Email_container'>
+                  <input type='text' name='Email' id='Email' value='%Email%' size='20' tabindex='11' class='sfm_textbox'/>
+               </div>
+               <div class='sfm_element_container' id='DateofBirth_container'>
+                  <input type='text' name='DateofBirth' id='DateofBirth' tabindex='12' value='%DateofBirth%'/>
+                  <input type='text' name='sfm_DateofBirth_parsed' id='sfm_DateofBirth_parsed' tabindex='-1' style='display:none'/>
+                  <div id='DateofBirth_image_container'>
+                     <img id='DateofBirth_image' class='sfm_datepicker_icon' src='images/calendar16x16_3.png' width='16' height='16' alt='Click here to open the date picker'/>
+                  </div>
+               </div>
+               <div class='element_label' id='areaofInterest_0_container'><input type='checkbox' name='areaofInterest[]' id='areaofInterest_item_0' value='Tutoring' tabindex='13' %1a5cbd516b449965d35c076f49c705a2%/><label for='areaofInterest_item_0' class='element_label' id='areaofInterest_item_0_label'>Tutoring</label></div>
+               <div class='element_label' id='areaofInterest_1_container'><input type='checkbox' name='areaofInterest[]' id='areaofInterest_item_1' value='Drama/Music' tabindex='14' %767bedb0c61e7cb4493591866bbe0d22%/><label for='areaofInterest_item_1' class='element_label' id='areaofInterest_item_1_label'>Drama/Music</label></div>
+               <div class='element_label' id='areaofInterest_2_container'><input type='checkbox' name='areaofInterest[]' id='areaofInterest_item_2' value='Office Tasks' tabindex='15' %9af64d38c16f6f62ab7d1616f4eb4a88%/><label for='areaofInterest_item_2' class='element_label' id='areaofInterest_item_2_label'>Office Tasks</label></div>
+               <div class='element_label' id='areaofInterest_3_container'><input type='checkbox' name='areaofInterest[]' id='areaofInterest_item_3' value='Arts &amp; Crafts' tabindex='16' %b9bd436a8e28dcc11d3e5dfd9a528fd8%/><label for='areaofInterest_item_3' class='element_label' id='areaofInterest_item_3_label'>Arts &amp; Crafts</label></div>
+               <div class='element_label' id='areaofInterest_4_container'><input type='checkbox' name='areaofInterest[]' id='areaofInterest_item_4' value='Mentoring' tabindex='17' %32fafc86f3f6a1367245fdd92736f80e%/><label for='areaofInterest_item_4' class='element_label' id='areaofInterest_item_4_label'>Mentoring</label></div>
+               <div class='element_label' id='areaofInterest_5_container'><input type='checkbox' name='areaofInterest[]' id='areaofInterest_item_5' value='Sports' tabindex='18' %a2751a2fc4dd5117d8c72ef088fb463a%/><label for='areaofInterest_item_5' class='element_label' id='areaofInterest_item_5_label'>Sports</label></div>
+               <div class='element_label' id='areaofInterest_6_container'><input type='checkbox' name='areaofInterest[]' id='areaofInterest_item_6' value='Other' tabindex='19' %ba7f72b72c349ab514ddf8b968fdfdab%/><label for='areaofInterest_item_6' class='element_label' id='areaofInterest_item_6_label'>Other</label></div>
+               <div id='otherInterest_container'>
+                  <input type='text' name='otherInterest' id='otherInterest' value='%otherInterest%' size='20' tabindex='20' class='sfm_textbox'/>
+               </div>
+               <div class='sfm_element_container' id='startDate_container'>
+                  <input type='text' name='startDate' id='startDate' tabindex='21' value='%startDate%'/>
+                  <input type='text' name='sfm_startDate_parsed' id='sfm_startDate_parsed' tabindex='-1' style='display:none'/>
+                  <div id='startDate_image_container'>
+                     <img id='startDate_image' class='sfm_datepicker_icon' src='images/calendar16x16_3.png' width='16' height='16' alt='Click here to open the date picker'/>
+                  </div>
+               </div>
+               <div id='Monday_container'>
+                  <input type='text' name='Monday' id='Monday' value='%Monday%' size='20' tabindex='22' class='sfm_textbox'/>
+               </div>
+               <div id='Tuesday_container'>
+                  <input type='text' name='Tuesday' id='Tuesday' value='%Tuesday%' size='20' tabindex='23' class='sfm_textbox'/>
+               </div>
+               <div id='Wednesday_container'>
+                  <input type='text' name='Wednesday' id='Wednesday' value='%Wednesday%' size='20' tabindex='24' class='sfm_textbox'/>
+               </div>
+               <div id='Thursday_container'>
+                  <input type='text' name='Thursday' id='Thursday' value='%Thursday%' size='20' tabindex='25' class='sfm_textbox'/>
+               </div>
+               <div id='Friday_container'>
+                  <input type='text' name='Friday' id='Friday' value='%Friday%' size='20' tabindex='26' class='sfm_textbox'/>
+               </div>
+               <div id='satSun_container'>
+                  <input type='text' name='satSun' id='satSun' value='%satSun%' size='20' tabindex='27' class='sfm_textbox'/>
+               </div>
+               <div id='ecName_container'>
+                  <input type='text' name='ecName' id='ecName' value='%ecName%' size='20' tabindex='28' class='sfm_textbox'/>
+               </div>
+               <div id='ec_relation_container'>
+                  <input type='text' name='ec_relation' id='ec_relation' value='%ec_relation%' size='20' tabindex='29' class='sfm_textbox'/>
+               </div>
+               <div id='ecAddress_container'>
+                  <input type='text' name='ecAddress' id='ecAddress' value='%ecAddress%' size='20' tabindex='30' class='sfm_textbox'/>
+               </div>
+               <div id='ec_apt_container'>
+                  <input type='text' name='ec_apt' id='ec_apt' value='%ec_apt%' size='20' tabindex='31' class='sfm_textbox'/>
+               </div>
+               <div id='ec_city_container'>
+                  <input type='text' name='ec_city' id='ec_city' value='%ec_city%' size='20' tabindex='32' class='sfm_textbox'/>
+               </div>
+               <div id='ec_state_container'>
+                  <select name='ec_state' id='ec_state' size='1' tabindex='33'>
+                     <option value='000' %0b9831496a66e2c373c28fe31cb06317%>Select state</option>
+                     <option value='Alabama' %92eacd8fbf82fe8955c581ea6f1d9c2f%>Alabama</option>
+                     <option value='Alaska' %4f3a810fd1be96dfc912fa29d09a75d3%>Alaska</option>
+                     <option value='Arizona' %899e1facfe32c36c7c25aecc77368c71%>Arizona</option>
+                     <option value='Arkansas' %be11a2e7e1a01894805fcc9f34f74e03%>Arkansas</option>
+                     <option value='California' %b6f7f82f364360322054550e84cffc12%>California</option>
+                     <option value='Colorado' %e7d432963d2f0e2440d4fed29046069a%>Colorado</option>
+                     <option value='Connecticut' %3aa013f15df34d010e30bfb850299a33%>Connecticut</option>
+                     <option value='Delaware' %d76e39f8d0b5a2eebe8fc2ee65c28228%>Delaware</option>
+                     <option value='Florida' %ce5936e5a9f884e279b8eafc26043430%>Florida</option>
+                     <option value='Georgia' %21b7472cbcfa9dfdcdeafba1129bbfc2%>Georgia</option>
+                     <option value='Hawaii' %ab5a8723f5ebba68dde5eac17026481b%>Hawaii</option>
+                     <option value='Idaho' %f827daaa5cbb6528baa5fd53a4676fc6%>Idaho</option>
+                     <option value='Illinois' %7a78635d044ec8fc8941bbe03beef950%>Illinois</option>
+                     <option value='Indiana' %bb6176577d0b59b669f96cce35cb9f8e%>Indiana</option>
+                     <option value='Iowa' %ff839d2007b19bbad6fada91ba422808%>Iowa</option>
+                     <option value='Kansas' %0225f8bea4b124defba6c438112fcf29%>Kansas</option>
+                     <option value='Kentucky' %69f3c0577e4b94a615ef070d6471b6c6%>Kentucky</option>
+                     <option value='Louisiana' %d4a000e1e5df00ba2199ee4fd3ab69cb%>Louisiana</option>
+                     <option value='Maine' %3ebc87a293fa5d855cfd1fd39e63224b%>Maine</option>
+                     <option value='Maryland' %ab1f1c970aebfb501c815590e022cc3e%>Maryland</option>
+                     <option value='Massachusetts' %2256a7ecfee436632d125b395032e8ce%>Massachusetts</option>
+                     <option value='Michigan' %f1b3c1818fc4183cb822e8c4cd1eb6ab%>Michigan</option>
+                     <option value='Minnesota' %047458e83897392f5eb053fb9a9c8277%>Minnesota</option>
+                     <option value='Mississippi' %875538786a2c9c9d59cec9dd15a31a14%>Mississippi</option>
+                     <option value='Missouri' %c9ccf464e6e8c113ff9cfd12c9e4ccb9%>Missouri</option>
+                     <option value='Montana' %77a68a7bc8afcd995ca33d8566675ef2%>Montana</option>
+                     <option value='Nebraska' %93e29a01f15f4e5c2670df65c906fec7%>Nebraska</option>
+                     <option value='Nevada' %98d2b8aa34c78e51ef81c64ca0e3f01b%>Nevada</option>
+                     <option value='New_Hampshire' %68a66883a00374f92bbb989fb2f4286e%>New Hampshire</option>
+                     <option value='New_Jersey' %56ba992e93115427a55fd2b65f20945d%>New Jersey</option>
+                     <option value='New_Mexico' %3747a620b1f513ebb88ce1c14825e653%>New Mexico</option>
+                     <option value='New_York' %a77f848bfeed16d7aa4856bdbbbec345%>New York</option>
+                     <option value='North_Carolina' %6c40b5a8736a21f2d3cf2ecfb2246e23%>North Carolina</option>
+                     <option value='North_Dakota' %52fe7a8ef358c624c447cc583b1369aa%>North Dakota</option>
+                     <option value='Ohio' %4b5af7aecb414cbd7d6717c030f447b3%>Ohio</option>
+                     <option value='Oklahoma' %8fd7fca42d2c35c4f949ec55c6d594dc%>Oklahoma</option>
+                     <option value='Oregon' %8ed3bab68393248d9011d18aebdb6b92%>Oregon</option>
+                     <option value='Pennsylvania' %d4e66deb0e6e3f89e04b75e61d20383a%>Pennsylvania</option>
+                     <option value='Rhode_Island' %8939bd640945f8e932d21915ef141263%>Rhode Island</option>
+                     <option value='South_Carolina' %f5c2f5263d1c0662fa261611669063dc%>South Carolina</option>
+                     <option value='South_Dakota' %3a9c9acee57f401779accd89d3e41d1a%>South Dakota</option>
+                     <option value='Tennessee' %4a85c08684c332f249d8b484d1bf1941%>Tennessee</option>
+                     <option value='Texas' %cf8016c0983220433f9e88283b0fecc5%>Texas</option>
+                     <option value='Utah' %e248f1a265299db2c41c361cd3d62b38%>Utah</option>
+                     <option value='Vermont' %6c5b1379baca549bf8686b5941e9890d%>Vermont</option>
+                     <option value='Virginia' %77fd3ae93e7f7bb4460c4e57900145bb%>Virginia</option>
+                     <option value='Washington' %37f50ea35b7c6ebcf90c2214e425fda3%>Washington</option>
+                     <option value='Virginia' %77fd3ae93e7f7bb4460c4e57900145bb%>West</option>
+                     <option value='Wisconsin' %db9fa296e78a37e85f2827c4d4e35e27%>Wisconsin</option>
+                     <option value='Wyoming' %120468130e160a81d1425d3b112fe4cb%>Wyoming</option>
+                  </select>
+               </div>
+               <div id='ec_zip_container'>
+                  <input type='text' name='ec_zip' id='ec_zip' value='%ec_zip%' size='20' tabindex='34' class='sfm_textbox'/>
+               </div>
+               <div id='ec_phone_container'>
+                  <input type='text' name='ec_phone' id='ec_phone' value='%ec_phone%' size='20' tabindex='35' class='sfm_textbox'/>
+               </div>
+               <div id='ec_mobile_container'>
+                  <input type='text' name='ec_mobile' id='ec_mobile' value='%ec_mobile%' size='20' tabindex='36' class='sfm_textbox'/>
+               </div>
+               <div id='ec_work_container'>
+                  <input type='text' name='ec_work' id='ec_work' value='%ec_work%' size='20' tabindex='37' class='sfm_textbox'/>
+               </div>
+               <div id='sfm_next_page_container' class='loading_div'>
+                  <input type='image' name='sfm_next_page' tabindex='38' id='VolunteerApplication_sfm_next_page_img' src='images/VolunteerApplication-sfm_next_page-0.png' alt='Next &gt;&gt;'/>
+               </div>
+               <div id='sfm_save_n_close_container' class='loading_div'>
+                  <input type='image' name='sfm_save_n_close' tabindex='39' id='VolunteerApplication_sfm_save_n_close_img' src='images/VolunteerApplication-sfm_save_n_close-0.png' alt='Save and Close'/>
+               </div>
+            </div>
+         </div>
+      </form>
+      <script type='text/javascript'>
+// <![CDATA[
+$(function()
+{
+   new sfm_number_field('totalHours','VolunteerApplication',{mirror:'sfm_totalHours_parsed'});
+   sfm_init_default_text("VolunteerApplication","first_name","First Name");
+   sfm_init_default_text("VolunteerApplication","last_name","Last Name");
+   sfm_init_default_text("VolunteerApplication","Address","Home Address");
+   sfm_init_default_text("VolunteerApplication","apt_num","Apt. #");
+   sfm_init_default_text("VolunteerApplication","City","City");
+   sfm_init_default_text("VolunteerApplication","ZipCode","Zip");
+   sfm_init_default_text("VolunteerApplication","homeNumber","Home Number");
+   sfm_init_default_text("VolunteerApplication","mobileNumber","Mobile Number");
+   sfm_init_default_text("VolunteerApplication","workNumber","Work Number");
+   sfm_init_default_text("VolunteerApplication","Email","Email Address");
+   new sfm_calendar({input_id:"DateofBirth",image_id:"DateofBirth_image",form_id:"VolunteerApplication",mirror:"sfm_DateofBirth_parsed",smart_init:"today"})
+   new sfm_calendar({input_id:"startDate",image_id:"startDate_image",form_id:"VolunteerApplication",mirror:"sfm_startDate_parsed"})
+   sfm_init_default_text("VolunteerApplication","Monday","Monday");
+   sfm_init_default_text("VolunteerApplication","Tuesday","Tuesday");
+   sfm_init_default_text("VolunteerApplication","Wednesday","Wednesday");
+   sfm_init_default_text("VolunteerApplication","Thursday","Thursday");
+   sfm_init_default_text("VolunteerApplication","Friday","Friday");
+   sfm_init_default_text("VolunteerApplication","satSun","Saturday / Sunday");
+   sfm_init_default_text("VolunteerApplication","ecName","Full Name");
+   sfm_init_default_text("VolunteerApplication","ec_relation","Relationship");
+   sfm_init_default_text("VolunteerApplication","ecAddress","Address");
+   sfm_init_default_text("VolunteerApplication","ec_apt","Apt. #");
+   sfm_init_default_text("VolunteerApplication","ec_city","City");
+   sfm_init_default_text("VolunteerApplication","ec_zip","Zip");
+   sfm_init_default_text("VolunteerApplication","ec_phone","Home Number");
+   sfm_init_default_text("VolunteerApplication","ec_mobile","Mobile Number");
+   sfm_init_default_text("VolunteerApplication","ec_work","Work Number");
+   sfm_show_loading_on_formsubmit('VolunteerApplication','VolunteerApplication_sfm_next_page_img');
+   sfm_init_special_action_button('VolunteerApplication','VolunteerApplication_sfm_save_n_close_img','sfm_save_n_close');
+   sfm_show_loading_on_formsubmit('VolunteerApplication','VolunteerApplication_sfm_save_n_close_img');
+});
+$(window).load(function()
+{
+ var w = $('form#VolunteerApplication #PageProgress_container').width() - 2 *2;
+ $('form#VolunteerApplication #PageProgress_inner_box').width(( w * %sfm_page_progress_perc%)/100);
+}
+);
+sfm_fix_png("VolunteerApplication_sfm_next_page_img","images/spacer.gif");
+sfm_fix_png("VolunteerApplication_sfm_save_n_close_img","images/spacer.gif");
+$('form#VolunteerApplication').simSaveForm();
+
+// ]]>
+      </script>
+      <script type='text/javascript'>
+// <![CDATA[
+var VolunteerApplicationValidator = new Validator("VolunteerApplication");
+VolunteerApplicationValidator.addValidation("totalHours",{numeric:true,message:"The input for  should be a valid numeric value"} );
+VolunteerApplicationValidator.addValidation("totalHours",{greaterthan:"0.00",message:"The value of totalHours should be greater than 0.00"} );
+VolunteerApplicationValidator.addValidation("totalHours",{required:true,message:"Please fill in totalHours"} );
+VolunteerApplicationValidator.addValidation("first_name",{required:true,message:"Please fill in first_name"} );
+VolunteerApplicationValidator.addValidation("first_name",{alnum:true,message:"The input for first_name should be a valid alpha-numeric value"} );
+VolunteerApplicationValidator.addValidation("last_name",{required:true,message:"Please fill in last_name"} );
+VolunteerApplicationValidator.addValidation("last_name",{alnum:true,message:"The input for last_name should be a valid alpha-numeric value"} );
+VolunteerApplicationValidator.addValidation("Address",{required:true,message:"Please fill in Address"} );
+VolunteerApplicationValidator.addValidation("City",{required:true,message:"Please fill in City"} );
+VolunteerApplicationValidator.addValidation("State",{dontselect:"000",message:"Please select an option for State"} );
+VolunteerApplicationValidator.addValidation("ZipCode",{regexp:"^\\d{5}(-\\d{4})?$",message:"Please enter a valid input for Zip"} );
+VolunteerApplicationValidator.addValidation("ZipCode",{required:true,message:"Please fill in ZipCode"} );
+VolunteerApplicationValidator.addValidation("homeNumber",{required:true,message:"Please fill in homeNumber"} );
+VolunteerApplicationValidator.addValidation("homeNumber",{numeric:true,message:"The input for homeNumber should be a valid numeric value"} );
+VolunteerApplicationValidator.addValidation("mobileNumber",{numeric:true,message:"The input for mobileNumber should be a valid numeric value"} );
+VolunteerApplicationValidator.addValidation("mobileNumber",{required:true,message:"Please fill in mobileNumber"} );
+VolunteerApplicationValidator.addValidation("workNumber",{numeric:true,message:"The input for workNumber should be a valid numeric value"} );
+VolunteerApplicationValidator.addValidation("Email",{email:true,message:"The input for Email should be a valid email value"} );
+VolunteerApplicationValidator.addValidation("Email",{required:true,message:"Please fill in Email"} );
+VolunteerApplicationValidator.addValidation("DateofBirth",{required:true,message:"Please fill in DateofBirth"} );
+VolunteerApplicationValidator.addValidation("startDate",{required:true,message:"Please fill in startDate"} );
+VolunteerApplicationValidator.addValidation("Monday",{required:true,message:"Please fill in Monday"} );
+VolunteerApplicationValidator.addValidation("Tuesday",{required:true,message:"Please fill in Tuesday"} );
+VolunteerApplicationValidator.addValidation("Wednesday",{required:true,message:"Please fill in Wednesday"} );
+VolunteerApplicationValidator.addValidation("Thursday",{required:true,message:"Please fill in Thursday"} );
+VolunteerApplicationValidator.addValidation("Friday",{required:true,message:"Please fill in Friday"} );
+VolunteerApplicationValidator.addValidation("satSun",{required:true,message:"Please fill in satSun"} );
+VolunteerApplicationValidator.addValidation("ecName",{required:true,message:"Please fill in ecName"} );
+VolunteerApplicationValidator.addValidation("ec_relation",{required:true,message:"Please fill in ec_relation"} );
+VolunteerApplicationValidator.addValidation("ecAddress",{required:true,message:"Please fill in ecAddress"} );
+VolunteerApplicationValidator.addValidation("ec_city",{required:true,message:"Please fill in ec_city"} );
+VolunteerApplicationValidator.addValidation("ec_state",{dontselect:"000",message:"Please select an option for ec_state"} );
+VolunteerApplicationValidator.addValidation("ec_zip",{regexp:"^\\d{5}(-\\d{4})?$",message:"Please enter a valid input for Zip"} );
+
+// ]]>
+      </script>
+   
+<!-- Custom Footer Start -->
+					<?php
+
+//Include footer html
+include('php/footer.php');
+
+?>
+<!-- Custom Footer End -->
+</body>
+</center>
+</html>
