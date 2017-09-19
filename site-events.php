@@ -91,7 +91,7 @@
 
 <!-- table and content for up coming events -->
 <div class = "container header">
-	<h3><center>Up comming events<center></h3>
+	<h3><center>Upcomming events<center></h3>
 	<br/>
 </div> 
 
