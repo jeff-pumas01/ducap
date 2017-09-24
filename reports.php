@@ -34,7 +34,7 @@ $num_rows = mysql_num_rows($result);
 		<link rel ="stylesheet" type ="text/css" href ="css/style.css"/>
 <style>
 #reporting{
- background: url("http://cs.lewisu.edu/~syedahasan/imgs/reports-bck.png");
+ background: url("http://cs.lewisu.edu/~syedahasan/imgs/reports-bck.png"); <!-- THIS? -->
  background-size: 100% 100%;  //
  background-repeat: no-repeat;
  height:600px;

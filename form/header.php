@@ -32,7 +32,7 @@
 		<link rel="shortcut icon" href="http://ducap.org/wp-content/themes/maog/images/favicon.png">
 
 		<!-- Bootstrap CSS -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Custom CSS -->
 		<link href="css/custom-stylesheet.css" rel="stylesheet">
 		<!-- Custom Fonts -->

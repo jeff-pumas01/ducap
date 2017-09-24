@@ -32,7 +32,7 @@
 		<link rel="shortcut icon" href="http://ducap.org/wp-content/themes/maog/images/favicon.png">
 
 		<!-- Bootstrap CSS -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Custom CSS -->
 		<link href="css/custom-stylesheet.css" rel="stylesheet">
 		<!-- Custom Fonts -->
@@ -40,8 +40,8 @@
 		<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
+	<nav class="navbar navbar-inverse">
+		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -58,7 +58,7 @@
 			//if not on login or signup page show other links
 			if(!noLinksNav()) { ?>
 			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<?php if($_SESSION['type'] == "volunteer") { ?>
 						<li <?=echoActiveClassIfRequestMatches("attendance")?>><a href="attendance.php">Attendance</a></li>
