@@ -1485,6 +1485,17 @@ mysql_select_db("cs440team2", $link);
 		// Return site ID or -1 if there was an error.
 		return $this->getSiteID($good_data['site_name'], $good_data['address'], $good_data['zip_code']);
 	}
+function verifyVolunteerData($data, $action){
+ 	$conn = $this->connect();
+ 	
+ 	$out = "";	// Holds the resulting output.
+		// Array of each field in the VolunteerApplicationNEW  table and its label.
+		$labels_par = array("_sfm_visitor_ip_"=>"IP", "_sfm_unique_id_"=>"ID", "first_name"=>"First Name","last_name"=>"Last Name", "Address"=>"Address", "apt_num"=>"Apartment #", "State"=>"State", "City"=>"City", "Zipcode"=>"Zip Code", "homeNumber"=>"Home Number", "workNumber"=>"Work Number", "mobileNumber"=>"Mobile Number", "Email"=>"Email", "DateofBirth"=>"Data of Birth", "otherInterest"=>"Other Interest", "areaofInterest"=>"Area of Interest", "startDate"=>"Start Date", "Monday"=>"Monday", "Tuesday"=>"Tuesday", "Wednesday"=>"Wednesday", "Thursday"=>"Thursday", "Friday"=>"Friday", "satSun"=>"Saturday/Sunday","ecName"=>"Emergency Contact Name","ec_relation"=>"Emergency Contact Relation", "ecAddress"=>"Emergency Contact Address", "ec_apt"=>"Emergency Contact Apartment", "ec_zip"=>"Emergency Contact Zip Code", "ec_state"=>"Emergency Contact State", "ec_city"=>"Emergency Contact City","ec_work"=>"Emergency Contact Work", "ec_phone"=>"Emergency Contact Number", "ec_Mobile"=>"Emergency Contact Cell","initial1"=>"1", "initial2"=>"2", "initial3"=>"3", "initial4"=>"4", "SSN"=>"Social Security Num.", "fullNameAuth"=>"Signature", "drivers_state"=>"Driver License State", "idob"=>"Date of Birth", "drivers"=>"Driver License Number", "totalHours"=>"Time");
 
+ 		// Arrays used for processing.
+		$blank_array = array();	// Holds the name of any blank fields.
+ 		$bad_format = array();	// Holds the name of any unacceptable fields.
+ 		$good_data = array();	// Holds the sanitizied data.
+ 	}
 }
 ?>

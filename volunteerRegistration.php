@@ -9,10 +9,17 @@
 	include('php/classes/DB.class.php');
 	include('php/header.php');
 
-	// Connect to database.
+	//Connect to database
 	$db = new DB();
-
+	
 ?>
+
+
+
+
+
+
+
 
 <!-- Content -->
 <div class = "container header">
@@ -26,7 +33,7 @@ Click <a href="VolunteerForm.pdf">Here</a> to Download Volunteer Application </d
 <!-- End Form -->
 
 
-					<?php
+<?php
 
 //Include footer html
 include('php/footer.php');
