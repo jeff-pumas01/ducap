@@ -21,7 +21,7 @@ To extend the functionality, see 'Extension Modules' in the help.
 @ini_set("display_errors", 1);//the error handler is added later in FormProc
 error_reporting(E_ALL & ~((defined('E_STRICT')?E_STRICT:0)|E_NOTICE));
 
-require_once(dirname(__FILE__)."/includes/VolunteerApplication-lib.php");
+require_once(dirname(__FILE__)."/php/VolunteerApplication-lib.php");
 $formproc_obj =  new SFM_FormProcessor('VolunteerApplication');
 $formproc_obj->initTimeZone('default');
 $formproc_obj->setFormID('444736ae-d625-4e8d-9357-c7b9bbc40e49');
