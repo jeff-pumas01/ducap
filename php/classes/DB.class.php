@@ -1487,7 +1487,7 @@ mysql_select_db("cs440team2", $link);
 	}
 function getVolunteerApplicationNEWID($lname, $fname, $siteID) {
 		$cn = $this->connect();
-		$sql_query = "SELECT * FROM VolunteerApplicationNEW WHERE last_name = '$lname' AND first_name = '$fname' AND ID= $siteID";
+		$sql_query = "SELECT * FROM VolunteerApplicationNEW WHERE last_name = '$lname' AND first_name = '$fname' AND ID= '$siteID'";
 		
 		$result = $cn->query($sql_query);
 		$cn->close();
@@ -1501,7 +1501,7 @@ function getVolunteerApplicationNEWID($lname, $fname, $siteID) {
 		//echo " -- NO MATCHES<br />";
 		return -1;
 	}
-
+	
 	function verifyVolunteerApplicationNEWData($data, $action){
 		$conn = $this->connect();
 		
@@ -1514,9 +1514,7 @@ function getVolunteerApplicationNEWID($lname, $fname, $siteID) {
 			"ecName"=>"Emergency Contact Name","ec_relation"=>"Emergency Contact Relation", "ecAddress"=>"Emergency Contact Address","ec_apt"=>"Emergency Contact Apartment", "ec_zip"=>"Emergency Contact Zip Code", "ec_state"=>"Emergency Contact State", "ec_city"=>"Emergency Contact City","ec_work"=>"Emergency Contact Work", "ec_phone"=>"Emergency Contact Number", "ec_Mobile"=>"Emergency Contact Cell",
 			"initial1"=>"1", "initial2"=>"2", "initial3"=>"3", "initial4"=>"4",
 			"fullNameAuth"=>"Signature", "SSN"=>"Social Security Num.","drivers_state"=>"Driver License State","idob"=>"Date of Birth", "drivers"=>"Driver License Number",
-			"totalHours"=>"Time",
-			"_sfm_visitor_ip_"=>"IP", 
-			"_sfm_unique_id_"=>"ID");
+			"totalHours"=>"Time");
 
 		// Arrays used for processing.
 		$blank_array = array();	// Holds the name of any blank fields.
@@ -1525,19 +1523,18 @@ function getVolunteerApplicationNEWID($lname, $fname, $siteID) {
 		
 		
 
-		
-		// Check data submitted to form.
+				// Check data submitted to form.
 		foreach ($data as $field => $value) {
 			
 			// Check for null inrequired fields.
 			if (!isset($value) && ($field != 'initial1') && ($field != 'initial2') && ($field != 'initial3')&& ($field != 'initial4')&& ($field != 'fullNameAuth')&& ($field != 'SSN')&& ($field != 'drivers_state')&& ($field != 'idob')&& ($field != 'drivers')) {
 				array_push($blank_array, $field);
 				
-			} else if ((($field == ("first_name") ||$field == "last_name") ||  ($field == "ecName") || ($field == "emer_relation")) && !preg_match("/^[A-Za-z.' -]{1,50}$/", $value)) {
+			} else if ((($field == "first_name") ||($field == "last_name") ||  ($field == "ecName") || ($field == "emer_relation")) && !preg_match("/^[A-Za-z.' -]{1,50}$/", $value)) {
 				// Only accept 1-50 letters.
 				array_push($bad_format, $field);
 				
-			} else if($field == "idob") || ($field == "DateofBirth") {
+			} else if(($field == "idob") || ($field == "DateofBirth") ){
 				
 				if (!preg_match("/^[0-9]{4}[-][01][0-9][-][0123][0-9]$/", $value))
 					array_push($bad_format, $field);
@@ -1551,8 +1548,7 @@ function getVolunteerApplicationNEWID($lname, $fname, $siteID) {
 		}
 		
 		
-			
-	// Displays error message.
+		// Displays error message.
 		if (@sizeof($blank_array) > 0) {
 			$out = "<p>You didn't fill in one or more of the required fields. Please fill out:<br />";
 			
@@ -1566,7 +1562,8 @@ function getVolunteerApplicationNEWID($lname, $fname, $siteID) {
 			foreach($bad_format as $value)
 				$out .= "- $labels_par[$value]<br />";
 			
-		} else {
+		} 
+		else {
 			
 			// Sanitize and copy data to a new array.
 			foreach ($data as $field => $value) {
@@ -1574,12 +1571,13 @@ function getVolunteerApplicationNEWID($lname, $fname, $siteID) {
 				$good_data[$field] = strip_tags(trim($data[$field]));
 				
 				// Removes special Characters from phone numbers and apt numbers.
-				if ($field == "ec_phone") ||($field == "homeNumber")||($field == "workNumber") ||($field == "mobileNumber")||($field == "ec_Mobile") ||($field == "apt_num") 
-					$good_data[$field] = preg_replace("/[)(.-]/", "", $good_data[$field]);
+				if (($field == "ec_phone") ||($field == "homeNumber")||($field == "workNumber") ||($field == "mobileNumber")||($field == "ec_Mobile") ||($field == "apt_num") )
+				$good_data[$field] = preg_replace("/[)(.-]/", "", $good_data[$field]);
+				
 				$good_data[$field] = $conn->real_escape_string($good_data[$field]);
 			}
-	
-			// Build query string based on the desired action.
+		
+				// Build query string based on the desired action.
 			if ($action == "insert") {
 				
 				// Search Participants table first to make sure Participant is not already registered!
@@ -1587,7 +1585,7 @@ function getVolunteerApplicationNEWID($lname, $fname, $siteID) {
 
 					$qryStr = "INSERT INTO VolunteerApplicationNEW (";
 					
-					// Add fields from form if they match up with VolunteerApplicationNEW fields.
+					// Add fields from form if they match up with Participant fields.
 					foreach ($good_data as $field => $value) {
 						if (array_key_exists($field, $labels_par))
 							$qryStr .= "$field,";
@@ -1600,8 +1598,7 @@ function getVolunteerApplicationNEWID($lname, $fname, $siteID) {
 					foreach ($good_data as $field => $value) {
 						
 						if (array_key_exists($field, $labels_par)) {
-							//totalHours is a double not an int (may need to be added to  this check)
-							if (($field == 'ID') 
+							if ($field == 'ID') 
 								// Int fields have no parentheses.
 								$qryStr .= " $value,";
 							else
@@ -1613,7 +1610,7 @@ function getVolunteerApplicationNEWID($lname, $fname, $siteID) {
 					
 					//echo "<br />$qryStr<br />";
 
-					$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not add new Applicant!");
+					$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not add new Participant!");
 					$conn->close();
 					
 					if ($result)
@@ -1621,17 +1618,19 @@ function getVolunteerApplicationNEWID($lname, $fname, $siteID) {
 					
 				} else {
 					
-					$out = "Error: Applicant named $fname $lname has already applied!<br /><br />";
+					$out = "Error: Participant named $fname $lname is already registered!<br /><br />";
 				}		
 				
-			} else if ($action == "update") {
+			}
+			else if ($action == "update") {
 				
-				// Build query string to update row in VolunteerApplicationNEW table.
+				// Build query string to update row in Participants table.
 				$qryStr = "UPDATE VolunteerApplicationNEW SET";
 				foreach ($good_data as $field => $value) {
 					
-					if (($field == 'ID') || ($field == 'submission'))
+					if ($field == 'ID')
 						$qryStr .= "";
+				
 					else
 						$qryStr .= " $field='$value',";
 				}
@@ -1639,11 +1638,11 @@ function getVolunteerApplicationNEWID($lname, $fname, $siteID) {
 				// Remove the comma added after the last pair.
 				$qryStr[strlen($qryStr) - 1] = " ";
 				
-				$qryStr .= "WHERE ID=" . $good_data['ID'] . ";";
+				$qryStr .= "WHERE ID =" . $good_data['ID'] . ";";
 				
 				//echo "<br />$qryStr<br /><br />";
 				
-				$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not update information for Applicant!");
+				$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not update information for VolunteerApplicationNEW!");
 				$conn->close();
 				
 				if ($result)
@@ -1653,19 +1652,17 @@ function getVolunteerApplicationNEWID($lname, $fname, $siteID) {
 				
 				$out = "ERROR: Cannot $action the data.";
 			}
-			
 		}
-		
 		echo $out;
 		
-		// Return Applicant ID or -1 if there was an error.
-		return $this->getVolunteerApplicationNEWID($good_data['last_name'], $good_data['first_name'], $good_data['ID']);
+		// Return participant ID or -1 if there was an error.
+		return $this->getVolunteerApplicationNEWID($good_data['last_name'], $good_data['first_name'], $good_data['ID']);	
 
 	
+
 	
+}
+
 	
-	
-	
-	}
 }
 ?>
