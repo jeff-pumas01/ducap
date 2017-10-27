@@ -64,17 +64,17 @@
 		<div class="row">
 			<div class="col-md-4 form-group">
 				<label for="home_number">Home Number:</label>
-				<input type="text" id="homeNumber" class="form-control" name="homeNumber" placeholder="Home Number" required>
+				<input type="tel" id="homeNumber" class="form-control" name="homeNumber" placeholder="Home Number" required>
 			</div>
 			
 			<div class="col-md-4 form-group">
 				<label for="mobileNumber">Mobile Number:</label>
-				<input type="text" class="form-control" id="mobileNumber" name="mobileNumber" placeholder="Mobile Number">
+				<input type="tel" class="form-control" id="mobileNumber" name="mobileNumber" placeholder="Mobile Number">
 			</div>
 			
 			<div class="col-md-4 form-group">
 				<label for="workNumber">Work Number:</label>
-				<input type="text" class="form-control" id="workNumber" name="workNumber" placeholder="Work Number">
+				<input type="tel" class="form-control" id="workNumber" name="workNumber" placeholder="Work Number">
 			</div>
 		</div>
 		
@@ -82,11 +82,11 @@
 		<div class = "row">
 			<div class="col-md-4 form-group">
 				<label for="Email">Email Address:</label>
-				<input type="text" class="form-control" name="Email" id="Email" placeholder = "Email" required>
+				<input type="email" class="form-control" name="Email" id="Email" placeholder = "Email" required>
 			</div>
             <div class="col-md-4 form-group">
-				<label for="DateofBirth">Data of Birth:</label>
-				<input type="text" class="form-control" id="DateofBirth" name="DateofBirth" placeholder="Data of Birth">
+				<label for="DateofBirth">Date of Birth (MM/DD/YYYY):</label>
+				<input type="date" class="form-control" id="DateofBirth" name="DateofBirth" required />
 			</div>
 		</div>
 		
@@ -115,55 +115,45 @@
 			
 		<div class = "row">
 			<h3><b>Availability</b></h3>
+			
 			<div class="col-md-4 form-group">
-				<label for="home_number">Date Available to Start:</label>
-				<input type="text" id="Monday" class="form-control" name="XX-XX-XXXX" placeholder="XX-XX-XXXX" required>
+				<label for="startDate">Date Available to Start (MM/DD/YYYY):</label>
+				<input type="date" class="form-control" id="startDate" name="startDate" required />
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-4 form-group">
-				<label for="home_number">Monday:</label>
-				<input type="text" id="Monday" class="form-control" name="Monday" placeholder="XX:XX to XX:XX" required>
+				<label for="Monday">Monday After:</label>
+				<input type="time" id="Monday" class="form-control" name="Monday">
 			</div>
 			
 			<div class="col-md-4 form-group">
-				<label for="mobileNumber">Tuesday:</label>
-				<input type="text" class="form-control" id="mobileNumber" name="mobileNumber" placeholder="XX:XX to XX:XX">
+				<label for="Tuesday">Tuesday After:</label>
+				<input type="time" class="form-control" id="Tuesday" name="Tuesday">
 			</div>
 			
 			<div class="col-md-4 form-group">
-				<label for="workNumber">Wednesday:</label>
-				<input type="text" class="form-control" id="workNumber" name="workNumber" placeholder="XX:XX to XX:XX">
+				<label for="Wednesday">Wednesday After:</label>
+				<input type="time" class="form-control" id="Wednesday" name="Wednesday" >
 			</div>
 		</div>
 		
 		
 		<div class="row">
 			<div class="col-md-4 form-group">
-				<label for="home_number">Thursday:</label>
-				<input type="text" id="Monday" class="form-control" name="Monday" placeholder="XX:XX to XX:XX" required>
+				<label for="Thursday">Thursday After:</label>
+				<input type="time" id="Monday" class="form-control" name="Thursday">
 			</div>
 			
 			<div class="col-md-4 form-group">
-				<label for="mobileNumber">Friday:</label>
-				<input type="text" class="form-control" id="mobileNumber" name="mobileNumber" placeholder="XX:XX to XX:XX">
+				<label for="satSun">Friday After:</label>
+				<input type="time" class="form-control" id="Friday" name="Friday" >
 			</div>
 			
 			<div class="col-md-4 form-group">
-				<label for="workNumber">Saturday/ Sunday:</label>
-					<select>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="2">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-						<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-					<option value="9">9</option>
-					</select>
-			</div>
+				<label for="">Saturday/ Sunday After:</label>
+				<input type="time" class="form-control" id="satSun" name="satSun" >
+			
 		</div>
 		
 		
