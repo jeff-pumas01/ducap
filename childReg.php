@@ -78,7 +78,7 @@
 		<button class = "btn btn-sm btn-primary btn-block" type = "submit"  name = "submission"  >Continue</button>
 		</div>
 	
-	</div>
+
 
 	
 </form>	
