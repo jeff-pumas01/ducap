@@ -1,0 +1,14 @@
+done = 1
+not done = 0
+tested = 1
+not tested = 0
+function name(status,tested):
+	AddAdministrator = 1,0
+	AddAttendance = 1,1
+	AddGuardianship = 1,0
+	AddVolunteer = 1,0 (need to add this to the manage volunteer admin page)
+	addVolunteerEmerContact = 1,0
+	verifyEventData = 0 (need help identifying variables?) doesnt work line 983
+	verifyLegalGuardianData = 0 (need help identifying variables?) doesnt work line 1149
+	verifyParticipantData = 0 (need help identifying variables?) doesnt work line 1324
+	verifySiteData = 0 (need help identifying variables?) doesnt work line 1495
