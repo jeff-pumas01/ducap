@@ -36,26 +36,41 @@
 
 	<div class = "container volunteer">
 		
-	
-	<?php
+		<center>
+			<!-- This php code retrieves the information about the event you want
+				to update and displays it in the textboxes. 
+				TODO (?): get rid of <center> and find out why it does not
+				automatically configure to the container volunteer-->
+			<?php
 
-				$eventData = $db->{'getEventInfo'}($event_id);
+						$eventData = $db->{'getEventInfo'}($event_id);
 
-				echo "<h3><b>Update an Event at " . $eventData['title'] . "</b></h3>";
-				echo "<br /><div class = 'row'>";
-				echo "<label for='title'>Title :</label> ";
-				echo '<input required  type = "text" name = "title" value="' . $eventData['title'] . '" />'
-				//echo "<br /><div class = 'row'>";
-				//echo "<br /> <label for='date'>Date :</label> ";
+						echo "<h3><b>Update the event: " . $eventData['title'] . "</b></h3>";
 				
+						// retrieves info for title and date textboxes
+						echo "<br /><div class = 'row'>";
+						echo "<label for='title'>Title :</label> ";
+						echo '<input required  type = "text" name = "title" value="' . $eventData['title'] . '" />';
+						echo "<label for='date'>&nbsp;&nbsp;Date (mm/dd/yyyy):</label> ";
+						echo '<input required  type = "text" name = "date" value="' . $eventData['date'] . '" />';
 				
+						// retrieves info for time and length textboxes
+						echo "<br /><br /><div class = 'row'>";
+						echo "<label for='time'>Time :</label> ";
+						echo '<input required  type = "text" name = "time" value="' . $eventData['timeStart'] . '" />';
+						echo "<label for='date'>&nbsp;&nbsp;Length (in minutes):</label> ";
+						echo '<input required  type = "text" name = "length" value="' . $eventData['timeLength'] . '" />';
+				
+						// this is the site selection menu
+						// TODO: make the default option the site that the event is currently at
+						echo "<br /><br /><div class = 'row'>";
+						echo "<label for='site'>Site :</label> ";
+						echo $db->{'getSiteSelect'}();
+			?>
+			
+			<!--<button class = "btn btn-sm btn-primary btn-block" type = "submit"  name = "submission"  >Update Event</button> -->
 
-
-				// Get a select list of events for the given site.
-				//echo $db->{'getEventSelectForSite'}($site_id);
-
-				// Pass along the site id as a hidden field.
-				//echo "<input type='hidden' name='site_id' value=$site_id />";  ?>
+		</center>
 	
 		<!--
 		<h3><b>Update an Event</h3>
