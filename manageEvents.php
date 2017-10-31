@@ -101,7 +101,7 @@
 		<div class="row">
 			
 			<div class="col-md-8 form-group">
-				<label for="site_id"></label>
+				<label for="event_id"></label>
 				<?php
 					// Get a select list of event names.
 					echo $db->{'getEventSelect'}();

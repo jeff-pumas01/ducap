@@ -26,6 +26,9 @@
 	// Connect to database.
 	$db = new DB();
 	
+	$event_id = $_POST['event_id'];
+
+	
 	
 ?>
 
@@ -33,10 +36,34 @@
 
 	<div class = "container volunteer">
 		
+	
+	<?php
+
+				$eventData = $db->{'getEventInfo'}($event_id);
+
+				echo "<h3><b>Update an Event at " . $eventData['title'] . "</b></h3>";
+				echo "<br /><div class = 'row'>";
+				echo "<label for='title'>Title :</label> ";
+				echo '<input required  type = "text" name = "title" value="' . $eventData['title'] . '" />'
+				//echo "<br /><div class = 'row'>";
+				//echo "<br /> <label for='date'>Date :</label> ";
+				
+				
+
+
+				// Get a select list of events for the given site.
+				//echo $db->{'getEventSelectForSite'}($site_id);
+
+				// Pass along the site id as a hidden field.
+				//echo "<input type='hidden' name='site_id' value=$site_id />";  ?>
+	
+		<!--
 		<h3><b>Update an Event</h3>
 		
 		
 		<div class="row">
+		
+		
 			
 			<div class="col-md-6 form-group">
 				<label for="title">Title:</label>
@@ -77,7 +104,7 @@
 		<button class = "btn btn-sm btn-primary btn-block" type = "submit"  name = "submission"  >Continue</button>
 		</div>
 	
-	</div>
+	</div> -->
 
 	
 </form>	
