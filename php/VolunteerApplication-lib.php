@@ -1626,7 +1626,6 @@ class FM_SimpleDB extends FM_Module
         $qry .= $values;
         $qry .= ");";
 
-
         if(!mysql_query($qry,$this->connection))
         {
             $this->HandleError('Error inserting data to the table',"\nquery:$qry");

@@ -979,15 +979,21 @@ mysql_select_db("cs440team2", $link);
 					// Remove the comma added after the last value.
 					$qryStr[strlen($qryStr) - 1] = ")";
 					
-					//echo $qryStr;
-					/* Need help getting variables
-					$stmt = $cn->prepare($qryStr);//prepare the statement
-					$stmt->bind_param("sssss",$title,$date,$timeStart,$timeLength,$site_id);//bind variables
-					$stmt->execute();//execute the statement
-					$stmt->close();//close the statement
-					*/
-					$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not add new Event!");
+					
+					//prepare the statement to prevent injection attacks
+					//prepare the statement
+					$stmt = $cn->prepare($qryStr);
+					
+					//bind parameters
+					$stmt->bind_param("sssss",$title,$date,$timeStart,$timeLength,$site_id);
+					
+					//execute the prepared statement
+					$result = $stmt->execute() or die ("ERROR: Could not add new Event!");
+					
+					//close connection and statement
 					$conn->close();
+					$stmt->close();
+					
 					
 					if ($result)
 						$out = "Information successfully entered for " . $good_data['title'] . " on " . $good_data['date'] . ".";
@@ -1144,15 +1150,20 @@ mysql_select_db("cs440team2", $link);
 					}
 					// Remove the comma added after the last value.
 					$qryStr[strlen($qryStr) - 1] = ")";
+
 					
-					//echo "<br />$qryStr<br />";
-					/*
-					$stmt = $cn->prepare($qryStr);//prepare the statement
-					$stmt->bind_param("sssss",$title,$date,$timeStart,$timeLength,$site_id);//bind variables
-					$stmt->execute();//execute the statement
-					$stmt->close();//close the statement
-					*/
-					$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not add new Legal Guardian!");
+					//prepare statement to prevent injection attacks
+					//prepare the statement
+					$stmt = $cn->prepare($qryStr);
+					
+					//bind variables
+					$stmt->bind_param("sssss",$title,$date,$timeStart,$timeLength,$site_id);
+					
+					//execute prepared statement
+					$result = $stmt->execute() or die ("ERROR: Could not add new Legal Guardian!");
+					
+					//close the statement and connection
+					$stmt->close();
 					$conn->close();
 					
 					if ($result)
@@ -1320,16 +1331,20 @@ mysql_select_db("cs440team2", $link);
 					// Remove the comma added after the last value.
 					$qryStr[strlen($qryStr) - 1] = ")";
 					
-					//echo "<br />$qryStr<br />";
-					/*
-					$stmt = $cn->prepare($qryStr);//prepare the statement
-					$stmt->bind_param("sssss",$title,$date,$timeStart,$timeLength,$site_id);//bind variables
-					$stmt->execute();//execute the statement
-					$stmt->close();//close the statement
-					*/
-					$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not add new Participant!");
-					$conn->close();
 					
+					//prepare statement to prevent injection attacks
+					$stmt = $cn->prepare($qryStr);//prepare the statement
+					
+					//bind parameters
+					$stmt->bind_param("sssss",$title,$date,$timeStart,$timeLength,$site_id);
+					
+					
+					//execute the statement
+					$result = $stmt->execute() or die ("ERROR: Could not add new Participant!");
+					
+					//close the statement.
+					$stmt->close();
+					$conn->close();
 					if ($result)
 						$out = "Information successfully updated for " . $good_data['first_name'] . " " . $good_data['last_name'] . ".";
 					
@@ -1491,15 +1506,13 @@ mysql_select_db("cs440team2", $link);
 				
 				$qryStr .= "WHERE site_id=" . $good_data['site_id'] . ";";
 				
-				//echo "<br />$qryStr<br /><br />";
-				/*
-				$stmt = $cn->prepare($qryStr);//prepare the statement
+				//prepare the statement to prevent injection attacks
+				$stmt = $cn->prepare($qryStr);
 				$stmt->bind_param("sssss",$title,$date,$timeStart,$timeLength,$site_id);//bind variables
-				$stmt->execute();//execute the statement
-				$stmt->close();//close the statement
-				*/
-				$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not update information for Site!");
+				
+				$result = $stmt->execute() or die ("ERROR: Could not update information for Site!");//execute the statement
 				$conn->close();
+				$stmt->close();//close the statement
 				
 				if ($result)
 					$out = "Information successfully updated for " . $good_data['site_name'] . ".";
