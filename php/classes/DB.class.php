@@ -85,7 +85,7 @@ class DB {
 					
 				$sql_insert = "INSERT INTO Attendance (participant_id, event_id) VALUES ($p_id, $e_id)";
 				$stmt = $cn->prepare($sql_insert);//prepare the statement
-				$stmt->bind_param("ss",$participant_id,$event_id);//bind variables
+				$stmt->bind_param("ss",$p_id,$e_id);//bind variables
 				$stmt->execute();//execute the statement
 				$stmt->close();//close the statement
 				$result = true;
@@ -192,7 +192,7 @@ class DB {
 			
 			$sql_insert = "INSERT INTO Guardianship (participant_id, legal_guardian_id) VALUES ($p_id, $lg_id)";
 			$stmt = $cn->prepare($sql_insert);//prepare the statement
-			$stmt->bind_param("ss",$participant_id, $legal_guardian_id);//bind variables
+			$stmt->bind_param("ss",$p_id, $lg_id);//bind variables
 			$stmt->execute();//execute the statement
 			$stmt->close();//close the statement
 			$result = true;
@@ -242,7 +242,7 @@ class DB {
 
 			$sql_insert = "INSERT INTO Volunteers (last_name, first_name, date_of_birth, address, city, state, zip_code, home_number, work_number, mobile_number, email, site_id, password, username) VALUES ('$lname','$fname','$dob','$address','$city','$state','$zip','$h_num','$w_num','$m_num','$email',$siteID,'$pword','$uname')";
 			$stmt = $cn->prepare($sql_insert);//prepare the statement
-			$stmt->bind_param("ssssssssssssss",$last_name, $first_name, $date_of_birth, $address, $city, $state, $zip_code, $home_number, $work_number, $mobile_number, $email, $site_id, $password, $username);//bind variables
+			$stmt->bind_param("ssssssssssssss",$lname, $fname, $dob, $address, $city, $state, $zip, $h_num, $w_num, $m_num, $email, $siteID, $pword, $uname);//bind variables
 			$stmt->execute();//execute the statement
 			$stmt->close();//close the statement
 
@@ -278,9 +278,9 @@ class DB {
 		// TO DO Search Volunteer_Emergency_Contact table first to make sure 
 		// info is not already in system!
 
-		$sql_insert = "INSERT INTO Volunteer_Emergency_Contact (last_name, first_name, number, address, city, volunteer_id) VALUES ('$lname','$fname','$phone','$address','$vol_id')";
+		$sql_insert = "INSERT INTO Volunteer_Emergency_Contact (last_name, first_name, number, address, city, volunteer_id) VALUES ('$lname','$fname','$phone','$address','$city','$vol_id')";
 		$stmt = $cn->prepare($sql_insert);//prepare the statement
-		$stmt->bind_param("ssssss",$last_name, $first_name, $number, $address, $city, $volunteer_id);//bind variables
+		$stmt->bind_param("ssssss",$lname, $fname, $phone, $address, $city, $vol_id);//bind variables
 		$stmt->execute();//execute the statement
 		$stmt->close();//close the statement
 		$result = $cn->query($sql_insert);
@@ -982,10 +982,10 @@ mysql_select_db("cs440team2", $link);
 					
 					//prepare the statement to prevent injection attacks
 					//prepare the statement
-					$stmt = $cn->prepare($qryStr);
+					$stmt = $conn->prepare($qryStr);
 					
 					//bind parameters
-					$stmt->bind_param("sssss",$title,$date,$timeStart,$timeLength,$site_id);
+					$stmt->bind_param("sssss",$good_data['title'],$good_data['date'],$good_data['timeStart'],$good_data['timeLength'],$good_data['site_id']);
 					
 					//execute the prepared statement
 					$result = $stmt->execute() or die ("ERROR: Could not add new Event!");
@@ -1024,8 +1024,19 @@ mysql_select_db("cs440team2", $link);
 				
 				//echo "<br />$qryStr<br /><br />";
 				
-				$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not update information for Event!");
+				//prepare the statement to prevent injection attacks
+				//prepare the statement
+				$stmt = $conn->prepare($qryStr);
+				
+				//bind parameters
+				$stmt->bind_param("sssss",$good_data['title'],$good_data['date'],$good_data['timeStart'],$good_data['timeLength'],$good_data['site_id']);
+				
+				//execute the prepared statement
+				$result = $stmt->execute() or die ("ERROR: Could not update information for Event!");
+				
+				//close connection and statement
 				$conn->close();
+				$stmt->close();
 				
 				if ($result)
 					$out = $good_data['title'] . " on " . $good_data['date'] . " was successfully updated for the system.";
@@ -1154,10 +1165,10 @@ mysql_select_db("cs440team2", $link);
 					
 					//prepare statement to prevent injection attacks
 					//prepare the statement
-					$stmt = $cn->prepare($qryStr);
+					$stmt = $conn->prepare($qryStr);
 					
 					//bind variables
-					$stmt->bind_param("sssss",$title,$date,$timeStart,$timeLength,$site_id);
+					$stmt->bind_param("sssss",$good_data['title'],$good_data['date'],$good_data['timeStart'],$good_data['timeLength'],$good_data['site_id']);
 					
 					//execute prepared statement
 					$result = $stmt->execute() or die ("ERROR: Could not add new Legal Guardian!");
@@ -1193,7 +1204,18 @@ mysql_select_db("cs440team2", $link);
 				
 				//echo "<br />$qryStr<br /><br />";
 				
-				$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not update information for Legal Guardian!");
+				//prepare statement to prevent injection attacks
+				//prepare the statement
+				$stmt = $conn->prepare($qryStr);
+				
+				//bind variables
+				$stmt->bind_param("sssss",$good_data['title'],$good_data['date'],$good_data['timeStart'],$good_data['timeLength'],$good_data['site_id']);
+				
+				//execute prepared statement
+				$result = $stmt->execute() or die ("ERROR: Could not update information for Legal Guardian!");
+				
+				//close the statement and connection
+				$stmt->close();
 				$conn->close();
 				
 				if ($result)
@@ -1333,10 +1355,11 @@ mysql_select_db("cs440team2", $link);
 					
 					
 					//prepare statement to prevent injection attacks
-					$stmt = $cn->prepare($qryStr);//prepare the statement
+					$stmt = $conn->prepare($qryStr);//prepare the statement
 					
 					//bind parameters
-					$stmt->bind_param("sssss",$title,$date,$timeStart,$timeLength,$site_id);
+					$stmt->bind_param("ssssssssssssssss",$good_data["participant_id"],$good_data["last_name"],$good_data["first_name"],$good_data["gender"],$good_data["race"],$good_data["date_of_birth"],$good_data["school"],$good_data["grade"],$good_data["t_shirt_size"],$good_data["site_id"],$good_data["medications"],$good_data["notes"],$good_data["asthma"],$good_data["emer_name"],$good_data["emer_phone"],$good_data["emer_relation"]);
+
 					
 					
 					//execute the statement
@@ -1373,8 +1396,19 @@ mysql_select_db("cs440team2", $link);
 				$qryStr .= "WHERE participant_id=" . $good_data['participant_id'] . ";";
 				
 				//echo "<br />$qryStr<br /><br />";
+								
 				
-				$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not update information for Participant!");
+				//prepare statement to prevent injection attacks
+				$stmt = $conn->prepare($qryStr);//prepare the statement
+				
+				//bind parameters
+				$stmt->bind_param("ssssssssssssssss",$good_data["participant_id"],$good_data["last_name"],$good_data["first_name"],$good_data["gender"],$good_data["race"],$good_data["date_of_birth"],$good_data["school"],$good_data["grade"],$good_data["t_shirt_size"],$good_data["site_id"],$good_data["medications"],$good_data["notes"],$good_data["asthma"],$good_data["emer_name"],$good_data["emer_phone"],$good_data["emer_relation"]);
+				
+				
+				//execute the statement
+				$result = $stmt->execute() or die ("ERROR: Could not update information for Participant!");
+				//close the statement.
+				$stmt->close();
 				$conn->close();
 				
 				if ($result)
@@ -1478,7 +1512,13 @@ mysql_select_db("cs440team2", $link);
 					// Remove the comma added after the last value.
 					$qryStr[strlen($qryStr) - 1] = ")";
 
-					$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not add new Site!");
+					
+					
+					//prepare the statement to prevent injection attacks
+					$stmt = $conn->prepare($qryStr);
+					$stmt->bind_param("sssss",$good_data['title'],$good_data['date'],$good_data['timeStart'],$good_data['timeLength'],$good_data['site_id']);//bind variables
+					$result = $stmt->execute() or die ("ERROR: Could not add new Site!");//execute the statement
+					$stmt->close();//close the statement
 					$conn->close();
 					
 					if ($result)
@@ -1507,10 +1547,11 @@ mysql_select_db("cs440team2", $link);
 				$qryStr .= "WHERE site_id=" . $good_data['site_id'] . ";";
 				
 				//prepare the statement to prevent injection attacks
-				$stmt = $cn->prepare($qryStr);
-				$stmt->bind_param("sssss",$title,$date,$timeStart,$timeLength,$site_id);//bind variables
-				
+				$stmt = $conn->prepare($qryStr);
+				$stmt->bind_param("sssss",$good_data['title'],$good_data['date'],$good_data['timeStart'],$good_data['timeLength'],$good_data['site_id']);//bind variables
 				$result = $stmt->execute() or die ("ERROR: Could not update information for Site!");//execute the statement
+				
+			
 				$conn->close();
 				$stmt->close();//close the statement
 				
@@ -1662,8 +1703,17 @@ mysql_select_db("cs440team2", $link);
 					$qryStr[strlen($qryStr) - 1] = ")";
 					
 					//echo "<br />$qryStr<br />";
-					$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not add new Participant!");
+					
+					//prepare the statement to prevent injection attacks
+					$stmt = $conn->prepare($qryStr);
+					$stmt->bind_param("sss",$good_data['last_name'],$good_data['first_name'],$good_data['ID']);//bind variables
+					$result = $stmt->execute() or die ("ERROR: Could not add new Participant!");//execute the statement
+					
+				
 					$conn->close();
+					$stmt->close();//close the statement
+					//$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not add new Participant!");
+					//$conn->close();
 					
 					if ($result)
 						$out = "Information successfully updated for " . $good_data['first_name'] . " " . $good_data['last_name'] . ".";
@@ -1694,8 +1744,16 @@ mysql_select_db("cs440team2", $link);
 				
 				//echo "<br />$qryStr<br /><br />";
 				
-				$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not update information for VolunteerApplicationNEW!");
+				
+				//prepare the statement to prevent injection attacks
+				$stmt = $conn->prepare($qryStr);
+				$stmt->bind_param("sss",$good_data['last_name'],$good_data['first_name'],$good_data['ID']);//bind variables
+				$result = $stmt->execute() or die ("ERROR: Could not update information for VolunteerApplicationNEW!");//execute the statement
+				
+			
 				$conn->close();
+				$stmt->close();//close the statement
+				//$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not update information for VolunteerApplicationNEW!");
 				
 				if ($result)
 					$out = "Information successfully updated for " . $good_data['first_name'] . " " . $good_data['last_name'] . ".";
