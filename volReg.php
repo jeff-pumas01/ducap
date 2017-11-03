@@ -5,16 +5,13 @@
 
 <body>
 
-
-
-
 <?php
 
 	/**
-	 *	This program displays the first page of the participant registration form.
-	 *	It adds 1 or 2 legal guardians to the database.
+	 *	This program displays the second page of the participant registration form.
+	 *	It verifies the legal guardian information.
 	 */
-	 
+
 	include('php/classes/DB.class.php');
 	include('php/header.php');
 
@@ -23,99 +20,41 @@
 	
 ?>
 
+
 <!-- Content -->
 <div class = "container header">
 	<center><h2>Volunteer Registration Form</h2></center>
 	<br/>
 </div> 
 
+<form action = "volReg1.php" method = "POST">
 
-<!--Volunteer Registration Form -->
-<form action = "test.php" method = "POST">
+	<div class = "container volunteer">
+			
+	<?php
 
-	<div class = "container registration">
-		
-		<h3><b>General Information<h3>
-		
-		<!-- Row for first and last name -->
-		<div class="row">
-			
-			<div class="col-md-6 form-group">
-				<label for="first_name">First Name:</label>
-				<input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name" required>
-			</div>
-			
-			<div class="col-md-6 form-group">
-				<label for="last_name">Last Name:</label>
-				<input type="text" class="form-control" name="last_name"  id="last_name" placeholder="Last Name" required>
-			</div>
-		</div>
-            
-            <!-- City,State,Zip -->
-		<div class="row">
-			<div class="col-md-4 form-group">
-				<label for="City">City:</label>
-				<input type="text" id="City" class="form-control" name="City" placeholder="City" required>
-			</div>
-			
-			<div class="col-md-4 form-group">
-				<label for="State">State:</label>
-				<input type="text" class="form-control" id="State" name="State" placeholder="State">
-			</div>
-			
-			<div class="col-md-4 form-group">
-				<label for="Zipcode">Zip Code:</label>
-				<input type="text" class="form-control" id="Zipcode" name="Zipcode" placeholder="Zip Code">
-			</div>
-		</div>
-		
-		<!-- Row for Home and Cell Phone Numbers. -->
-		<div class="row">
-			<div class="col-md-4 form-group">
-				<label for="home_number">Home Number:</label>
-				<input type="text" id="homeNumber" class="form-control" name="homeNumber" placeholder="Home Number" required>
-			</div>
-			
-			<div class="col-md-4 form-group">
-				<label for="mobileNumber">Mobile Number:</label>
-				<input type="text" class="form-control" id="mobileNumber" name="mobileNumber" placeholder="Mobile Number">
-			</div>
-			
-			<div class="col-md-4 form-group">
-				<label for="workNumber">Work Number:</label>
-				<input type="text" class="form-control" id="workNumber" name="workNumber" placeholder="Work Number">
-			</div>
-		</div>
-		
-		<!-- Email -->
-		<div class = "row">
-			<div class="col-md-6 form-group">
-				<label for="Email">Email Address:</label>
-				<input type="text" class="form-control" name="Email" id="Email" placeholder = "Email" required>
-			</div>
-            <div class="col-md-4 form-group">
-				<label for="DateofBirth">Data of Birth:</label>
-				<input type="text" class="form-control" id="DateofBirth" name="DateofBirth" placeholder="Data of Birth">
-			</div>
-		</div>
-		
-		
-		<br />
-		<button class = "btn btn-sm btn-primary btn-block" type = "submit"  name = "submission"  >Continue</button>
-		</div>
+		// Verify that all information is correct
+		$vol = $db->{'verifyVolunteerApplicationNEWData'}($_POST, "insert");
 	
+		// Send ID of Legal Guardian to next page to create a Guardianship link with Participant.
+		echo "<input type='hidden' name='lg_id' value=$vol />";
+		
+		if ($lgID == -1) {
+			echo "<a href='volunteerRegistration.php'>Back</a>";
+		} else {
+			echo '<br /><br /><button class = "btn btn-sm btn-primary btn-block" type = "submit"  name = "sub"  >Continue</button>';
+		}
+	?>
+
 	</div>
-
-	
 </form>	
 
 <?php
 
-//Include footer html
-include('php/footer.php');
+	// Include footer html.
+	include('php/footer.php');
 
 ?>
 
 </body>
 </html>
-

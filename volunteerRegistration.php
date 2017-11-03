@@ -23,7 +23,7 @@
 <center>Click <a href="VolunteerForm.pdf">Here</a> to Download Volunteer Application Form<center>
 
 <!--Volunteer Registration Form -->
-<form action = "childReg2.php" method = "POST">
+<form action = "volReg.php" method = "POST">
 
 	<div class = "container volunteer" align="left">
 			<h3><b>General Information</b></h3>
