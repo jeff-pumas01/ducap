@@ -32,7 +32,7 @@
 	
 ?>
 
-<form action = "" method = "POST">
+<form action = "updateEvent2.php" method = "POST">
 
 	<div class = "container volunteer">
 		
@@ -68,7 +68,7 @@
 						echo $db->{'getSiteSelect'}();
 			?>
 			
-			<!--<button class = "btn btn-sm btn-primary btn-block" type = "submit"  name = "submission"  >Update Event</button> -->
+			<button class = "btn btn-sm btn-primary btn-block" type = "submit"  name = "submission"  >Update Event</button>
 
 		</center>
 	
