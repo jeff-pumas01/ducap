@@ -23,7 +23,7 @@
 <center>Click <a href="VolunteerForm.pdf">Here</a> to Download Volunteer Application Form<center>
 
 <!--Volunteer Registration Form -->
-<form action = "volReg.php" method = "POST">
+<form action = "volunteerRegistration0.php" method = "POST">
 
 	<div class = "container volunteer" align="left">
 			<h3><b>General Information</b></h3>
@@ -115,17 +115,17 @@
 		<div class="row">
 			<div class="col-md-4 form-group">
 				<label for="home_number">Home Number:</label>
-				<input type="tel" id="homeNumber" class="form-control" name="homeNumber" placeholder="Home Number" required>
+				<input type="text" id="homeNumber" class="form-control" name="homeNumber" placeholder="Home Number" required>
 			</div>
 			
 			<div class="col-md-4 form-group">
 				<label for="mobileNumber">Mobile Number:</label>
-				<input type="tel" class="form-control" id="mobileNumber" name="mobileNumber" placeholder="Mobile Number">
+				<input type="text" class="form-control" id="mobileNumber" name="mobileNumber" placeholder="Mobile Number">
 			</div>
 			
 			<div class="col-md-4 form-group">
 				<label for="workNumber">Work Number:</label>
-				<input type="tel" class="form-control" id="workNumber" name="workNumber" placeholder="Work Number">
+				<input type="text" class="form-control" id="workNumber" name="workNumber" placeholder="Work Number">
 			</div>
 		</div>
 		

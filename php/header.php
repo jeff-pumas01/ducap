@@ -13,7 +13,7 @@
 	function noLinksNav() {
 	    $fileName = basename($_SERVER['REQUEST_URI'], ".php");
 	    //Return true if user is viewing signup or login pages
-	     if ($fileName == "signup" || $fileName == "login" || $fileName == "childReg" || $fileName == "volunteerRegistration"|| $fileName == "volunteerRegistration2"|| $fileName == "volunteerRegistration3"|| $fileName == "volunteerRegistration4") {
+	     if ($fileName == "signup" || $fileName == "login" ||$fileName =="childReg" || $fileName == "volunteerRegistration"||$fileName == "volunteerRegistration0"|| $fileName == "volunteerRegistration2"|| $fileName == "volunteerRegistration3"|| $fileName == "volunteerRegistration4") {
 		   return true;
 	    } else {
 		   return false;
@@ -72,6 +72,7 @@
 				</ul>
 				<!-- Show current logged in user -->
 				<?
+			
 				if(isset($_SESSION['user_name'])) {?>
 					<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link"><b><?php echo $user;?><b></a></p>
 				<?}?>
