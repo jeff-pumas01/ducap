@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>DuCAP Participant Registration</title>
+	<title>DuCAP Volunteer Registration</title>
 </head>
 
 <body>
@@ -10,11 +10,6 @@
 
 <?php
 
-	/**
-	 *	This program displays the first page of the participant registration form.
-	 *	It adds 1 or 2 legal guardians to the database.
-	 */
-	 
 	include('php/classes/DB.class.php');
 	include('php/header.php');
 

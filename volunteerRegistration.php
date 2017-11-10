@@ -141,11 +141,6 @@
 			</div>
 		</div>
 		
-		
-		
-<!--*************************************************************************************************************************************************************************************-->		
-<!--Still Have to change Id for database upload for all below till...-->	
-		
 		<!--Area of Interest-->
 		<div class= "row">
 			<h3><b>Area of Interest</b></h3>
@@ -206,15 +201,7 @@
 				<input type="time" class="form-control" id="satSun" name="satSun" >
 			
 		</div>
-		
-		
-		
-		
-		
-		
-		
-<!--*************************************************************************************************************************************************************************************-->
-		
+			
 		
 		<br />
 		<button class = "btn btn-sm btn-primary btn-block" type = "submit"  name = "sub"  >Continue</button>
