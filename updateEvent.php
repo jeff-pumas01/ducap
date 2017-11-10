@@ -64,6 +64,7 @@
 						// TODO: make the default option the site that the event is currently at
 						echo "<br /><br /><div class = 'row'>";
 						echo "<label for='site'>Site :</label> ";
+						echo '<input required  type = "hidden" name = "event_id" value="' . $event_id . '" />';
 						echo $db->{'getSiteSelect'}();
 			?>
 			
