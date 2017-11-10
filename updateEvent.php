@@ -42,7 +42,6 @@
 				TODO (?): get rid of <center> and find out why it does not
 				automatically configure to the container volunteer-->
 			<?php
-
 						$eventData = $db->{'getEventInfo'}($event_id);
 
 						echo "<h3><b>Update the event: " . $eventData['title'] . "</b></h3>";
@@ -57,9 +56,9 @@
 						// retrieves info for time and length textboxes
 						echo "<br /><br /><div class = 'row'>";
 						echo "<label for='time'>Time :</label> ";
-						echo '<input required  type = "text" name = "time" value="' . $eventData['timeStart'] . '" />';
+						echo '<input required  type = "text" name = "timeStart" value="' . $eventData['timeStart'] . '" />';
 						echo "<label for='date'>&nbsp;&nbsp;Length (in minutes):</label> ";
-						echo '<input required  type = "text" name = "length" value="' . $eventData['timeLength'] . '" />';
+						echo '<input required  type = "text" name = "timeLength" value="' . $eventData['timeLength'] . '" />';
 				
 						// this is the site selection menu
 						// TODO: make the default option the site that the event is currently at

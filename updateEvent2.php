@@ -11,6 +11,7 @@
 	// Connect to database.
 	$db = new DB();
 
+
 ?>
 
 <!-- Content -->
