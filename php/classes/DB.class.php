@@ -30,7 +30,7 @@ class DB {
 		// TO DO Search Administrator table first to make sure Administrator is not
 		// already registered!
 
-		$sql_insert = "INSERT INTO Administrators (admin_id,name,email,phone,password) VALUES ('$admin_id','$name','$email','$phone','$password')";
+		$sql_insert = "INSERT INTO Users (admin_id,name,email,phone,password) VALUES ('$admin_id','$name','$email','$phone','$password')";
 		$stmt = $cn->prepare($sql_insert);
 		$stmt->bind_param("sssss",$admin_id,$name,$email,$phone,$password);
 		$stmt->execute();
@@ -758,7 +758,7 @@ mysql_select_db("cs440team2", $link);
 	 
 		//Generate hashed password
 		$hashedPassword = crypt($pStr,'1234');
-		$admin_sql = "SELECT * FROM Administrators WHERE admin_id=\"$uStr\" AND password=\"$hashedPassword\"";
+		$admin_sql = "SELECT * FROM Users WHERE admin_id=\"$uStr\" AND password=\"$hashedPassword\"";
 		$vol_sql = "SELECT * FROM Volunteers WHERE username=\"$uStr\" AND password=\"$hashedPassword\"";
 		$vol_result = $cn->query($vol_sql);
 		$admin_result = $cn->query($admin_sql);
