@@ -35,13 +35,13 @@
 		<div class="row">
 			
 			<div class="col-md-6 form-group">
-				<label for="ecName">Full Name:</label>
-				<input type="text" class="form-control" name="ecName" id="ecName"  required>
+				<label for="ec_name">Full Name:</label>
+				<input type="text" class="form-control" name="ec_name" id="ec_name"  required>
 			</div>
 			
 			<div class="col-md-6 form-group">
-				<label for="ec_relation">Relationship</label>
-				<input type="text" class="form-control" name="ec_relation"  id="ec_relation"  required>
+				<label for="ec_relationship">Relationship</label>
+				<input type="text" class="form-control" name="ec_relationship"  id="ec_relationship"  required>
 			</div>
 		</div>
 		
@@ -49,13 +49,13 @@
 		<div class="row">
 			
 			<div class="col-md-6 form-group">
-				<label for="ecAddress">Address:</label>
-				<input type="text" class="form-control" name="ecAddress" id="ecAddress"  required>
+				<label for="ec_address">Address:</label>
+				<input type="text" class="form-control" name="ec_address" id="ec_address"  required>
 			</div>
 			
 			<div class="col-md-6 form-group">
-				<label for="ec_apt">Apartment Number</label>
-				<input type="text" class="form-control" name="ec_apt"  id="ec_apt" required>
+				<label for="ec_apart_num">Apartment Number</label>
+				<input type="text" class="form-control" name="ec_apart_num"  id="ec_apart_num" required>
 			</div>
 		</div>
 		
@@ -73,26 +73,26 @@
 			</div>
 			
 			<div class="col-md-4 form-group">
-				<label for="ec_zip">Zip Code:</label>
-				<input type="text" class="form-control" id="ec_zip" name="ec_zip">
+				<label for="ec_zipcode">Zip Code:</label>
+				<input type="text" class="form-control" id="ec_zipcode" name="ec_zipcode">
 			</div>
 		</div>
 		
 		<!-- Row for Home and Cell Phone Numbers. -->
 		<div class="row">
 			<div class="col-md-4 form-group">
-				<label for="ec_phone">Home Number:</label>
-				<input type="text" id="ec_phone" class="form-control" name="ec_phone" placeholder="Home Number" required>
+				<label for="ec_homephone">Home Number:</label>
+				<input type="text" id="ec_homephone" class="form-control" name="ec_homephone" placeholder="Home Number" required>
 			</div>
 			
 			<div class="col-md-4 form-group">
-				<label for="ec_mobile">Mobile Number:</label>
-				<input type="text" class="form-control" id="ec_mobile" name="ec_mobile" placeholder="Mobile Number">
+				<label for="ec_mobilephone">Mobile Number:</label>
+				<input type="text" class="form-control" id="ec_mobilephone" name="ec_mobilephone" placeholder="Mobile Number">
 			</div>
 			
 			<div class="col-md-4 form-group">
-				<label for="ec_work">Work Number:</label>
-				<input type="text" class="form-control" id="ec_work" name="ec_work" placeholder="Work Number">
+				<label for="ec_workphone">Work Number:</label>
+				<input type="text" class="form-control" id="ec_workphone" name="ec_workphone" placeholder="Work Number">
 			</div>
 		</div>
 		
@@ -106,8 +106,8 @@
 			<br />
 			
 			<div class="col-md-6 form-group">
-				<label for="initial1">Volunteer Name: </label>
-				<input type="text" class="form-control" name="initial1" id="initial1" required>
+				<label for="initial_one">Volunteer Name: </label>
+				<input type="text" class="form-control" name="initial_one" id="initial_one" required>
 			</div>
 		</div>
 		
@@ -117,8 +117,8 @@
 		<div class="row">
 			<p>I authorize the Illinois Department of Human services, any Affiliate or Sponsor/Partner of DuCAP, and the local DuCAP Program operators to photograph my child/children listed/registered for means of publication purposes. Photos might be used in various brochures and publications describing and promoting the program in a positive way. The photos will not be used in any illegal misrepresentation of my child/children listed/registered. </p>	
 			<div class="col-md-6 form-group">
-				<label for="initial2">Volunteer Name: </label>
-				<input type="text" class="form-control" name="initial2" id="initial2"  required>
+				<label for="initial_two">Volunteer Name: </label>
+				<input type="text" class="form-control" name="initial_two" id="initial_two"  required>
 			</div>
 		</div>
 		
@@ -134,8 +134,8 @@
 		
 			<p>I understand and give permission for DuCAP to conduct a criminal Background Investigation on me. </p>
 			<div class="col-md-6 form-group">
-				<label for="initial3">Volunteer Name: </label>
-				<input type="text" class="form-control" name="initial3" id="initial3"  required>
+				<label for="initial_three">Volunteer Name: </label>
+				<input type="text" class="form-control" name="initial3_three" id="initial_three"  required>
 			</div>
 			<br />
 			
@@ -143,8 +143,8 @@
 		<div class= "row">
 			<p>My signature below certifies that all information I have provided in connection with this application is true, accurate and complete to the best of my knowledge.</p>
 			<div class="col-md-6 form-group">
-				<label for="initial4">Volunteer Name: </label>
-				<input type="text" class="form-control" name="initial4" id="initial4" required>
+				<label for="initial_four">Volunteer Name: </label>
+				<input type="text" class="form-control" name="initial_four" id="initial_four" required>
 			</div>
 		</div>
 			
@@ -154,31 +154,31 @@
 		<h3>AUTHORIZATION</h3>	
 		<div class="row">
 			<div class="col-md-6 form-group">
-				<label for="fullNameAuth">Full Name</label>
-				<input type="text" class="form-control" name="fullNameAuth" id="fullNameAuth" required>
+				<label for="auth_full_name">Full Name</label>
+				<input type="text" class="form-control" name="auth_full_name" id="auth_full_name" required>
 			</div>
 			
 			<div class="col-md-6 form-group">
-				<label for="SSN">Social Security Number:</label>
-				<input type="text" class="form-control" name="SSN"  id="SSN" placeholder="SSN" required>
+				<label for="auth_ssn">Social Security Number:</label>
+				<input type="text" class="form-control" name="auth_ssn"  id="auth_ssn" placeholder="" required>
 			</div>
 		</div>
             
             <!-- City,State,Zip -->
 		<div class="row">
 			<div class="col-md-4 form-group">
-				<label for="dob">Date of Birth (MM/DD/YYYY):</label>
-				<input type="date" class="form-control" id="dob" name="dob" required />
+				<label for="auth_birthdate">Date of Birth (MM/DD/YYYY):</label>
+				<input type="date" class="form-control" id="auth_birthdate" name="auth_birthdate" required />
 			</div>
 			
 			<div class="col-md-4 form-group">
-				<label for="drivers">Driver's License Number:</label>
-				<input type="text" class="form-control" id="drivers" name="drivers" required>
+				<label for="auth_license">Driver's License Number:</label>
+				<input type="text" class="form-control" id="auth_license" name="auth_license" required>
 			</div>
 			
 			<div class="col-md-4 form-group">
-				<label for="drivers_state">Driver License State:</label>
-				<input type="text" class="form-control" id="drivers_state" name="drivers_state" required>
+				<label for="auth_state">Driver License State:</label>
+				<input type="text" class="form-control" id="auth_state" name="auth_state" required>
 			</div>
 		</div>
 			
