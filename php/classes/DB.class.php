@@ -719,6 +719,41 @@ mysql_select_db("cs440team2", $link);
 		
 		return $out;
 	}
+	
+	
+	/** OVERLOADED FOR PERMISSIONS
+	 *	Get HTML that creates a select list of Site IDs and names.
+	 *	The id/name of each option is the site ID, since it's the primary key.
+	 *	@return {string}				HTML select list
+	 */
+	function getSiteSelectByPermissions($permissions) {
+		$cn = $this->connect();
+		$sql_query = "SELECT site_id, site_name FROM Sites WHERE ";
+		for ($i = 0; $i <= count($permissions); $i++){
+			if ($i < count($permissions)){
+				$site = $permisisons[i];
+				$sql_query .= "site_id = '$permissions[$i]' OR ";
+			}
+			if ($i == count($permissions)){
+				$site = $permisisons[i];
+				$sql_query .= "site_id = '$permissions[$i]' ";
+			}
+		}
+		
+		$sql_query .= "ORDER BY site_id";
+		$result = $cn->query($sql_query);
+		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not fetch site data!");
+		$cn->close();
+		
+		$out = "<select name='site_id' >";
+		while ($row = mysqli_fetch_assoc($result)) {
+			extract($row);
+			$out .= "<option name='$site_id' id='$site_id' value='$site_id'>$site_name</option>";
+		}
+		$out .= "</select>";
+		
+		return $out;
+	}
 
 	/**
 	 *	Search for the ID of a Volunteer.
@@ -778,6 +813,33 @@ mysql_select_db("cs440team2", $link);
 		}
 		$cn->close();
 	}
+	
+	/**
+	 *	gets sites the user is assigned to.
+	 *
+	 */
+	function getUserPermissions($uStr) {
+		$cn = $this->connect();
+		$permission_result = 0;
+		//Clean input
+		$uStr = $cn->real_escape_string($uStr);
+		$admin_sql = "SELECT Site FROM Users WHERE admin_id = \"$uStr\"";
+		$permission_result = $cn->query($admin_sql);
+		$Row = $permission_result->fetch_assoc();
+		$userPermissions = str_split($Row['Site']);
+		return $userPermissions;
+		$cn->close();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	/**
 	 *	Get an array of Participant names.

@@ -11,14 +11,12 @@
 	if(!isset($_SESSION['user_name'])) {
 		header("Location: login.php");
 	}
-
-
+	
 	include('php/classes/DB.class.php');
 	include('php/header.php');
 
 	// Connect to database.
 	$db = new DB();
-
 
 ?>
 
@@ -34,14 +32,14 @@
 	<div class = "container volunteer">
 
 		<center>
-			<h3><b>Choose a Site:</b></h3>
+			<h3><b>Choose a Site:<?php $permissions = $db->{'getUserPermissions'}($_SESSION['user_name']); ?></b></h3>
 			<br />
 
 			<!-- Site -->
 			<div class = "row">
 				<label for="site_id">Site:</label>
 				<?php
-					echo $db->{'getSiteSelect'}();
+					echo $db->{'getSiteSelectByPermissions'}($permissions);
 				?>
 
 			</div>
