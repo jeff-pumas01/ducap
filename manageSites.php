@@ -102,8 +102,9 @@
 			<div class="col-md-8 form-group">
 				
 				<?php
-					// Get a select list of site names.
-					echo $db->{'getSiteSelect'}();
+					// Get sites based on users permissions.
+					$permissions = $db->{'getUserPermissions'}($_SESSION['user_name']);
+					echo $db->{'getSiteSelectByPermissions'}($permissions);
 				?>
 				
 			</div>
@@ -129,8 +130,9 @@
 			<div class="col-md-8 form-group">
 				
 				<?php
-					// Get a select list of site names.
-					echo $db->{'getSiteSelect'}();
+					// Get sites based on users permissions.
+					$permissions = $db->{'getUserPermissions'}($_SESSION['user_name']);
+					echo $db->{'getSiteSelectByPermissions'}($permissions);
 				?>
 				
 			</div>

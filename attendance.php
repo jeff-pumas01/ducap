@@ -32,13 +32,14 @@
 	<div class = "container volunteer">
 
 		<center>
-			<h3><b>Choose a Site:<?php $permissions = $db->{'getUserPermissions'}($_SESSION['user_name']); ?></b></h3>
+			<h3><b>Choose a Site:</b></h3>
 			<br />
 
 			<!-- Site -->
 			<div class = "row">
 				<label for="site_id">Site:</label>
 				<?php
+					$permissions = $db->{'getUserPermissions'}($_SESSION['user_name']);
 					echo $db->{'getSiteSelectByPermissions'}($permissions);
 				?>
 

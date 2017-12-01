@@ -727,6 +727,7 @@ mysql_select_db("cs440team2", $link);
 	 *	@return {string}				HTML select list
 	 */
 	function getSiteSelectByPermissions($permissions) {
+		echo "got here";
 		$cn = $this->connect();
 		$sql_query = "SELECT site_id, site_name FROM Sites WHERE ";
 		for ($i = 0; $i <= count($permissions); $i++){
@@ -739,7 +740,6 @@ mysql_select_db("cs440team2", $link);
 				$sql_query .= "site_id = '$permissions[$i]' ";
 			}
 		}
-		
 		$sql_query .= "ORDER BY site_id";
 		$result = $cn->query($sql_query);
 		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not fetch site data!");
@@ -1628,6 +1628,14 @@ mysql_select_db("cs440team2", $link);
 		}
 		
 		echo $out;
+		//add this site the the users permissions
+		
+		
+		$sql_query .= "UPDATE ";
+		$result = $cn->query($sql_query);
+		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not fetch site data!");
+		
+		
 		
 		// Return site ID or -1 if there was an error.
 		return $this->getSiteID($good_data['site_name'], $good_data['address'], $good_data['zip_code']);
