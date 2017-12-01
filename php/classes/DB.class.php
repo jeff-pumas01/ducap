@@ -1631,12 +1631,6 @@ mysql_select_db("cs440team2", $link);
 		//add this site the the users permissions
 		
 		
-		$sql_query .= "UPDATE ";
-		$result = $cn->query($sql_query);
-		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not fetch site data!");
-		
-		
-		
 		// Return site ID or -1 if there was an error.
 		return $this->getSiteID($good_data['site_name'], $good_data['address'], $good_data['zip_code']);
 	}
