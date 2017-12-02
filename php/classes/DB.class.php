@@ -1669,12 +1669,12 @@ mysql_select_db("cs440team2", $link);
 		$out = "";	// Will hold the resulting output.
 		
 		// Array of each field in the VolunteerApplicationNEW  table and its label.
-	$labels_par = array("ID"=>"volunteer_id" ,"first_name"=>"First Name","last_name"=>"Last Name","Address"=>"Address","apt_num"=>"Apartment #", "State"=>"State", "City"=>"City", "Zipcode"=>"Zip Code", "homeNumber"=>"Home Number","workNumber"=>"Work Number", "mobileNumber"=>"Mobile Number", "Email"=>"Email", "DateofBirth"=>"Data of Birth", 
-			"areaofInterest"=>"Area of Interest","otherInterest"=>"Other Interest", 
-			"startDate"=>"Start Date", "Monday"=>"Monday","Tuesday"=>"Tuesday", "Wednesday"=>"Wednesday", "Thursday"=>"Thursday", "Friday"=>"Friday", "satSun"=>"Saturday/Sunday",
-			"ecName"=>"Emergency Contact Name","ec_relation"=>"Emergency Contact Relation", "ecAddress"=>"Emergency Contact Address","ec_apt"=>"Emergency Contact Apartment", "ec_zip"=>"Emergency Contact Zip Code", "ec_state"=>"Emergency Contact State", "ec_city"=>"Emergency Contact City","ec_work"=>"Emergency Contact Work", "ec_phone"=>"Emergency Contact Number", "ec_Mobile"=>"Emergency Contact Cell",
-			"initial1"=>"1", "initial2"=>"2", "initial3"=>"3", "initial4"=>"4",
-			"fullNameAuth"=>"Signature", "SSN"=>"Social Security Num.","drivers_state"=>"Driver License State","idob"=>"Date of Birth", "drivers"=>"Driver License Number",
+	$labels_par = array("ID"=>"volunteer_id" ,"first_name"=>"First Name","last_name"=>"Last Name","address"=>"Address","apt_number"=>"Apartment #", "State"=>"State", "city"=>"City", "zipcode"=>"Zip Code", "homephone"=>"Home Number","workphone"=>"Work Number", "mobilephone"=>"Mobile Number", "email"=>"Email", "birthdate"=>"Data of Birth", 
+			"area_of_interest"=>"Area of Interest","other_interest"=>"Other Interest", 
+			"start_date"=>"Start Date", "monday_time"=>"Monday","tuesday_time"=>"Tuesday", "wednesday_time"=>"Wednesday", "thursday_time"=>"Thursday", "friday_time"=>"Friday", "satsun_time"=>"Saturday/Sunday",
+			"ec_name"=>"Emergency Contact Name","ec_relationship"=>"Emergency Contact Relation", "ec_address"=>"Emergency Contact Address","ec_apart_num"=>"Emergency Contact Apartment", "ec_zipcode"=>"Emergency Contact Zip Code", "ec_state"=>"Emergency Contact State", "ec_city"=>"Emergency Contact City","ec_workphone"=>"Emergency Contact Work", "ec_homephone"=>"Emergency Contact Number", "ec_mobilephone"=>"Emergency Contact Cell",
+			"initial_one"=>"1", "initial_two"=>"2", "initial_three"=>"3", "initial_four"=>"4",
+			"auth_full_name"=>"Signature", "auth_ssn"=>"Social Security Num.","auth_state"=>"Driver License State","auth_birthdate"=>"Date of Birth", "auth_license"=>"Driver License Number",
 			"totalHours"=>"Time");
 		// Arrays used for processing.
 		$blank_array = array();	// Holds the name of any blank fields.
@@ -1686,20 +1686,20 @@ mysql_select_db("cs440team2", $link);
 		foreach ($data as $field => $value) {
 			
 			// Check for null inrequired fields.
-			if (!isset($value) && ($field != 'initial1') && ($field != 'initial2') && ($field != 'initial3')&& ($field != 'initial4')&& ($field != 'fullNameAuth')&& ($field != 'SSN')&& ($field != 'drivers_state')&& ($field != 'idob')&& ($field != 'drivers')) {
+			if (!isset($value) && ($field != 'initial_one') && ($field != 'initial_two') && ($field != 'initial_three')&& ($field != 'initial_four')&& ($field != 'auth_full_name')&& ($field != 'SSN')&& ($field != 'auth_state')&& ($field != 'auth_birthdate')&& ($field != 'auth_license')) {
 				array_push($blank_array, $field);
 				
-			} else if ((($field == "first_name") ||($field == "last_name") ||  ($field == "ecName") || ($field == "emer_relation")) && !preg_match("/^[A-Za-z.' -]{1,50}$/", $value)) {
+			} else if ((($field == "first_name") ||($field == "last_name") ||  ($field == "ec_name") || ($field == "ec_relationship")) && !preg_match("/^[A-Za-z.' -]{1,50}$/", $value)) {
 				// Only accept 1-50 letters.
 				array_push($bad_format, $field);
 				
-			} else if(($field == "idob") || ($field == "DateofBirth") ){
+			} else if(($field == "auth_birthdate") || ($field == "birthdate") ){
 				
 				if (!preg_match("/^[0-9]{4}[-][01][0-9][-][0123][0-9]$/", $value))
 					array_push($bad_format, $field);
 				
 				
-			} else if(($field == "ec_phone") ||($field == "homeNumber")||($field == "workNumber") ||($field == "mobileNumber")||($field == "ec_Mobile")  && !preg_match("/^[0-9)( -]{7,20}(([xX]|(ext)|(ex))?[ -]?[0-9]{1,7})?$/", $value)) {
+			} else if(($field == "ec_homephone") ||($field == "homephone")||($field == "workphone") ||($field == "mobilephone")||($field == "ec_mobilephone")  && !preg_match("/^[0-9)( -]{7,20}(([xX]|(ext)|(ex))?[ -]?[0-9]{1,7})?$/", $value)) {
 				
 				array_push($bad_format, $field);
 				
@@ -1730,7 +1730,7 @@ mysql_select_db("cs440team2", $link);
 				$good_data[$field] = strip_tags(trim($data[$field]));
 				
 				// Removes special Characters from phone numbers and apt numbers.
-				if (($field == "ec_phone") ||($field == "homeNumber")||($field == "workNumber") ||($field == "mobileNumber")||($field == "ec_Mobile") ||($field == "apt_num") )
+				if (($field == "ec_homephone") ||($field == "homephone")||($field == "workphone") ||($field == "mobilephone")||($field == "ec_mobilephone") ||($field == "apt_number") )
 				$good_data[$field] = preg_replace("/[)(.-]/", "", $good_data[$field]);
 				
 				$good_data[$field] = $conn->real_escape_string($good_data[$field]);

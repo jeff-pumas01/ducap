@@ -35,18 +35,27 @@
             exit;
     }
 	
-	$query = "SELECT * FROM Events";
-    $result = mysqli_query($db, $query) or die ("Error: Could not delete attendance records for the event!");
 	
-	while($row = mysqli_fetch_row($result)) {
-		echo "row";
-	}
 ?>
 
 <!-- table and content for site name and addreess -->
 <div class = "container header">
 	<h3><center>Ducap Sites and Address<center></h3>
 	<br/>
+	<?php
+		$query = "SELECT * FROM Sites";
+    	$result = mysqli_query($db, $query) or die ("Error: Could not delete attendance records for the event!");
+    
+    	echo "<table>";
+    	echo "<tr><th>Site Name</th><th>Site Address</th>";
+    
+	
+		while($row = mysqli_fetch_row($result)) {
+		
+			echo "<tr><td>" . $row['site_name'] . "</td><td>" . $row['address'] . "</td></tr>";
+		}
+		echo "</table>";
+	?>
 </div> 
 
 
@@ -54,6 +63,21 @@
 <div class = "container header">
 	<h3><center>Upcomming events<center></h3>
 	<br/>
+	<?php
+	
+		$query = "SELECT * FROM Events";
+    	$result = mysqli_query($db, $query) or die ("Error: Could not delete attendance records for the event!");
+    
+    	echo "<table>";
+    	echo "<tr><th>Date</th><th>Event</th><th>Location</th>";
+    
+	
+		while($row = mysqli_fetch_row($result)) {
+		
+			echo "<tr><td>" . $row['date'] . "</td><td>" . $row['title'] . "</td><td>" . $row['site_id'] . "</td></tr>";
+		}
+		echo "</table>";
+	?>
 </div> 
 
 
