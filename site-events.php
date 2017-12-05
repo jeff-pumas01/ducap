@@ -22,7 +22,7 @@
 	include('php/header.php');
 
 	// Connect to database.
-	$db = new DB();
+	$db1 = new DB();
 	
 	$db_name = "cs440team2";
 	$db_user = "anthonymatsas";
@@ -50,7 +50,7 @@
     	echo "<tr><th>Site Name</th><th>Site Address</th>";
     
 	
-		while($row = mysqli_fetch_row($result)) {
+		while($row = mysqli_fetch_assoc($result)) {
 		
 			echo "<tr><td>" . $row['site_name'] . "</td><td>" . $row['address'] . "</td></tr>";
 		}
@@ -72,8 +72,12 @@
     	echo "<tr><th>Date</th><th>Event</th><th>Location</th>";
     
 	
-		while($row = mysqli_fetch_row($result)) {
-		
+		while($row = mysqli_fetch_assoc($result)) {
+			$site = $row['site_id'];
+			echo $site;
+			$siteData = $db1->getSiteInfo($site);
+			echo $siteData;
+			//echo "$siteData = $db->{'getSiteInfo'}($row['site_id'])";
 			echo "<tr><td>" . $row['date'] . "</td><td>" . $row['title'] . "</td><td>" . $row['site_id'] . "</td></tr>";
 		}
 		echo "</table>";
