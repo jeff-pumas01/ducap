@@ -27,19 +27,19 @@
 	<br/>
 </div> 
 
-<form action = "volReg1.php" method = "POST">
+<form action = "volunteerRegistration1.php" method = "POST">
 
 	<div class = "container volunteer">
 			
 	<?php
 
 		// Verify that all information is correct
-		$volID = $db->{'verifyVolunteerApplicationNEWData'}($_POST, "insert");
+		$ID = $db->{'verifyVolunteer_RegistrationData'}($_POST, "insert");
 	
 		// Send ID of  to next page 
-		echo "<input type='hidden' name='ID' value=$volID />";
+		echo "<input type='hidden' name='ID' value=$ID />";
 		
-		if ($volID == -1) {
+		if ($ID == -1) {
 			echo "<a href='volunteerRegistration.php'>Back</a>";
 		} else {
 			echo '<br /><br /><button class = "btn btn-sm btn-primary btn-block" type = "submit"  name = "sub"  >Continue</button>';

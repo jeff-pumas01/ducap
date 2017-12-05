@@ -1634,21 +1634,10 @@ mysql_select_db("cs440team2", $link);
 		// Return site ID or -1 if there was an error.
 		return $this->getSiteID($good_data['site_name'], $good_data['address'], $good_data['zip_code']);
 	}
-	function verifyVolunteerData($data, $action){
-		$conn = $this->connect();
-		
-		$out = "";	// Holds the resulting output.
-			// Array of each field in the VolunteerApplicationNEW  table and its label.
-			$labels_par = array("_sfm_visitor_ip_"=>"IP", "_sfm_unique_id_"=>"ID", "first_name"=>"First Name","last_name"=>"Last Name", "Address"=>"Address", "apt_num"=>"Apartment #", "State"=>"State", "City"=>"City", "Zipcode"=>"Zip Code", "homeNumber"=>"Home Number", "workNumber"=>"Work Number", "mobileNumber"=>"Mobile Number", "Email"=>"Email", "DateofBirth"=>"Data of Birth", "otherInterest"=>"Other Interest", "areaofInterest"=>"Area of Interest", "startDate"=>"Start Date", "Monday"=>"Monday", "Tuesday"=>"Tuesday", "Wednesday"=>"Wednesday", "Thursday"=>"Thursday", "Friday"=>"Friday", "satSun"=>"Saturday/Sunday","ecName"=>"Emergency Contact Name","ec_relation"=>"Emergency Contact Relation", "ecAddress"=>"Emergency Contact Address", "ec_apt"=>"Emergency Contact Apartment", "ec_zip"=>"Emergency Contact Zip Code", "ec_state"=>"Emergency Contact State", "ec_city"=>"Emergency Contact City","ec_work"=>"Emergency Contact Work", "ec_phone"=>"Emergency Contact Number", "ec_Mobile"=>"Emergency Contact Cell","initial1"=>"1", "initial2"=>"2", "initial3"=>"3", "initial4"=>"4", "SSN"=>"Social Security Num.", "fullNameAuth"=>"Signature", "drivers_state"=>"Driver License State", "idob"=>"Date of Birth", "drivers"=>"Driver License Number", "totalHours"=>"Time");
 
-			// Arrays used for processing.
-			$blank_array = array();	// Holds the name of any blank fields.
-			$bad_format = array();	// Holds the name of any unacceptable fields.
-			$good_data = array();	// Holds the sanitizied data.
-	}
-	function getVolunteerApplicationNEWID($lname, $fname, $siteID) {
+	function getVolunteer_RegistrationID($lname, $fname, $ID) {
 		$cn = $this->connect();
-		$sql_query = "SELECT * FROM VolunteerApplicationNEW WHERE last_name = '$lname' AND first_name = '$fname' AND ID= '$siteID'";
+		$sql_query = "SELECT * FROM Volunteer_Registration WHERE last_name = '$lname' AND first_name = '$fname' AND ID= '$ID'";
 		
 		$result = $cn->query($sql_query);
 		$cn->close();
@@ -1663,13 +1652,13 @@ mysql_select_db("cs440team2", $link);
 		return -1;
 	}
 	
-	function verifyVolunteerApplicationNEWData($data, $action){
+	function verifyVolunteer_RegistrationData($data, $action){
 		$conn = $this->connect();
 		
 		$out = "";	// Will hold the resulting output.
 		
 		// Array of each field in the VolunteerApplicationNEW  table and its label.
-	$labels_par = array("ID"=>"volunteer_id" ,"first_name"=>"First Name","last_name"=>"Last Name","address"=>"Address","apt_number"=>"Apartment #", "State"=>"State", "city"=>"City", "zipcode"=>"Zip Code", "homephone"=>"Home Number","workphone"=>"Work Number", "mobilephone"=>"Mobile Number", "email"=>"Email", "birthdate"=>"Data of Birth", 
+	$labels_par = array("ID"=>"volunteer_id" ,"first_name"=>"First Name","last_name"=>"Last Name","address"=>"Address","apt_number"=>"Apartment #", "state"=>"State", "city"=>"City", "zipcode"=>"Zip Code", "homephone"=>"Home Number","workphone"=>"Work Number", "mobilephone"=>"Mobile Number", "email"=>"Email", "birthdate"=>"Data of Birth", 
 			"area_of_interest"=>"Area of Interest","other_interest"=>"Other Interest", 
 			"start_date"=>"Start Date", "monday_time"=>"Monday","tuesday_time"=>"Tuesday", "wednesday_time"=>"Wednesday", "thursday_time"=>"Thursday", "friday_time"=>"Friday", "satsun_time"=>"Saturday/Sunday",
 			"ec_name"=>"Emergency Contact Name","ec_relationship"=>"Emergency Contact Relation", "ec_address"=>"Emergency Contact Address","ec_apart_num"=>"Emergency Contact Apartment", "ec_zipcode"=>"Emergency Contact Zip Code", "ec_state"=>"Emergency Contact State", "ec_city"=>"Emergency Contact City","ec_workphone"=>"Emergency Contact Work", "ec_homephone"=>"Emergency Contact Number", "ec_mobilephone"=>"Emergency Contact Cell",
@@ -1686,7 +1675,7 @@ mysql_select_db("cs440team2", $link);
 		foreach ($data as $field => $value) {
 			
 			// Check for null inrequired fields.
-			if (!isset($value) && ($field != 'initial_one') && ($field != 'initial_two') && ($field != 'initial_three')&& ($field != 'initial_four')&& ($field != 'auth_full_name')&& ($field != 'SSN')&& ($field != 'auth_state')&& ($field != 'auth_birthdate')&& ($field != 'auth_license')) {
+			if (!isset($value) && ($field != 'initial_one') && ($field != 'initial_two') && ($field != 'initial_three')&& ($field != 'initial_four')&& ($field != 'auth_full_name')&& ($field != 'auth_ssn')&& ($field != 'auth_state')&& ($field != 'auth_birthdate')&& ($field != 'auth_license')) {
 				array_push($blank_array, $field);
 				
 			} else if ((($field == "first_name") ||($field == "last_name") ||  ($field == "ec_name") || ($field == "ec_relationship")) && !preg_match("/^[A-Za-z.' -]{1,50}$/", $value)) {
@@ -1699,7 +1688,7 @@ mysql_select_db("cs440team2", $link);
 					array_push($bad_format, $field);
 				
 				
-			} else if(($field == "ec_homephone") ||($field == "homephone")||($field == "workphone") ||($field == "mobilephone")||($field == "ec_mobilephone")  && !preg_match("/^[0-9)( -]{7,20}(([xX]|(ext)|(ex))?[ -]?[0-9]{1,7})?$/", $value)) {
+			} else if(($field == "ec_homephone") && !preg_match("/^[0-9)( -]{7,20}(([xX]|(ext)|(ex))?[ -]?[0-9]{1,7})?$/", $value)) {
 				
 				array_push($bad_format, $field);
 				
@@ -1730,7 +1719,7 @@ mysql_select_db("cs440team2", $link);
 				$good_data[$field] = strip_tags(trim($data[$field]));
 				
 				// Removes special Characters from phone numbers and apt numbers.
-				if (($field == "ec_homephone") ||($field == "homephone")||($field == "workphone") ||($field == "mobilephone")||($field == "ec_mobilephone") ||($field == "apt_number") )
+				if (($field == "ec_homephone") ||($field == "homephone")||($field == "workphone")||($field == "ec_workphone") ||($field == "mobilephone")||($field == "ec_mobilephone") ||($field == "apt_number") )
 				$good_data[$field] = preg_replace("/[)(.-]/", "", $good_data[$field]);
 				
 				$good_data[$field] = $conn->real_escape_string($good_data[$field]);
@@ -1740,8 +1729,8 @@ mysql_select_db("cs440team2", $link);
 			if ($action == "insert") {
 				
 				// Search Participants table first to make sure Participant is not already registered!
-				if ($this->getVolunteerApplicationNEWID($good_data['last_name'], $good_data['first_name'], $good_data['ID']) == -1) {
-					$qryStr = "INSERT INTO VolunteerApplicationNEW (";
+				if ($this->getVolunteer_RegistrationID($good_data['last_name'], $good_data['first_name'], $good_data['ID']) == -1) {
+					$qryStr = "INSERT INTO Volunteer_Registration (";
 					
 					// Add fields from form if they match up with Participant fields.
 					foreach ($good_data as $field => $value) {
@@ -1771,7 +1760,7 @@ mysql_select_db("cs440team2", $link);
 					//prepare the statement to prevent injection attacks
 					$stmt = $conn->prepare($qryStr);
 					$stmt->bind_param("sss",$good_data['last_name'],$good_data['first_name'],$good_data['ID']);//bind variables
-					$result = $stmt->execute() or die ("ERROR: Could not add new Participant!");//execute the statement
+					$result = $stmt->execute() or die ("ERROR: Could not add new Volunteer!");//execute the statement
 					
 				
 					$conn->close();
@@ -1784,14 +1773,14 @@ mysql_select_db("cs440team2", $link);
 					
 				} else {
 					
-					$out = "Error: Participant named $fname $lname is already registered!<br /><br />";
+					$out = "Error: Volunteer named $fname $lname is already registered!<br /><br />";
 				}		
 				
 			}
 			else if ($action == "update") {
 				
 				// Build query string to update row in Participants table.
-				$qryStr = "UPDATE VolunteerApplicationNEW SET";
+				$qryStr = "UPDATE Volunteer_Registration SET";
 				foreach ($good_data as $field => $value) {
 					
 					if ($field == 'ID')
@@ -1812,7 +1801,7 @@ mysql_select_db("cs440team2", $link);
 				//prepare the statement to prevent injection attacks
 				$stmt = $conn->prepare($qryStr);
 				$stmt->bind_param("sss",$good_data['last_name'],$good_data['first_name'],$good_data['ID']);//bind variables
-				$result = $stmt->execute() or die ("ERROR: Could not update information for VolunteerApplicationNEW!");//execute the statement
+				$result = $stmt->execute() or die ("ERROR: Could not update information for Volunteer Registration!");//execute the statement
 				
 			
 				$conn->close();
@@ -1830,7 +1819,7 @@ mysql_select_db("cs440team2", $link);
 		echo $out;
 		
 		// Return participant ID or -1 if there was an error.
-		return $this->getVolunteerApplicationNEWID($good_data['last_name'], $good_data['first_name'], $good_data['ID']);	
+		return $this->getVolunteer_RegistrationID($good_data['last_name'], $good_data['first_name'], $good_data['ID']);	
 	
 	
 	}

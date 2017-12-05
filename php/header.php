@@ -13,9 +13,16 @@
 	function noLinksNav() {
 	    $fileName = basename($_SERVER['REQUEST_URI'], ".php");
 	    //Return true if user is viewing signup or login pages
-	     if ($fileName == "signup" || $fileName == "login" ||$fileName =="childReg" || $fileName == "volunteerRegistration"||$fileName == "volunteerRegistration0"|| $fileName == "volunteerRegistration2"|| $fileName == "volunteerRegistration3"|| $fileName == "volunteerRegistration4") {
+	     if ($fileName == "signup" || $fileName == "login" || $fileName == "site-events" ) {
 		   return true;
-	    } else {
+	    }//Return true if user is applying for the child application
+		else if ($fileName ="childReg" ) {
+		   return true;
+	    }//Return true if user is applying for the volunteer application
+		else if ($fileName = "volunteerRegistration"){
+			return true;
+		}
+		else {
 		   return false;
 	    }
 	}
