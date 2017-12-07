@@ -517,7 +517,10 @@ mysql_select_db("cs440team2", $link);
 		
 		return $out;
 	}
-	
+	/**
+	 *	Get HTML that creates a select list of Event dates and names based on permissions granted to the user.
+	 *	@return {string}				HTML select list
+	 */
 	function getEventSelectByPermissions($permissions) {
 	
 		$cn = $this->connect();
@@ -546,26 +549,6 @@ mysql_select_db("cs440team2", $link);
 		
 		return $out;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 
@@ -793,7 +776,8 @@ mysql_select_db("cs440team2", $link);
 		
 		$sql_query .= "ORDER BY site_id";
 		$result = $cn->query($sql_query);
-		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not fetch site data!");+		$cn->close();
+		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not fetch site data!");
+		$cn->close();
 		
 		$out = "<select name='site_id' >";
 		while ($row = mysqli_fetch_assoc($result)) {
