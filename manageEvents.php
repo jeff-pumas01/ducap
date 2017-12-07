@@ -77,7 +77,9 @@
 			<div class="col-md-6 form-group">
 				<label for="site_id">Site:</label>
 				<?php
-					echo $db->{'getSiteSelect'}();
+					// Get sites based on users permissions.
+					$permissions = $db->{'getUserPermissions'}($_SESSION['user_name']);
+					echo $db->{'getSiteSelectByPermissions'}($permissions);
 				?>
 			</div>
 		</div>
@@ -103,8 +105,9 @@
 			<div class="col-md-8 form-group">
 				<label for="event_id"></label>
 				<?php
-					// Get a select list of event names.
-					echo $db->{'getEventSelect'}();
+					// Get sites based on users permissions.
+					$permissions = $db->{'getUserPermissions'}($_SESSION['user_name']);
+					echo $db->{'getEventSelectByPermissions'}($permissions);
 				?>
 				
 			</div>
@@ -130,8 +133,9 @@
 			<div class="col-md-8 form-group">
 				
 				<?php
-					// Get a select list of Event names.
-					echo $db->{'getEventSelect'}();
+					// Get sites based on users permissions.
+					$permissions = $db->{'getUserPermissions'}($_SESSION['user_name']);
+					echo $db->{'getEventSelectByPermissions'}($permissions);
 				?>
 				
 			</div>

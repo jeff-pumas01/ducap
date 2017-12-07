@@ -517,6 +517,57 @@ mysql_select_db("cs440team2", $link);
 		
 		return $out;
 	}
+	
+	function getEventSelectByPermissions($permissions) {
+	
+		$cn = $this->connect();
+		$sql_query = "SELECT e.event_id, e.date, e.title, s.site_name FROM Events e JOIN Sites s on e.site_id = s.site_id WHERE (";
+		for ($i = 0; $i <= count($permissions); $i++){
+			if ($i < count($permissions)){
+				$site = $permisisons[i];
+				$sql_query .= "s.site_id = '$permissions[$i]' OR ";
+			}
+			if ($i == count($permissions)){
+				$site = $permisisons[i];
+				$sql_query .= "s.site_id = '$permissions[$i]' )";
+			}
+		}
+		$sql_query .= "ORDER BY date";	
+		$result = $cn->query($sql_query);
+		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not fetch event data!");
+		$cn->close();
+		
+		$out = "<select name='site_id' >";
+		while ($row = mysqli_fetch_assoc($result)) {
+			extract($row);
+			$out .= "<option name='$event_id' id='$event_id' value='$event_id'>$date $title -- $site_name</option>";
+		}
+		$out .= "</select>";
+		
+		return $out;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	/**
 	 *	Get HTML that creates a select list of Event dates and names for a given site.
@@ -722,12 +773,11 @@ mysql_select_db("cs440team2", $link);
 	
 	
 	/** OVERLOADED FOR PERMISSIONS
-	 *	Get HTML that creates a select list of Site IDs and names.
-	 *	The id/name of each option is the site ID, since it's the primary key.
-	 *	@return {string}				HTML select list
-	 */
+	*	Get HTML that creates a select list of Site IDs and names.
+	*	The id/name of each option is the site ID, since it's the primary key.
+	*	@return {string}				HTML select list
+	*/
 	function getSiteSelectByPermissions($permissions) {
-		echo "got here";
 		$cn = $this->connect();
 		$sql_query = "SELECT site_id, site_name FROM Sites WHERE ";
 		for ($i = 0; $i <= count($permissions); $i++){
@@ -740,10 +790,10 @@ mysql_select_db("cs440team2", $link);
 				$sql_query .= "site_id = '$permissions[$i]' ";
 			}
 		}
+		
 		$sql_query .= "ORDER BY site_id";
 		$result = $cn->query($sql_query);
-		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not fetch site data!");
-		$cn->close();
+		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not fetch site data!");+		$cn->close();
 		
 		$out = "<select name='site_id' >";
 		while ($row = mysqli_fetch_assoc($result)) {
