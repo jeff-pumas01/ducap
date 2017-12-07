@@ -16,10 +16,10 @@
 	     if ($fileName == "signup" || $fileName == "login" || $fileName == "site-events" ) {
 		   return true;
 	    }//Return true if user is applying for the child application
-		else if ($fileName ="childReg" ) {
+		else if ($fileName =='childReg' || $fileName =='childReg1' ||$fileName =='childReg2'||$fileName =='childReg3'||$fileName =='childReg4'||$fileName =='childReg5'||$fileName =='childReg6' ) {
 		   return true;
 	    }//Return true if user is applying for the volunteer application
-		else if ($fileName = "volunteerRegistration"){
+		else if ($fileName == 'volunteerRegistration' || $fileName == "volunteerRegistration0"){
 			return true;
 		}
 		else {

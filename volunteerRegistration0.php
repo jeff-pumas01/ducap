@@ -27,7 +27,7 @@
 	<br/>
 </div> 
 
-<form action = "volunteerRegistration1.php" method = "POST">
+<form action = "volunteerRegistration0.php" method = "POST">
 
 	<div class = "container volunteer">
 			
@@ -42,7 +42,8 @@
 		if ($ID == -1) {
 			echo "<a href='volunteerRegistration.php'>Back</a>";
 		} else {
-			echo '<br /><br /><button class = "btn btn-sm btn-primary btn-block" type = "submit"  name = "sub"  >Continue</button>';
+			echo '<br /><br /><p><a href="http://front.cs.lewisu.edu/~franciscoarodrigue/">Back to Homepage</a></p>
+';
 		}
 	?>
 

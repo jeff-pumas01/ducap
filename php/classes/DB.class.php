@@ -1669,9 +1669,9 @@ mysql_select_db("cs440team2", $link);
 		return $this->getSiteID($good_data['site_name'], $good_data['address'], $good_data['zip_code']);
 	}
 
-	function getVolunteer_RegistrationID($lname, $fname, $ID) {
+	function getVolunteer_RegistrationID($lname, $fname, $unique) {
 		$cn = $this->connect();
-		$sql_query = "SELECT * FROM Volunteer_Registration WHERE last_name = '$lname' AND first_name = '$fname' AND ID= '$ID'";
+		$sql_query = "SELECT * FROM Volunteer_Registration WHERE last_name = '$lname' AND first_name = '$fname' AND auth_ssn = '$unique'";
 		
 		$result = $cn->query($sql_query);
 		$cn->close();
@@ -1763,7 +1763,7 @@ mysql_select_db("cs440team2", $link);
 			if ($action == "insert") {
 				
 				// Search Participants table first to make sure Participant is not already registered!
-				if ($this->getVolunteer_RegistrationID($good_data['last_name'], $good_data['first_name'], $good_data['ID']) == -1) {
+				if ($this->getVolunteer_RegistrationID($good_data['last_name'], $good_data['first_name'], $good_data['auth_ssn']) == -1) {
 					$qryStr = "INSERT INTO Volunteer_Registration (";
 					
 					// Add fields from form if they match up with Participant fields.
@@ -1803,7 +1803,7 @@ mysql_select_db("cs440team2", $link);
 					//$conn->close();
 					
 					if ($result)
-						$out = "Information successfully updated for " . $good_data['first_name'] . " " . $good_data['last_name'] . ".";
+						$out = "The application successfully submitted for " . $good_data['first_name'] . " " . $good_data['last_name'] . ".";
 					
 				} else {
 					
@@ -1840,7 +1840,7 @@ mysql_select_db("cs440team2", $link);
 			
 				$conn->close();
 				$stmt->close();//close the statement
-				//$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not update information for VolunteerApplicationNEW!");
+			
 				
 				if ($result)
 					$out = "Information successfully updated for " . $good_data['first_name'] . " " . $good_data['last_name'] . ".";
@@ -1853,11 +1853,11 @@ mysql_select_db("cs440team2", $link);
 		echo $out;
 		
 		// Return participant ID or -1 if there was an error.
-		return $this->getVolunteer_RegistrationID($good_data['last_name'], $good_data['first_name'], $good_data['ID']);	
+		return $this->getVolunteer_RegistrationID($good_data['last_name'], $good_data['first_name'], $good_data['auth_ssn']);	
 	
 	
 	}
-		
+	
 }
 
 ?>
