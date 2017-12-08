@@ -40,9 +40,9 @@ $db = mysql_select_db("cs440team2", $connection); // Selecting Database From Ser
 if (isset($_GET['del'])) {
 $del = $_GET['del'];
 //SQL query for deletion.
-$query1 = mysql_query("delete from VolunteerApplicationNEW where ID=$del", $connection);
+$query1 = mysql_query("delete from Volunteer_Registration where ID=$del", $connection);
 }
-$query = mysql_query("select * from VolunteerApplicationNEW", $connection); // SQL query to fetch data to display in menu.
+$query = mysql_query("select * from Volunteer_Registration", $connection); // SQL query to fetch data to display in menu.
 while ($row = mysql_fetch_array($query)) {
 echo "<b><a href=\"deleteVolunteer.php?id={$row['ID']}\">{$row['first_name']} {$row['last_name']} ID: {$row['ID']}</a></b>";
 echo "<br />";
@@ -52,16 +52,17 @@ echo "<br />";
 if (isset($_GET['id'])) {
 $id = $_GET['id'];
 // SQL query to Display Details.
-$query1 = mysql_query("select * from VolunteerApplicationNEW where ID=$id", $connection);
+$query1 = mysql_query("select * from Volunteer_Registration where ID=$id", $connection);
 while ($row1 = mysql_fetch_array($query1)) {
 ?>
 <form class="form">
 <h2>---Details---</h2>
-<span>First Name:</span> <?php echo $row1['first_name']; ?>
-<br><span>Last Name:</span> <?php echo $row1['last_name']; ?>
 <br><span>ID:</span> <?php echo $row1['ID']; ?>
-<br><span>E-mail:</span> <?php echo $row1['Email']; ?>
-<br><span>Address:</span> <?php echo $row1['Address']; ?>
+<br><span>First Name:</span> <?php echo $row1['first_name']; ?>
+<br><span>Last Name:</span> <?php echo $row1['last_name']; ?>
+<br><span>Address:</span> <?php echo $row1['address']; ?>
+<br><span>Phone:</span> <?php echo $row1['homephone']; ?>
+<br><span>E-mail:</span> <?php echo $row1['email']; ?>
 <?php echo "<b><a href=\"deleteVolunteer.php?del={$row1['ID']}\">
 <br><input type=\"button\" class=\"submit\" value=\"Delete\"/></a></b>"; ?>
 </form><?php

@@ -171,7 +171,7 @@
 			<!--Availability -->
 			
 		<div class = "row">
-			<h3><b>Availability</b></h3>
+			<h3><b>Hours of Availability</b></h3>
 			
 			<div class="col-md-4 form-group">
 				<label for="start_date">Date Available to Start (MM/DD/YYYY):</label>
@@ -331,7 +331,7 @@
 		</div>
 		
 	<!-- Medical Release AUTHORIZATION FOR TREATMENT OR EMERGENCY CARE  -->
-		<h3>Emergency Contact Person</h3>	
+		<h3> Medical Release</h3>	
 		<h4>AUTHORIZATION FOR TREATMENT OR EMERGENCY CARE  </h4>
 		<div class="row">
 			<p>I hereby give permission to the medical personnel selected by DuCAP personnel to order X-rays, routine tests, treatment, and necessary transportation for my child or children listed/registered. In the event, I cannot be reached in an emergency, I hereby give permission to the physician selected by DuCAP personnel to secure and administer treatment, including hospitalization, for my child or children listed/registered. The completed forms will be photocopied. </p>
@@ -340,7 +340,7 @@
 			<br />
 			
 			<div class="col-md-6 form-group">
-				<label for="initial_one">Volunteer Name: </label>
+				<label for="initial_one">Initial: </label>
 				<input type="text" class="form-control" name="initial_one" id="initial_one" placeholder="Initial here"required>
 			</div>
 		</div>
@@ -351,7 +351,7 @@
 		<div class="row">
 			<p>I authorize the Illinois Department of Human services, any Affiliate or Sponsor/Partner of DuCAP, and the local DuCAP Program operators to photograph my child/children listed/registered for means of publication purposes. Photos might be used in various brochures and publications describing and promoting the program in a positive way. The photos will not be used in any illegal misrepresentation of my child/children listed/registered. </p>	
 			<div class="col-md-6 form-group">
-				<label for="initial_two">Volunteer Name: </label>
+				<label for="initial_two">Initial: </label>
 				<input type="text" class="form-control" name="initial_two" id="initial_two" placeholder="Initial here" required>
 			</div>
 		</div>
@@ -368,7 +368,7 @@
 		
 			<p>I understand and give permission for DuCAP to conduct a criminal Background Investigation on me. </p>
 			<div class="col-md-6 form-group">
-				<label for="initial_three">Volunteer Name: </label>
+				<label for="initial_three">Initial:  </label>
 				<input type="text" class="form-control" name="initial3_three" id="initial_three" placeholder="Initial here" required>
 			</div>
 			<br />
@@ -377,7 +377,7 @@
 		<div class= "row">
 			<p>My signature below certifies that all information I have provided in connection with this application is true, accurate and complete to the best of my knowledge.</p>
 			<div class="col-md-6 form-group">
-				<label for="initial_four">Volunteer Name: </label>
+				<label for="initial_four">Initial:  </label>
 				<input type="text" class="form-control" name="initial_four" id="initial_four" placeholder="Initial here"required>
 			</div>
 		</div>
