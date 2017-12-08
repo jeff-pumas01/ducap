@@ -1,6 +1,8 @@
 <html>
 <head>
 	<title> Ducap Sites</title>
+	<link rel="stylesheet" type="text/css" href="css/sites-eventspage.css"/>
+
 </head>
 
 <body>
@@ -73,12 +75,8 @@
     
 	
 		while($row = mysqli_fetch_assoc($result)) {
-			$site = $row['site_id'];
-			echo $site;
-			$siteData = $db1->getSiteInfo($site);
-			echo $siteData;
-			//echo "$siteData = $db->{'getSiteInfo'}($row['site_id'])";
-			echo "<tr><td>" . $row['date'] . "</td><td>" . $row['title'] . "</td><td>" . $row['site_id'] . "</td></tr>";
+			$siteData = $db1->{'getSiteInfo'}($row['site_id']);
+			echo "<tr><td>" . $row['date'] . "</td><td>" . $row['title'] . "</td><td>" . $siteData['site_name'] . "</td></tr>";
 		}
 		echo "</table>";
 	?>
