@@ -20,7 +20,7 @@
 </head>
 
 <body>
-
+<center>
 
 <!-- Content -->
 <div class = "container header">
@@ -42,7 +42,7 @@
 include('php/footer.php');
 
 ?>
-
+</center>
 
 </body>
 </html>

@@ -18,7 +18,7 @@
 </head>
 
 <body>
-
+<center>
 
 <!-- Content -->
 <div class = "container header">
@@ -35,7 +35,7 @@
 	?>
 	<br /><br /><a href='admin_cp.php'>Back</a>
 </div> 
-
+</center>
 <?php
 
 //Include footer html

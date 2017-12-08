@@ -328,7 +328,7 @@ mysql_select_db("cs440team2", $link);
 		
 		// First, delete related rows in other tables (Attendance).
 		$sql_query = "DELETE FROM Attendance WHERE event_id = $id";
-		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not delete attendance records for the event!");
+		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not delete attendance!");
 		
 		// Now, the database should allow you to delete the event.
 		$sql_query = "DELETE FROM Events WHERE event_id = $id";
@@ -540,13 +540,12 @@ mysql_select_db("cs440team2", $link);
 		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not fetch event data!");
 		$cn->close();
 		
-		$out = "<select name='site_id' >";
+		$out = "<select name='event_id' >";
 		while ($row = mysqli_fetch_assoc($result)) {
 			extract($row);
 			$out .= "<option name='$event_id' id='$event_id' value='$event_id'>$date $title -- $site_name</option>";
 		}
 		$out .= "</select>";
-		
 		return $out;
 	}
 	
@@ -860,12 +859,27 @@ mysql_select_db("cs440team2", $link);
 		$admin_sql = "SELECT Site FROM Users WHERE admin_id = \"$uStr\"";
 		$permission_result = $cn->query($admin_sql);
 		$Row = $permission_result->fetch_assoc();
-		$userPermissions = str_split($Row['Site']);
-		return $userPermissions;
+		$userPermissions = explode("-",$Row['Site']);
 		$cn->close();
+		return $userPermissions;
 	}
 	
 	
+	
+	/**
+	*
+	* Adds a site permission to a user in the User table.
+	*
+	*/
+	function addUserPermissions($siteID,$uStr){
+		$siteID = ' ' . $siteID;
+		$cn = $this->connect();
+		$uStr = $cn->real_escape_string($uStr);
+		$admin_sql = "UPDATE Users Set Site = CONCAT(Site,-$siteID) WHERE admin_id = \"$uStr\"";
+		$permission_result = $cn->query($admin_sql);
+		$cn->close();
+		return 0;
+	}
 	
 	
 	
@@ -1619,7 +1633,6 @@ mysql_select_db("cs440team2", $link);
 					
 					if ($result)
 						$out = "Successfully added the new site " . $good_data['site_name'] . ".";
-					
 				} else {
 					
 					$out = "Error: Site named $site_name at $address is already registered!<br /><br />";
@@ -1646,14 +1659,11 @@ mysql_select_db("cs440team2", $link);
 				$stmt = $conn->prepare($qryStr);
 				$stmt->bind_param("sssss",$good_data['title'],$good_data['date'],$good_data['timeStart'],$good_data['timeLength'],$good_data['site_id']);//bind variables
 				$result = $stmt->execute() or die ("ERROR: Could not update information for Site!");//execute the statement
-				
-			
 				$conn->close();
 				$stmt->close();//close the statement
 				
 				if ($result)
 					$out = "Information successfully updated for " . $good_data['site_name'] . ".";
-				
 			} else {
 				
 				$out = "ERROR: Cannot $action the data.";
@@ -1662,9 +1672,6 @@ mysql_select_db("cs440team2", $link);
 		}
 		
 		echo $out;
-		//add this site the the users permissions
-		
-		
 		// Return site ID or -1 if there was an error.
 		return $this->getSiteID($good_data['site_name'], $good_data['address'], $good_data['zip_code']);
 	}
@@ -1840,7 +1847,8 @@ mysql_select_db("cs440team2", $link);
 			
 				$conn->close();
 				$stmt->close();//close the statement
-			
+				
+				
 				
 				if ($result)
 					$out = "Information successfully updated for " . $good_data['first_name'] . " " . $good_data['last_name'] . ".";
@@ -1853,11 +1861,11 @@ mysql_select_db("cs440team2", $link);
 		echo $out;
 		
 		// Return participant ID or -1 if there was an error.
-		return $this->getVolunteer_RegistrationID($good_data['last_name'], $good_data['first_name'], $good_data['auth_ssn']);	
+		return $this->getVolunteer_RegistrationID($good_data['last_name'], $good_data['first_name'], $good_data['auth_ssn']);
 	
 	
 	}
-	
+		
 }
 
 ?>

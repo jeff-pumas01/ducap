@@ -1,4 +1,10 @@
+<html>
+<head>
+	<title>Add Event</title>
+</head>
 
+<body>
+<center>
 <?php
 
 	/*
@@ -36,6 +42,6 @@ include('php/footer.php');
 
 ?>
 
-
+</center>
 </body>
 </html>

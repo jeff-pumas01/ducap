@@ -18,22 +18,26 @@
 	$db = new DB();
 
 ?>
+<html>
+<head>
+</head>
 
-
+<body>
+<center>
+<div class="container volunteer">
 <?php
-
 
 	// Verify and add site.
 	$db->{'verifySiteData'}($_POST, "insert");
-
-
-	echo "<br /><br /><a href='http://cs.lewisu.edu/cs440/team2/Implementation_Bird/admin_cp.php'>Continue</a>";
-
+	$db->{'addUserPermissions'}($db->getSiteID($_POST['site_name'], $_POST['address'], $_POST['zip_code']),$_SESSION['user_name']);
+	?>
+	<br /><br /><a href='admin_cp.php'>Back</a>
+	<?php
 	//Include footer html
 	include('php/footer.php');
 
 ?>
-
+</div>
 </center>
 </body>
 </html>

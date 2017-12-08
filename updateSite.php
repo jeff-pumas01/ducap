@@ -44,7 +44,7 @@
 </head>
 
 <body>
-
+<center>
 <?php
 
 	if ($sID == -1) {
@@ -82,7 +82,7 @@
 		include('php/footer.php');
 	}
 ?>
-
+</center>
 
 </body>
 </html>

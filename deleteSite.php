@@ -20,14 +20,13 @@
 </head>
 
 <body>
-
+<center>
 
 <!-- Content -->
 <div class = "container header">
-	<center><h2>Delete Site</h2></center>
+	<h2>Delete Site</h2>
 	<br/>
 </div> 
-
 <div class="container volunteer">
 
 	<?php
@@ -35,7 +34,7 @@
 	?>
 	<br /><br /><a href='admin_cp.php'>Back</a>
 </div> 
-
+</center>
 <?php
 
 //Include footer html

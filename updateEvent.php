@@ -4,7 +4,7 @@
 </head>
 
 <body>
-
+<center>
 <?php
 
 	/**
@@ -124,10 +124,12 @@
 	
 </form>	
 
-
+</center>
 <?php
 
 	// Include footer html.
 	include('php/footer.php');
 
 ?>
+</body>
+</html>
