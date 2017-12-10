@@ -3,7 +3,18 @@
 <head>
 	<title>DuCAP Volunteer Registration</title>
 </head>
+
 <body>
+	<style>
+p {
+    
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 10em;
+    margin-right: 10em;
+}
+</style>
+
 
 <!-- DuCap - Software Engineering Project -->
 <?php
@@ -153,31 +164,31 @@
 		</div>
 		
 		<!--Area of Interest-->
-		<div class= "row">
-			<h3><b>Area of Interest</b></h3>
-			<!--Still Have to change Id for database upload-->
-			<input type="radio" name="area_of_interest" value="Tutoring">Tutoring<br>
-			<input type="radio" name="area_of_interest" value="Office Tasks">Office Tasks<br>
-			<input type="radio" name="area_of_interest" value="Mentoring">Mentoring<br>
-			<input type="radio" name="area_of_interest" value="Drama/Music">Drama/Music<br>
-			<input type="radio" name="area_of_interest" value="Arts/Crafts">Arts/Crafts<br>
-			<input type="radio" name="area_of_interest" value="Sports">Sports<br>
+		<h3 align="left"><b>Area of Interest</b></h3>
+		<div class= "row" align="left">
+			<input type="radio" name="area_of_interest" value="Tutoring">   Tutoring<br>
+			<input type="radio" name="area_of_interest" value="Office Tasks">   Office Tasks<br>
+			<input type="radio" name="area_of_interest" value="Mentoring">   Mentoring<br>
+			<input type="radio" name="area_of_interest" value="Drama/Music">   Drama/Music<br>
+			<input type="radio" name="area_of_interest" value="Arts/Crafts">   Arts/Crafts<br>
+			<input type="radio" name="area_of_interest" value="Sports">   Sports<br>
+			
 			<div class="col-md-4 form-group">
-				<label for="other_interest">Other:</label>
-				<input type="text" class="form-control" name="other_interest" id="other_interest" placeholder = "Other">
+			<label for="other_interest">Other:</label><input type="text" class="form-control" name="other_interest" id="other_interest" placeholder = "Other">
+			
 			</div>
-		</div>
+			</div>
 		
-			<!--Availability -->
-			
+		<!--Availability -->
+		<h3 align="left"><b>Hours of Availability</b></h3>
 		<div class = "row">
-			<h3><b>Hours of Availability</b></h3>
-			
+		
 			<div class="col-md-4 form-group">
 				<label for="start_date">Date Available to Start (MM/DD/YYYY):</label>
 				<input type="date" class="form-control" id="start_date" name="start_date" required />
 			</div>
-		</div>
+			</div>
+		
 		<div class="row">
 			<div class="col-md-4 form-group">
 				<label for="monday_time">Monday Availability:</label>
@@ -212,9 +223,9 @@
 				<input type="text" class="form-control" id="satsun_time" name="satsun_time"  placeholder = "XX:XX - XX:XX AM/PM">
 			
 		</div>
-		<h3>Emergency Contact Person</h3>
-		
+		</div>
 		<!-- Row for first and last name -->
+		<h3 align="left"><b>Emergency Contact Person</b></h3>
 		<div class="row">
 			
 			<div class="col-md-6 form-group">
@@ -331,14 +342,14 @@
 		</div>
 		
 	<!-- Medical Release AUTHORIZATION FOR TREATMENT OR EMERGENCY CARE  -->
-		<h3> Medical Release</h3>	
+	<h3 align="left"><b>Medical Release</b></h3>
 		<h4>AUTHORIZATION FOR TREATMENT OR EMERGENCY CARE  </h4>
-		<div class="row">
-			<p>I hereby give permission to the medical personnel selected by DuCAP personnel to order X-rays, routine tests, treatment, and necessary transportation for my child or children listed/registered. In the event, I cannot be reached in an emergency, I hereby give permission to the physician selected by DuCAP personnel to secure and administer treatment, including hospitalization, for my child or children listed/registered. The completed forms will be photocopied. </p>
+	
+			<p style="font-family:courier;">I hereby give permission to the medical personnel selected by DuCAP personnel to order X-rays, routine tests, treatment, and necessary transportation for my child or children listed/registered. In the event, I cannot be reached in an emergency, I hereby give permission to the physician selected by DuCAP personnel to secure and administer treatment, including hospitalization, for my child or children listed/registered. The completed forms will be photocopied. </p>
 			<br />
-			<p>I release, waive, discharge and covenant not to sue DuCAP, its departments, their respective administrators, directors, agents, coaches, and other employees of the organization, other participants, sponsoring agencies, sponsors, advertisers and if applicable, owners and leasers of premises used to conduct the event, all of which are hereinafter referred to as “releases”, from any and all liability to the participant, his or her heirs and next of kin for any and all claims, demands, medical bills, losses or damages on account of injury, including death or damage to property, caused or alleged to be caused in whole or in part by the negligence of the releases or otherwise. </p>
+			<p style="font-family:courier;">I release, waive, discharge and covenant not to sue DuCAP, its departments, their respective administrators, directors, agents, coaches, and other employees of the organization, other participants, sponsoring agencies, sponsors, advertisers and if applicable, owners and leasers of premises used to conduct the event, all of which are hereinafter referred to as “releases”, from any and all liability to the participant, his or her heirs and next of kin for any and all claims, demands, medical bills, losses or damages on account of injury, including death or damage to property, caused or alleged to be caused in whole or in part by the negligence of the releases or otherwise. </p>
 			<br />
-			
+				<div class="row" align="left">
 			<div class="col-md-6 form-group">
 				<label for="initial_one">Initial: </label>
 				<input type="text" class="form-control" name="initial_one" id="initial_one" placeholder="Initial here"required>
@@ -347,17 +358,18 @@
 		
 		
 		<!-- Photography Release  -->
-		<h3>Photography Release</h3>	
-		<div class="row">
-			<p>I authorize the Illinois Department of Human services, any Affiliate or Sponsor/Partner of DuCAP, and the local DuCAP Program operators to photograph my child/children listed/registered for means of publication purposes. Photos might be used in various brochures and publications describing and promoting the program in a positive way. The photos will not be used in any illegal misrepresentation of my child/children listed/registered. </p>	
+		<h3 align="left"><b>Photography Release</b></h3>	
+		
+			<p style="font-family:courier;">I authorize the Illinois Department of Human services, any Affiliate or Sponsor/Partner of DuCAP, and the local DuCAP Program operators to photograph my child/children listed/registered for means of publication purposes. Photos might be used in various brochures and publications describing and promoting the program in a positive way. The photos will not be used in any illegal misrepresentation of my child/children listed/registered. </p>	
+			<div class="row">
 			<div class="col-md-6 form-group">
 				<label for="initial_two">Initial: </label>
 				<input type="text" class="form-control" name="initial_two" id="initial_two" placeholder="Initial here" required>
 			</div>
 		</div>
+		<!--Background Investigation  -->
+		<h3 align="left"><b>Background Investigation</b></h3>	
 		
-		<h3>Background Investigation</h3>	
-		<div class="row">
 		<h4>NOTICE TO VOLUNTEERS REGARDING BACKGROUND INVESTIGATION </h4>
 		<p   style="font-family:courier;">I understand that a consumer report (background screening report) and/or an investigative consumer report (reference checks and/or interviews) that may include information from public or private sources regarding my character, driving records, criminal history, court records (both civil and criminal), qualifications and experience, work habits, and/or other information relevant to my volunteer service may be obtained in connection with my application as a volunteer with DuPage County Area Project</p>
 		<p   style="font-family:courier;">I understand that, if I am approved for volunteer service by DuPage County Area Project, this background check authorization will be kept on file and may be used at any time during my service to procure further information when, in the judgment of DuPage County Area Project, such may be necessary.</p>
@@ -366,7 +378,8 @@
 		<p   style="font-family:courier;">By signing below, I, have read, understand and consent to the above. I further authorize that a photographic copy or a telephonic facsimile of this document shall be valid for purposes present and future. My signature below certifies that all information I have provided in connection with this background check is true, accurate and complete to the best of my knowledge. </p>
 		
 		
-			<p>I understand and give permission for DuCAP to conduct a criminal Background Investigation on me. </p>
+			<p style="font-family:courier;">I understand and give permission for DuCAP to conduct a criminal Background Investigation on me. </p>
+			<div class="row">
 			<div class="col-md-6 form-group">
 				<label for="initial_three">Initial:  </label>
 				<input type="text" class="form-control" name="initial3_three" id="initial_three" placeholder="Initial here" required>
@@ -374,10 +387,11 @@
 			<br />
 			
 		</div>
+			<p style="font-family:courier;" >My signature below certifies that all information I have provided in connection with this application is true, accurate and complete to the best of my knowledge.</p>
+			
 		<div class= "row">
-			<p>My signature below certifies that all information I have provided in connection with this application is true, accurate and complete to the best of my knowledge.</p>
 			<div class="col-md-6 form-group">
-				<label for="initial_four">Initial:  </label>
+				<label for="initial_four">Signature:  </label>
 				<input type="text" class="form-control" name="initial_four" id="initial_four" placeholder="Initial here"required>
 			</div>
 		</div>
@@ -385,7 +399,7 @@
 			
 			
 		<!-- Photography Release  -->
-		<h3>AUTHORIZATION</h3>	
+		<h3 align="left"><b>Authorization</b></h3>	
 		<div class="row">
 			<div class="col-md-6 form-group">
 				<label for="auth_full_name">Full Name</label>
