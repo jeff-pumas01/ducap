@@ -5,15 +5,7 @@
 </head>
 
 <body>
-	<style>
-p {
-    
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 10em;
-    margin-right: 10em;
-}
-</style>
+
 
 
 <!-- DuCap - Software Engineering Project -->
@@ -181,48 +173,494 @@ p {
 		
 		<!--Availability -->
 		<h3 align="left"><b>Hours of Availability</b></h3>
-		<div class = "row">
 		
-			<div class="col-md-4 form-group">
-				<label for="start_date">Date Available to Start (MM/DD/YYYY):</label>
-				<input type="date" class="form-control" id="start_date" name="start_date" required />
-			</div>
-			</div>
-		
-		<div class="row">
-			<div class="col-md-4 form-group">
-				<label for="monday_time">Monday Availability:</label>
-				<input type="text" id="monday_time" class="form-control" name="monday_time" placeholder = "XX:XX - XX:XX AM/PM">
-			</div>
-			
-			<div class="col-md-4 form-group">
-				<label for="tuesday_time">Tuesday Availability:</label>
-				<input type="text" class="form-control" id="tuesday_time" name="tuesday_time"  placeholder = "XX:XX - XX:XX AM/PM">
-			</div>
-			
-			<div class="col-md-4 form-group">
-				<label for="wednesday_time">Wednesday Availability:</label>
-				<input type="text" class="form-control" id="wednesday_time" name="wednesday_time"  placeholder = "XX:XX - XX:XX AM/PM">
-			</div>
-		</div>
 		
 		
 		<div class="row">
-			<div class="col-md-4 form-group">
-				<label for="thursday_time">Thursday Availability:</label>
-				<input type="text" id="thursday_time" class="form-control" name="thursday_time"  placeholder = "XX:XX - XX:XX AM/PM">
-			</div>
+				 <div class="col-md-4 form-group">
+					<label for="monday_time">Monday Availability From:</label>
+					<select name="monday_time" id = "monday_time" class="form-control" required>
+						<option>6:00 AM</option>
+						<option>6:30 AM</option>
+						<option>7:00 AM</option>
+						<option>7:30 AM</option>
+						<option>8:00 AM</option>
+						<option>8:30 AM</option>
+						<option>9:00 AM</option>
+						<option>9:30 AM</option>
+						<option>10:00 AM</option>
+						<option>10:30 AM</option>
+						<option>11:00 AM</option>
+						<option>11:30 AM</option>
+						<option>12:00 PM</option>
+						<option>12:30 PM</option>
+						<option>1:00 PM</option>
+						<option>1:30 PM</option>
+						<option>2:00 PM</option>
+						<option>2:30 PM</option>
+						<option>3:00 PM</option>
+						<option>3:30 PM</option>
+						<option>4:00 PM</option>
+						<option>4:30 PM</option>
+						<option>5:00 PM</option>
+						<option>5:30 PM</option>
+						<option>6:00 PM</option>
+						<option>6:30 PM</option>
+						<option>7:00 PM</option>
+						<option>7:30 PM</option>
+						<option>8:00 PM</option>
+						<option>8:30 PM</option>
+						<option>9:00 PM</option>
+						<option>9:30 PM</option>
+						<option>10:00 PM</option>
+						<option>10:30 PM</option>
+					</select>
+				</div>
 			
-			<div class="col-md-4 form-group">
-				<label for="friday_time">Friday Availability:</label>
-				<input type="text" class="form-control" id="friday_time" name="friday_time"  placeholder = "XX:XX - XX:XX AM/PM">
-			</div>
-			
-			<div class="col-md-4 form-group">
-				<label for="satsun_time">Saturday/ Sunday Availability:</label>
-				<input type="text" class="form-control" id="satsun_time" name="satsun_time"  placeholder = "XX:XX - XX:XX AM/PM">
-			
+				 <div class="col-md-4 form-group">
+				 	<label for="monday_time">To:</label>
+					<select name="monday_end" id = "monday_end" class="form-control" required>
+						<option>6:00 AM</option>
+						<option>6:30 AM</option>
+						<option>7:00 AM</option>
+						<option>7:30 AM</option>
+						<option>8:00 AM</option>
+						<option>8:30 AM</option>
+						<option>9:00 AM</option>
+						<option>9:30 AM</option>
+						<option>10:00 AM</option>
+						<option>10:30 AM</option>
+						<option>11:00 AM</option>
+						<option>11:30 AM</option>
+						<option>12:00 PM</option>
+						<option>12:30 PM</option>
+						<option>1:00 PM</option>
+						<option>1:30 PM</option>
+						<option>2:00 PM</option>
+						<option>2:30 PM</option>
+						<option>3:00 PM</option>
+						<option>3:30 PM</option>
+						<option>4:00 PM</option>
+						<option>4:30 PM</option>
+						<option>5:00 PM</option>
+						<option>5:30 PM</option>
+						<option>6:00 PM</option>
+						<option>6:30 PM</option>
+						<option>7:00 PM</option>
+						<option>7:30 PM</option>
+						<option>8:00 PM</option>
+						<option>8:30 PM</option>
+						<option>9:00 PM</option>
+						<option>9:30 PM</option>
+						<option>10:00 PM</option>
+						<option>10:30 PM</option>
+					</select>
+					</div>
 		</div>
+				<div class="row">
+				 <div class="col-md-4 form-group">
+					<label for="tuesday_time">Tuesday Availability From:</label>
+					<select name="tuesday_time" id = "tuesday_time" class="form-control" required>
+						<option>6:00 AM</option>
+						<option>6:30 AM</option>
+						<option>7:00 AM</option>
+						<option>7:30 AM</option>
+						<option>8:00 AM</option>
+						<option>8:30 AM</option>
+						<option>9:00 AM</option>
+						<option>9:30 AM</option>
+						<option>10:00 AM</option>
+						<option>10:30 AM</option>
+						<option>11:00 AM</option>
+						<option>11:30 AM</option>
+						<option>12:00 PM</option>
+						<option>12:30 PM</option>
+						<option>1:00 PM</option>
+						<option>1:30 PM</option>
+						<option>2:00 PM</option>
+						<option>2:30 PM</option>
+						<option>3:00 PM</option>
+						<option>3:30 PM</option>
+						<option>4:00 PM</option>
+						<option>4:30 PM</option>
+						<option>5:00 PM</option>
+						<option>5:30 PM</option>
+						<option>6:00 PM</option>
+						<option>6:30 PM</option>
+						<option>7:00 PM</option>
+						<option>7:30 PM</option>
+						<option>8:00 PM</option>
+						<option>8:30 PM</option>
+						<option>9:00 PM</option>
+						<option>9:30 PM</option>
+						<option>10:00 PM</option>
+						<option>10:30 PM</option>
+					</select>
+				</div>
+			
+				 <div class="col-md-4 form-group">
+				 	<label for="tuesday_time">To:</label>
+					<select name="tuesday_end" id = "tuesday_end" class="form-control" required>
+						<option>6:00 AM</option>
+						<option>6:30 AM</option>
+						<option>7:00 AM</option>
+						<option>7:30 AM</option>
+						<option>8:00 AM</option>
+						<option>8:30 AM</option>
+						<option>9:00 AM</option>
+						<option>9:30 AM</option>
+						<option>10:00 AM</option>
+						<option>10:30 AM</option>
+						<option>11:00 AM</option>
+						<option>11:30 AM</option>
+						<option>12:00 PM</option>
+						<option>12:30 PM</option>
+						<option>1:00 PM</option>
+						<option>1:30 PM</option>
+						<option>2:00 PM</option>
+						<option>2:30 PM</option>
+						<option>3:00 PM</option>
+						<option>3:30 PM</option>
+						<option>4:00 PM</option>
+						<option>4:30 PM</option>
+						<option>5:00 PM</option>
+						<option>5:30 PM</option>
+						<option>6:00 PM</option>
+						<option>6:30 PM</option>
+						<option>7:00 PM</option>
+						<option>7:30 PM</option>
+						<option>8:00 PM</option>
+						<option>8:30 PM</option>
+						<option>9:00 PM</option>
+						<option>9:30 PM</option>
+						<option>10:00 PM</option>
+						<option>10:30 PM</option>
+					</select>
+					</div>
+		</div>
+				<div class="row">
+				 <div class="col-md-4 form-group">
+					<label for="wednesday_time">Wednesday Availability From:</label>
+					<select name="wednesday_time" id = "wednesday_time" class="form-control" required>
+						<option>6:00 AM</option>
+						<option>6:30 AM</option>
+						<option>7:00 AM</option>
+						<option>7:30 AM</option>
+						<option>8:00 AM</option>
+						<option>8:30 AM</option>
+						<option>9:00 AM</option>
+						<option>9:30 AM</option>
+						<option>10:00 AM</option>
+						<option>10:30 AM</option>
+						<option>11:00 AM</option>
+						<option>11:30 AM</option>
+						<option>12:00 PM</option>
+						<option>12:30 PM</option>
+						<option>1:00 PM</option>
+						<option>1:30 PM</option>
+						<option>2:00 PM</option>
+						<option>2:30 PM</option>
+						<option>3:00 PM</option>
+						<option>3:30 PM</option>
+						<option>4:00 PM</option>
+						<option>4:30 PM</option>
+						<option>5:00 PM</option>
+						<option>5:30 PM</option>
+						<option>6:00 PM</option>
+						<option>6:30 PM</option>
+						<option>7:00 PM</option>
+						<option>7:30 PM</option>
+						<option>8:00 PM</option>
+						<option>8:30 PM</option>
+						<option>9:00 PM</option>
+						<option>9:30 PM</option>
+						<option>10:00 PM</option>
+						<option>10:30 PM</option>
+					</select>
+				</div>
+			
+				 <div class="col-md-4 form-group">
+				 	<label for="wednesday_time">To:</label>
+					<select name="wednesday_end" id = "wednesday_end" class="form-control" required>
+						<option>6:00 AM</option>
+						<option>6:30 AM</option>
+						<option>7:00 AM</option>
+						<option>7:30 AM</option>
+						<option>8:00 AM</option>
+						<option>8:30 AM</option>
+						<option>9:00 AM</option>
+						<option>9:30 AM</option>
+						<option>10:00 AM</option>
+						<option>10:30 AM</option>
+						<option>11:00 AM</option>
+						<option>11:30 AM</option>
+						<option>12:00 PM</option>
+						<option>12:30 PM</option>
+						<option>1:00 PM</option>
+						<option>1:30 PM</option>
+						<option>2:00 PM</option>
+						<option>2:30 PM</option>
+						<option>3:00 PM</option>
+						<option>3:30 PM</option>
+						<option>4:00 PM</option>
+						<option>4:30 PM</option>
+						<option>5:00 PM</option>
+						<option>5:30 PM</option>
+						<option>6:00 PM</option>
+						<option>6:30 PM</option>
+						<option>7:00 PM</option>
+						<option>7:30 PM</option>
+						<option>8:00 PM</option>
+						<option>8:30 PM</option>
+						<option>9:00 PM</option>
+						<option>9:30 PM</option>
+						<option>10:00 PM</option>
+						<option>10:30 PM</option>
+					</select>
+					</div>
+		</div>
+				<div class="row">
+				 <div class="col-md-4 form-group">
+					<label for="thursday_time">Thursday Availability From:</label>
+					<select name="thursday_time" id = "thursday_time" class="form-control" required>
+						<option>6:00 AM</option>
+						<option>6:30 AM</option>
+						<option>7:00 AM</option>
+						<option>7:30 AM</option>
+						<option>8:00 AM</option>
+						<option>8:30 AM</option>
+						<option>9:00 AM</option>
+						<option>9:30 AM</option>
+						<option>10:00 AM</option>
+						<option>10:30 AM</option>
+						<option>11:00 AM</option>
+						<option>11:30 AM</option>
+						<option>12:00 PM</option>
+						<option>12:30 PM</option>
+						<option>1:00 PM</option>
+						<option>1:30 PM</option>
+						<option>2:00 PM</option>
+						<option>2:30 PM</option>
+						<option>3:00 PM</option>
+						<option>3:30 PM</option>
+						<option>4:00 PM</option>
+						<option>4:30 PM</option>
+						<option>5:00 PM</option>
+						<option>5:30 PM</option>
+						<option>6:00 PM</option>
+						<option>6:30 PM</option>
+						<option>7:00 PM</option>
+						<option>7:30 PM</option>
+						<option>8:00 PM</option>
+						<option>8:30 PM</option>
+						<option>9:00 PM</option>
+						<option>9:30 PM</option>
+						<option>10:00 PM</option>
+						<option>10:30 PM</option>
+					</select>
+				</div>
+			
+				 <div class="col-md-4 form-group">
+				 	<label for="thursday_time">To:</label>
+					<select name="thursday_end" id = "thursday_end" class="form-control" required>
+						<option>6:00 AM</option>
+						<option>6:30 AM</option>
+						<option>7:00 AM</option>
+						<option>7:30 AM</option>
+						<option>8:00 AM</option>
+						<option>8:30 AM</option>
+						<option>9:00 AM</option>
+						<option>9:30 AM</option>
+						<option>10:00 AM</option>
+						<option>10:30 AM</option>
+						<option>11:00 AM</option>
+						<option>11:30 AM</option>
+						<option>12:00 PM</option>
+						<option>12:30 PM</option>
+						<option>1:00 PM</option>
+						<option>1:30 PM</option>
+						<option>2:00 PM</option>
+						<option>2:30 PM</option>
+						<option>3:00 PM</option>
+						<option>3:30 PM</option>
+						<option>4:00 PM</option>
+						<option>4:30 PM</option>
+						<option>5:00 PM</option>
+						<option>5:30 PM</option>
+						<option>6:00 PM</option>
+						<option>6:30 PM</option>
+						<option>7:00 PM</option>
+						<option>7:30 PM</option>
+						<option>8:00 PM</option>
+						<option>8:30 PM</option>
+						<option>9:00 PM</option>
+						<option>9:30 PM</option>
+						<option>10:00 PM</option>
+						<option>10:30 PM</option>
+					</select>
+					</div>
+		</div>
+				<div class="row">
+				 <div class="col-md-4 form-group">
+					<label for="friday_time">Friday Availability From:</label>
+					<select name="friday_time" id = "friday_time" class="form-control" required>
+						<option>6:00 AM</option>
+						<option>6:30 AM</option>
+						<option>7:00 AM</option>
+						<option>7:30 AM</option>
+						<option>8:00 AM</option>
+						<option>8:30 AM</option>
+						<option>9:00 AM</option>
+						<option>9:30 AM</option>
+						<option>10:00 AM</option>
+						<option>10:30 AM</option>
+						<option>11:00 AM</option>
+						<option>11:30 AM</option>
+						<option>12:00 PM</option>
+						<option>12:30 PM</option>
+						<option>1:00 PM</option>
+						<option>1:30 PM</option>
+						<option>2:00 PM</option>
+						<option>2:30 PM</option>
+						<option>3:00 PM</option>
+						<option>3:30 PM</option>
+						<option>4:00 PM</option>
+						<option>4:30 PM</option>
+						<option>5:00 PM</option>
+						<option>5:30 PM</option>
+						<option>6:00 PM</option>
+						<option>6:30 PM</option>
+						<option>7:00 PM</option>
+						<option>7:30 PM</option>
+						<option>8:00 PM</option>
+						<option>8:30 PM</option>
+						<option>9:00 PM</option>
+						<option>9:30 PM</option>
+						<option>10:00 PM</option>
+						<option>10:30 PM</option>
+					</select>
+				</div>
+			
+				 <div class="col-md-4 form-group">
+				 	<label for="friday_time">To:</label>
+					<select name="friday_end" id = "friday_end" class="form-control" required>
+						<option>6:00 AM</option>
+						<option>6:30 AM</option>
+						<option>7:00 AM</option>
+						<option>7:30 AM</option>
+						<option>8:00 AM</option>
+						<option>8:30 AM</option>
+						<option>9:00 AM</option>
+						<option>9:30 AM</option>
+						<option>10:00 AM</option>
+						<option>10:30 AM</option>
+						<option>11:00 AM</option>
+						<option>11:30 AM</option>
+						<option>12:00 PM</option>
+						<option>12:30 PM</option>
+						<option>1:00 PM</option>
+						<option>1:30 PM</option>
+						<option>2:00 PM</option>
+						<option>2:30 PM</option>
+						<option>3:00 PM</option>
+						<option>3:30 PM</option>
+						<option>4:00 PM</option>
+						<option>4:30 PM</option>
+						<option>5:00 PM</option>
+						<option>5:30 PM</option>
+						<option>6:00 PM</option>
+						<option>6:30 PM</option>
+						<option>7:00 PM</option>
+						<option>7:30 PM</option>
+						<option>8:00 PM</option>
+						<option>8:30 PM</option>
+						<option>9:00 PM</option>
+						<option>9:30 PM</option>
+						<option>10:00 PM</option>
+						<option>10:30 PM</option>
+					</select>
+					</div>
+		</div>
+				<div class="row">
+				 <div class="col-md-4 form-group">
+					<label for="satsun_time">Sat/Sun Availability From:</label>
+					<select name="satsun_time" id = "satsun_time" class="form-control" required>
+						<option>6:00 AM</option>
+						<option>6:30 AM</option>
+						<option>7:00 AM</option>
+						<option>7:30 AM</option>
+						<option>8:00 AM</option>
+						<option>8:30 AM</option>
+						<option>9:00 AM</option>
+						<option>9:30 AM</option>
+						<option>10:00 AM</option>
+						<option>10:30 AM</option>
+						<option>11:00 AM</option>
+						<option>11:30 AM</option>
+						<option>12:00 PM</option>
+						<option>12:30 PM</option>
+						<option>1:00 PM</option>
+						<option>1:30 PM</option>
+						<option>2:00 PM</option>
+						<option>2:30 PM</option>
+						<option>3:00 PM</option>
+						<option>3:30 PM</option>
+						<option>4:00 PM</option>
+						<option>4:30 PM</option>
+						<option>5:00 PM</option>
+						<option>5:30 PM</option>
+						<option>6:00 PM</option>
+						<option>6:30 PM</option>
+						<option>7:00 PM</option>
+						<option>7:30 PM</option>
+						<option>8:00 PM</option>
+						<option>8:30 PM</option>
+						<option>9:00 PM</option>
+						<option>9:30 PM</option>
+						<option>10:00 PM</option>
+						<option>10:30 PM</option>
+					</select>
+				</div>
+			
+				 <div class="col-md-4 form-group">
+				 	<label for="satsun_time">To:</label>
+					<select name="satsun_end" id = "satsun_end" class="form-control" required>
+						<option>6:00 AM</option>
+						<option>6:30 AM</option>
+						<option>7:00 AM</option>
+						<option>7:30 AM</option>
+						<option>8:00 AM</option>
+						<option>8:30 AM</option>
+						<option>9:00 AM</option>
+						<option>9:30 AM</option>
+						<option>10:00 AM</option>
+						<option>10:30 AM</option>
+						<option>11:00 AM</option>
+						<option>11:30 AM</option>
+						<option>12:00 PM</option>
+						<option>12:30 PM</option>
+						<option>1:00 PM</option>
+						<option>1:30 PM</option>
+						<option>2:00 PM</option>
+						<option>2:30 PM</option>
+						<option>3:00 PM</option>
+						<option>3:30 PM</option>
+						<option>4:00 PM</option>
+						<option>4:30 PM</option>
+						<option>5:00 PM</option>
+						<option>5:30 PM</option>
+						<option>6:00 PM</option>
+						<option>6:30 PM</option>
+						<option>7:00 PM</option>
+						<option>7:30 PM</option>
+						<option>8:00 PM</option>
+						<option>8:30 PM</option>
+						<option>9:00 PM</option>
+						<option>9:30 PM</option>
+						<option>10:00 PM</option>
+						<option>10:30 PM</option>
+					</select>
+					</div>
 		</div>
 		<!-- Row for first and last name -->
 		<h3 align="left"><b>Emergency Contact Person</b></h3>
@@ -392,7 +830,7 @@ p {
 		<div class= "row">
 			<div class="col-md-6 form-group">
 				<label for="initial_four">Signature:  </label>
-				<input type="text" class="form-control" name="initial_four" id="initial_four" placeholder="Initial here"required>
+				<input type="text" class="form-control" name="initial_four" id="initial_four" placeholder="Signature"required>
 			</div>
 		</div>
 			
@@ -485,7 +923,7 @@ p {
 			
 		
 		<br />
-		<button class = "btn btn-sm btn-primary btn-block" type = "submit"  name = "sub"  >Continue</button>
+		<button class = "btn btn-sm btn-primary btn-block" type = "submit"  name = "sub"  >Submit Application</button>
 		</div>
 			</div>
 	
