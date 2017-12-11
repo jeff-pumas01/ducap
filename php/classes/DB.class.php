@@ -376,7 +376,7 @@ mysql_select_db("cs440team2", $link);
 	 *	@param {int}		id		Site's unique ID
 	 *	@return {bool}				Success
 	 */
-	function deleteSite($id) {
+	function deleteSite($id,$uStr) {
 		$cn = $this->connect();
 		
 		// Delete related rows in other tables (Events, Participants).
@@ -390,6 +390,8 @@ mysql_select_db("cs440team2", $link);
 		$sql_query = "DELETE FROM Sites WHERE site_id = $id";
 		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not delete site!");
 		
+		$deletePermissionsQuery = 'UPDATE Users SET Site = replace(Site, "-' . $id .'","") WHERE admin_id = "' . $uStr . '"';
+		mysqli_query($cn,$deletePermissionsQuery);
 		if ($result)
 			echo "The site was successfully deleted.";
 		

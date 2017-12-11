@@ -10,7 +10,7 @@
 	// Connect to database.
 	$db = new DB();
 	$sID = $_POST['site_id'];
-	
+	$uStr = $_SESSION['user_name'];
 	
 	
 ?>
@@ -30,7 +30,7 @@
 <div class="container volunteer">
 
 	<?php
-		$db->{'deleteSite'}($sID);
+		$db->{'deleteSite'}($sID,$uStr);
 	?>
 	<br /><br /><a href='admin_cp.php'>Back</a>
 </div> 
