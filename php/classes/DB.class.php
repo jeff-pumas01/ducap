@@ -1707,7 +1707,8 @@ mysql_select_db("cs440team2", $link);
 			"ec_name"=>"Emergency Contact Name","ec_relationship"=>"Emergency Contact Relation", "ec_address"=>"Emergency Contact Address","ec_apart_num"=>"Emergency Contact Apartment", "ec_zipcode"=>"Emergency Contact Zip Code", "ec_state"=>"Emergency Contact State", "ec_city"=>"Emergency Contact City","ec_workphone"=>"Emergency Contact Work", "ec_homephone"=>"Emergency Contact Number", "ec_mobilephone"=>"Emergency Contact Cell",
 			"initial_one"=>"1", "initial_two"=>"2", "initial_three"=>"3", "initial_four"=>"4",
 			"auth_full_name"=>"Signature", "auth_ssn"=>"Social Security Num.","auth_state"=>"Driver License State","auth_birthdate"=>"Date of Birth", "auth_license"=>"Driver License Number",
-			 "monday_end"=>"Monday","tuesday_end"=>"Tuesday", "wednesday_end"=>"Wednesday", "thursday_end"=>"Thursday", "friday_end"=>"Friday", "satsun_end"=>"Saturday/Sunday");
+			"monday_end"=>"Monday","tuesday_end"=>"Tuesday", "wednesday_end"=>"Wednesday", "thursday_end"=>"Thursday", "friday_end"=>"Friday", "satsun_end"=>"Saturday/Sunday" ,
+			"totalHours"=>"Time");
 		// Arrays used for processing.
 		$blank_array = array();	// Holds the name of any blank fields.
 		$bad_format = array();	// Holds the name of any unacceptable fields.
@@ -1762,7 +1763,7 @@ mysql_select_db("cs440team2", $link);
 				$good_data[$field] = strip_tags(trim($data[$field]));
 				
 				// Removes special Characters from phone numbers and apt numbers.
-				if (($field == "ec_homephone") ||($field == "homephone")||($field == "workphone")||($field == "ec_workphone") ||($field == "mobilephone")||($field == "ec_mobilephone") ||($field == "apt_number") )
+				if (($field == "ec_homephone") ||($field == "homephone")||($field == "workphone")||($field == "ec_workphone") ||($field == "mobilephone")||($field == "ec_mobilephone") ||($field == "apt_number")||($field == "auth_ssn") )
 				$good_data[$field] = preg_replace("/[)(.-]/", "", $good_data[$field]);
 				
 				$good_data[$field] = $conn->real_escape_string($good_data[$field]);
@@ -1867,6 +1868,7 @@ mysql_select_db("cs440team2", $link);
 	
 	
 	}
+		
 		
 }
 

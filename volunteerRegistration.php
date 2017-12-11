@@ -174,12 +174,25 @@
 		<!--Availability -->
 		<h3 align="left"><b>Hours of Availability</b></h3>
 		
-		
+		<div class = "row">
+			
+			<div class="col-md-4 form-group">
+				<label for="start_date">Date Available to Start (MM/DD/YYYY):</label>
+				<input type="date" class="form-control" id="start_date" name="start_date" required />
+			</div>
+			<div class="col-md-4 form-group">
+				<label for="totalHours">Availability Hours Per Week:</label>
+				<br><br/>
+				<input type="number" class="form-control" id="totalHours" name="totalHours"  required />
+			</div>
+		</div>
 		
 		<div class="row">
 				 <div class="col-md-4 form-group">
 					<label for="monday_time">Monday Availability From:</label>
 					<select name="monday_time" id = "monday_time" class="form-control" required>
+						<option value="" selected disabled hidden>Choose here</option>
+						<option>NOT AVAILABLE</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -220,6 +233,8 @@
 				 <div class="col-md-4 form-group">
 				 	<label for="monday_time">To:</label>
 					<select name="monday_end" id = "monday_end" class="form-control" required>
+						<option value="" selected disabled hidden>Choose here</option>
+					    <option>NOT AVAILABLE</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -257,10 +272,12 @@
 					</select>
 					</div>
 		</div>
-				<div class="row">
+		<div class="row">
 				 <div class="col-md-4 form-group">
 					<label for="tuesday_time">Tuesday Availability From:</label>
 					<select name="tuesday_time" id = "tuesday_time" class="form-control" required>
+						<option value="" selected disabled hidden>Choose here</option>
+						<option>NOT AVAILABLE</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -301,6 +318,8 @@
 				 <div class="col-md-4 form-group">
 				 	<label for="tuesday_time">To:</label>
 					<select name="tuesday_end" id = "tuesday_end" class="form-control" required>
+						<option value="" selected disabled hidden>Choose here</option>
+						<option>NOT AVAILABLE</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -342,6 +361,8 @@
 				 <div class="col-md-4 form-group">
 					<label for="wednesday_time">Wednesday Availability From:</label>
 					<select name="wednesday_time" id = "wednesday_time" class="form-control" required>
+						<option value="" selected disabled hidden>Choose here</option>
+						<option>NOT AVAILABLE</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -382,6 +403,8 @@
 				 <div class="col-md-4 form-group">
 				 	<label for="wednesday_time">To:</label>
 					<select name="wednesday_end" id = "wednesday_end" class="form-control" required>
+						<option value="" selected disabled hidden>Choose here</option>
+						<option>NOT AVAILABLE</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -423,6 +446,8 @@
 				 <div class="col-md-4 form-group">
 					<label for="thursday_time">Thursday Availability From:</label>
 					<select name="thursday_time" id = "thursday_time" class="form-control" required>
+						<option value="" selected disabled hidden>Choose here</option>
+						<option>NOT AVAILABLE</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -463,6 +488,8 @@
 				 <div class="col-md-4 form-group">
 				 	<label for="thursday_time">To:</label>
 					<select name="thursday_end" id = "thursday_end" class="form-control" required>
+						<option value="" selected disabled hidden>Choose here</option>
+						<option>NOT AVAILABLE</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -504,6 +531,8 @@
 				 <div class="col-md-4 form-group">
 					<label for="friday_time">Friday Availability From:</label>
 					<select name="friday_time" id = "friday_time" class="form-control" required>
+						<option value="" selected disabled hidden>Choose here</option>
+						<option>NOT AVAILABLE</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -544,6 +573,8 @@
 				 <div class="col-md-4 form-group">
 				 	<label for="friday_time">To:</label>
 					<select name="friday_end" id = "friday_end" class="form-control" required>
+						<option value="" selected disabled hidden>Choose here</option>
+						<option>NOT AVAILABLE</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -585,6 +616,8 @@
 				 <div class="col-md-4 form-group">
 					<label for="satsun_time">Sat/Sun Availability From:</label>
 					<select name="satsun_time" id = "satsun_time" class="form-control" required>
+						<option value="" selected disabled hidden>Choose here</option>
+						<option>NOT AVAILABLE</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -625,6 +658,8 @@
 				 <div class="col-md-4 form-group">
 				 	<label for="satsun_time">To:</label>
 					<select name="satsun_end" id = "satsun_end" class="form-control" required>
+						<option value="" selected disabled hidden>Choose here</option>
+						<option>NOT AVAILABLE</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -829,15 +864,15 @@
 			
 		<div class= "row">
 			<div class="col-md-6 form-group">
-				<label for="initial_four">Signature:  </label>
-				<input type="text" class="form-control" name="initial_four" id="initial_four" placeholder="Signature"required>
+				<label for="initial_four">Initials:  </label>
+				<input type="text" class="form-control" name="initial_four" id="initial_four" placeholder="Initial Here"required>
 			</div>
 		</div>
 			
 			
 			
 		<!-- Photography Release  -->
-		<h3 align="left"><b>Authorization</b></h3>	
+		<h3 align="left"><b>Identification Authorization</b></h3>	
 		<div class="row">
 			<div class="col-md-6 form-group">
 				<label for="auth_full_name">Full Name</label>
@@ -858,7 +893,8 @@
 			</div>
 			
 			<div class="col-md-4 form-group">
-				<label for="auth_license">Driver's License Number:</label>
+				<label for="auth_license">Driver's License Number:
+				</label>
 				<input type="text" class="form-control" id="auth_license" name="auth_license" required>
 			</div>
 			

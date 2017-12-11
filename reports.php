@@ -23,7 +23,7 @@
 $link = mysql_connect("localhost", "anthonymatsas", "cs440-2901");
 mysql_select_db("cs440team2", $link);
 
-$result = mysql_query("SELECT * FROM VolunteerApplicationNEW", $link);
+$result = mysql_query("SELECT * FROM Volunteer_Registration", $link);
 $num_rows = mysql_num_rows($result);
 
 
@@ -60,7 +60,7 @@ $num_rows = mysql_num_rows($result);
 		   <tr>
 		     <td width="347">Total Number of Active Volunteers this Month (new & old combined)</td>
 		     <td width="179"><?php
-$query = mysql_query("select count(*) as total from VolunteerApplicationNEW");
+$query = mysql_query("select count(*) as total from Volunteer_Registration");
 $result = mysql_fetch_array($query);
 echo $result['total'];
 ?></td>
@@ -68,14 +68,14 @@ echo $result['total'];
 		   <tr>
 		     <td>Number of New Volunteers Active this Month</td>
 		     		     <td><?php
-$query = mysql_query("select count(*) as total from VolunteerApplicationNEW");
+$query = mysql_query("select count(*) as total from Volunteer_Registration");
 $result = mysql_fetch_array($query);
 echo $result['total'];
 ?></td>
 	       </tr>
            		     <td>Total Number of Volunteers hours this month</td>
 		     <td><?php
-$query = mysql_query("select sum(totalHours) as grandHours from VolunteerApplicationNEW");
+$query = mysql_query("select sum(totalHours) as grandHours from Volunteer_Registration");
 $result = mysql_fetch_array($query);
 echo $result['grandHours'];
 ?></td>
