@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Manage Participants</title>
+	<title>Manage Volunteers</title>
 </head>
 
 <body>
@@ -36,20 +36,46 @@
 	<br/>
 </div> 
 
-<!-- Form to update a Volunteer. -->
+<!-- Print Volunteer Info. -->
 <iframe src='printVolunteer.php' frameborder='0' width='100%' height='500' allowtransparency='true' align="middle"></iframe>
-<!-- <iframe src='VolunteerApplication.php?sfm_adminpage=disp' frameborder='0' width='100%' height='500' allowtransparency='true' align="middle"></iframe>-->
+<br />
+<br />
+<!-- Form to remove a Participant. -->
+<form action = "deleteVolunteer.php" method = "POST">
+	<div class = "container volunteer">
 
-<!-- Delete a Volunteer. -->
-<iframe src='deleteVolunteer.php' frameborder='0' width='100%' height='700' allowtransparency='true' align="middle"></iframe>
+		<h3><b>Remove a Volunteer</b></h3>
+		
+		<p>Select a volunteer to remove:</p>
+		
+		<div class="row">
+			
+			<div class="col-md-8 form-group">
+				
+				<?php
+					// Get a select list of participant names.
+					echo $db->{'getVolunteerSelect'}();
+				?>
+				
+			</div>
+		</div>
+		
+		<br />
+		<button class = "btn btn-sm btn-primary btn-block" type = "submit"  name = "submission"  >Remove Volunteer</button>
+		</div>
+	
+	</div>
+</form>	
 
 
-</body>
+
 <?php
 
-//Include footer html
-include('php/footer.php');
+	// Include footer html.
+	include('php/footer.php');
 
 ?>
+
+</body>
 </html>
 		

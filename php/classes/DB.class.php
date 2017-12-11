@@ -399,6 +399,20 @@ mysql_select_db("cs440team2", $link);
 		
 		return $result;
 	}
+		function deleteVolunteer($id) {
+		$cn = $this->connect();
+		
+		// Delete related rows in other tables (Guardianship, Attendance).
+		$sql_query = "delete from Volunteer_Registration where ID=$id";
+		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not delete volunteer record!");
+		
+		if ($result)
+			echo "The volunteer was successfully deleted.";
+		
+		$cn->close();
+		
+		return $result;
+	}
 
 	
 	/**
@@ -813,6 +827,26 @@ mysql_select_db("cs440team2", $link);
 		//echo " -- NO MATCHES<br />";
 		return -1;
 	}
+		function getVolunteerSelect() {
+		$cn = $this->connect();
+		$sql_query = "SELECT ID, last_name, first_name FROM Volunteer_Registration ORDER BY last_name";
+		
+		$result = $cn->query($sql_query);
+		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not fetch volunteer data!");
+		$cn->close();
+		
+		$out = "<select name='ID'>";
+		while ($row = mysqli_fetch_assoc($result)) {
+			extract($row);
+			$out .= "<option name='$ID' value='$ID'>$last_name, $first_name</option>";
+		}
+		
+		$out .= "</select>";
+		
+		return $out;
+	}
+	
+	
 
 	/**
 	 *	Log in an Administrator or Volunteer.

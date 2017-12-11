@@ -1,83 +1,120 @@
+<html>
+<head>
+	<title> Ducap Sites</title>
+	<link rel="stylesheet" type="text/css" href="css/sites-eventspage.css"/>
+
+</head>
+
+<body>
+
+
 <?php
 
 	/**
-	 *	This program allows the user to add a new site,
-	 *	choose a site to update, or remove a site.
+	 *	This program allows the user to print the 
+	 *	sites , address and upcoming events.
 	 */
 	 
 	session_start();
 	
-	//If user not logged in, redirect.
-	if(!isset($_SESSION['user_name'])) {
-		header("Location: login.php");
-	} 
+
 	
 	 
 	include('php/classes/DB.class.php');
 
 
 	// Connect to database.
-	$db = new DB();
+	$db1 = new DB();
+	
+	$db_name = "cs440team2";
+	$db_user = "anthonymatsas";
+	$db_pass = "cs440-2901";
+	$db_host = "localhost";
+	
+	$db = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+    if (!$db) {
+            print "Error - Could not connect to MySQL";
+            exit;
+    }
 	
 	
 ?>
-<html>
-<head>
-<link href="css/style.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-<div class="maindiv">
-<div class="divA">
-<div class="title">
-<h2>Print Volunteer List</h2>
-</div>
-<div class="divB">
-<div class="divD">
-<p>Select Below</p>
-<?php
-$connection = mysql_connect("localhost", "anthonymatsas", "cs440-2901"); // Eastablishing Connection With Server.
-$db = mysql_select_db("cs440team2", $connection); // Selecting Database From Server.
-if (isset($_GET['del'])) {
-$del = $_GET['del'];
-//SQL query for deletion.
-$query1 = mysql_query("SELECT Volunteer_Registration.ID,
-                   Volunteer_Registration.first_name,
-                   Volunteer_Registration.last_name
-              FROM MYTABLE Volunteer_Registration
-             WHERE Volunteer_Registration.ID = mysql_real_escape_string(del)", $connection);
-}
-$query = mysql_query("select * from Volunteer_Registration", $connection); // SQL query to fetch data to display in menu.
-while ($row = mysql_fetch_array($query)) {
-echo "<b><a href=\"printVolunteer.php?id={$row['ID']}\">{$row['first_name']} {$row['last_name']} ID: {$row['ID']}</a></b>";
-echo "<br />";
-}
-?>
-</div><?php
-if (isset($_GET['id'])) {
-$id = $_GET['id'];
-// SQL query to Display Details.
-$query1 = mysql_query("select * from Volunteer_Registration where ID=$id", $connection);
-while ($row1 = mysql_fetch_array($query1)) {
-?>
-<form class="form">
-<h2>---Details---</h2>
-<br><span>ID:</span> <?php echo $row1['ID']; ?>
-<br><span>First Name:</span> <?php echo $row1['first_name']; ?>
-<br><span>Last Name:</span> <?php echo $row1['last_name']; ?>
-<br><span>Address:</span> <?php echo $row1['address']; ?>
-<br><span>Phone:</span> <?php echo $row1['homephone']; ?>
-<br><span>E-mail:</span> <?php echo $row1['email']; ?>
-<?php echo "<b><a href=\"deleteVolunteer.php?del={$row1['ID']}\">
-<br><input type=\"button\" class=\"submit\" value=\"Delete\"/></a></b>"; ?>
-</form><?php
-}
-}
-// Closing Connection with Server.
-mysql_close($connection);
-?>
-<div class="clear"></div>
-</div>
-<div class="clear"></div>
-</div>
+
+<!-- Volunteer Table Information -->
+<div class = "container header">
+	<h3><center>Volunteer General Information<center></h3>
+	<br/>
+	<?php
+		$query = "SELECT * FROM Volunteer_Registration";
+    	$result = mysqli_query($db, $query) or die ("Error: Could load volunteer data!");
+    
+    	echo "<table>";
+    	echo "<tr><th>ID #</th><th>First Name</th><th>Last Name</th><th>Address</th><th>Apt #</th><th>State</th><th>City</th><th>Zip</th><th>Home #</th><th>Work #</th><th>Cell #</th><th>Email</th><th>Birthdate</th>";
+		while($row = mysqli_fetch_assoc($result)) {
+			echo "<tr><td>" . $row['ID'] . "</td><td>" . $row['first_name'] . "</td><td>" . $row['last_name'] . "</td><td>" . $row['address'] . "</td><td>" . $row['apt_number'] . "</td><td>" . $row['state'] . "</td><td>" . $row['city'] . "</td><td>" . $row['zipcode'] . "</td><td>" . $row['homephone'] . "</td><td>" . $row['workphone'] . "</td><td>" . $row['mobilephone'] . "</td><td>" . $row['email'] . "</td><td>" . $row['birthdate'] . "</td></tr>" ;
+		}
+		echo "</table>";
+	?>
+</div> 
+
+<div class = "container header">
+	<h3><center>Area of Interest & Availability<center></h3>
+	<br/>
+	<?php
+		$query = "SELECT * FROM Volunteer_Registration";
+    	$result = mysqli_query($db, $query) or die ("Error: Could load volunteer data!");
+    
+    	echo "<table>";
+    	echo "<tr><th>Volunteer</th><th>Area of Interest</th><th>Other</th><th>Hours Per Week</th><th>Start Date</th><th>Monday</th><th>To</th><th>Tuesday</th><th>To</th><th>Wednesday</th><th>To</th><th>Thursday</th><th>To</th><th>Friday</th><th>To</th><th>Sat/Sun</th><th>To</th>";
+		while($row = mysqli_fetch_assoc($result)) {
+			echo "<tr><td>" . $row['auth_full_name'] . "</td><td>" . $row['area_of_interest'] . "</td><td>" . $row['other_interest'] . "</td><td>" . $row['totalHours'] . "</td><td>". $row['start_date'] . "</td><td>" . $row['monday_time'] . "</td><td>" . $row['monday_end'] . "</td><td>" . $row['tuesday_time'] . "</td><td>" . $row['tuesday_end'] . "</td><td>" . $row['wednesday_time'] . "</td><td>" . $row['wednesday_end'] . "</td><td>" . $row['thursday_time'] . "</td><td>" 
+			. $row['thursday_end'] . "</td><td>" . $row['friday_time'] . "</td><td>" . $row['friday_end'] . "</td><td>" . $row['satsun_time'] . "</td><td>" . $row['satsun_end'] . "</td></tr>" ;
+		}
+		echo "</table>";
+	?>
+</div> 
+
+
+<div class = "container header">
+	<h3><center>Emergency Contact Information<center></h3>
+	<br/>
+	<?php
+		$query = "SELECT * FROM Volunteer_Registration";
+    	$result = mysqli_query($db, $query) or die ("Error: Could load volunteer data!");
+    
+    	echo "<table>";
+    	echo "<tr><th>Volunteer</th><th>Emergency Contact</th><th>Relationship</th><th>Address</th><th>Apt #</th><th>State</th><th>City</th><th>Zip</th><th>Home #</th><th>Work #</th><th>Cell #</th>";
+		while($row = mysqli_fetch_assoc($result)) {
+			echo "<tr><td>" . $row['auth_full_name'] . "</td><td>" . $row['ec_name'] . "</td><td>" . $row['ec_relationship'] . "</td><td>" . $row['ec_address'] . "</td><td>" . $row['ec_apart_num'] . "</td><td>" . $row['ec_city'] . "</td><td>" . $row['ec_state'] . "</td><td>" . $row['ec_zipcode'] . "</td><td>" . $row['ec_homephone'] . "</td><td>" . $row['ec_workphone'] . "</td><td>" . $row['ec_mobilephone'] . "</td></tr>" ;
+		}
+		echo "</table>";
+	?>
+</div> 
+
+<div class = "container header">
+	<h3><center>Identification Authorization<center></h3>
+	<br/>
+	<?php
+		$query = "SELECT * FROM Volunteer_Registration";
+    	$result = mysqli_query($db, $query) or die ("Error: Could load volunteer data!");
+    
+    	echo "<table>";
+    	echo "<tr><th>Full Name</th><th>SSN</th><th>Birthdate</th><th>Licence</th><th>State</th>";
+		while($row = mysqli_fetch_assoc($result)) {
+			echo "<tr><td>" . $row['auth_full_name'] . "</td><td>" . $row['auth_ssn'] . "</td><td>" . $row['auth_birthdate'] . "</td><td>" . $row['auth_license'] . "</td><td>" . $row['auth_state'] . "</td></tr>" ;
+		}
+		echo "</table>";
+	?>
+</div> 
+
+
+
+
+<a href title = "print screen" "alt=" "print screen" onclick = "window.print();"
+"target="_blank" style ="cursor:pointer;"><b><center>Print Volunteer Tables<center><b></a>
+
+
+
+
 </body>
 </html>
