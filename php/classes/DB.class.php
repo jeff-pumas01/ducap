@@ -866,7 +866,26 @@ mysql_select_db("cs440team2", $link);
 		return $userPermissions;
 	}
 	
-	
+	/**
+	 *	gets users.
+	 *
+	 */
+	function getUsers() {	
+		$out = "<select name='site_id' >";
+		$cn = $this->connect();
+		//Clean input
+		$uStr = $cn->real_escape_string($uStr);
+		$admin_sql = "SELECT admin_id, name FROM Users";
+		$Users_result = $cn->query($admin_sql);
+		while($Row = $Users_result->fetch_assoc()){
+			extract($Row);
+			$out .= "<option username='$admin_id' name='$name'>$admin_id, $name</option>";
+		}
+		$out .= "</select>";
+		$cn->close();
+		return $out;
+		
+	}
 	
 	/**
 	*

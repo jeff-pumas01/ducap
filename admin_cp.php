@@ -30,6 +30,9 @@
 		<a href='manageEvents.php'>Manage Events</a><br /><br />
 		<a href='manageParticipants.php'>Manage Participants</a><br /><br />
 		<a href='manageVolunteers.php'>Manage Volunteers</a><br /><br />
+		<?php if($_SESSION['user_name'] == 'root'){ ?>		
+			<a href='adminPermissions.php'>Permissions</a><br /><br />
+		<?php } ?>
 	</div>
 
 </div>
