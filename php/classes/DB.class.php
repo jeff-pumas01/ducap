@@ -399,16 +399,11 @@ mysql_select_db("cs440team2", $link);
 		
 		return $result;
 	}
-<<<<<<< HEAD
-	
 	
 	
 	
 	
 	function deleteVolunteer($id) {
-=======
-		function deleteVolunteer($id) {
->>>>>>> ac9e3e4c9ae10b84ef50691cf1afd3a7efd52f23
 		$cn = $this->connect();
 		
 		// Delete related rows in other tables (Guardianship, Attendance).
@@ -836,11 +831,7 @@ mysql_select_db("cs440team2", $link);
 		//echo " -- NO MATCHES<br />";
 		return -1;
 	}
-<<<<<<< HEAD
 	function getVolunteerSelect() {
-=======
-		function getVolunteerSelect() {
->>>>>>> ac9e3e4c9ae10b84ef50691cf1afd3a7efd52f23
 		$cn = $this->connect();
 		$sql_query = "SELECT ID, last_name, first_name FROM Volunteer_Registration ORDER BY last_name";
 		
@@ -858,12 +849,8 @@ mysql_select_db("cs440team2", $link);
 		
 		return $out;
 	}
-<<<<<<< HEAD
-=======
 	
 	
->>>>>>> ac9e3e4c9ae10b84ef50691cf1afd3a7efd52f23
-
 	/**
 	 *	Log in an Administrator or Volunteer.
 	 *	@param {string}		uStr	User name
