@@ -192,7 +192,7 @@
 					<label for="monday_time">Monday Availability From:</label>
 					<select name="monday_time" id = "monday_time" class="form-control" required>
 						<option value="" selected disabled hidden>Choose here</option>
-						<option>NOT AVAILABLE</option>
+						<option>N/A</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -234,7 +234,7 @@
 				 	<label for="monday_time">To:</label>
 					<select name="monday_end" id = "monday_end" class="form-control" required>
 						<option value="" selected disabled hidden>Choose here</option>
-					    <option>NOT AVAILABLE</option>
+					    <option>N/A</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -277,7 +277,7 @@
 					<label for="tuesday_time">Tuesday Availability From:</label>
 					<select name="tuesday_time" id = "tuesday_time" class="form-control" required>
 						<option value="" selected disabled hidden>Choose here</option>
-						<option>NOT AVAILABLE</option>
+						<option>N/A</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -319,7 +319,7 @@
 				 	<label for="tuesday_time">To:</label>
 					<select name="tuesday_end" id = "tuesday_end" class="form-control" required>
 						<option value="" selected disabled hidden>Choose here</option>
-						<option>NOT AVAILABLE</option>
+						<option>N/A</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -362,7 +362,7 @@
 					<label for="wednesday_time">Wednesday Availability From:</label>
 					<select name="wednesday_time" id = "wednesday_time" class="form-control" required>
 						<option value="" selected disabled hidden>Choose here</option>
-						<option>NOT AVAILABLE</option>
+						<option>N/A</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -404,7 +404,7 @@
 				 	<label for="wednesday_time">To:</label>
 					<select name="wednesday_end" id = "wednesday_end" class="form-control" required>
 						<option value="" selected disabled hidden>Choose here</option>
-						<option>NOT AVAILABLE</option>
+						<option>N/A</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -447,7 +447,7 @@
 					<label for="thursday_time">Thursday Availability From:</label>
 					<select name="thursday_time" id = "thursday_time" class="form-control" required>
 						<option value="" selected disabled hidden>Choose here</option>
-						<option>NOT AVAILABLE</option>
+						<option>N/A</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -489,7 +489,7 @@
 				 	<label for="thursday_time">To:</label>
 					<select name="thursday_end" id = "thursday_end" class="form-control" required>
 						<option value="" selected disabled hidden>Choose here</option>
-						<option>NOT AVAILABLE</option>
+						<option>N/A</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -532,7 +532,7 @@
 					<label for="friday_time">Friday Availability From:</label>
 					<select name="friday_time" id = "friday_time" class="form-control" required>
 						<option value="" selected disabled hidden>Choose here</option>
-						<option>NOT AVAILABLE</option>
+						<option>N/A</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -574,7 +574,7 @@
 				 	<label for="friday_time">To:</label>
 					<select name="friday_end" id = "friday_end" class="form-control" required>
 						<option value="" selected disabled hidden>Choose here</option>
-						<option>NOT AVAILABLE</option>
+						<option>N/A</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -617,7 +617,7 @@
 					<label for="satsun_time">Sat/Sun Availability From:</label>
 					<select name="satsun_time" id = "satsun_time" class="form-control" required>
 						<option value="" selected disabled hidden>Choose here</option>
-						<option>NOT AVAILABLE</option>
+						<option>N/A</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
@@ -659,7 +659,7 @@
 				 	<label for="satsun_time">To:</label>
 					<select name="satsun_end" id = "satsun_end" class="form-control" required>
 						<option value="" selected disabled hidden>Choose here</option>
-						<option>NOT AVAILABLE</option>
+						<option>N/A</option>
 						<option>6:00 AM</option>
 						<option>6:30 AM</option>
 						<option>7:00 AM</option>
