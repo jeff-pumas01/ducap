@@ -399,6 +399,25 @@ mysql_select_db("cs440team2", $link);
 		
 		return $result;
 	}
+	
+	
+	
+	
+	
+	function deleteVolunteer($id) {
+		$cn = $this->connect();
+		
+		// Delete related rows in other tables (Guardianship, Attendance).
+		$sql_query = "delete from Volunteer_Registration where ID=$id";
+		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not delete volunteer record!");
+		
+		if ($result)
+			echo "The volunteer was successfully deleted.";
+		
+		$cn->close();
+		
+		return $result;
+	}
 
 	
 	/**
@@ -748,7 +767,7 @@ mysql_select_db("cs440team2", $link);
 		$out = "<select name='site_id' >";
 		while ($row = mysqli_fetch_assoc($result)) {
 			extract($row);
-			$out .= "<option name='$site_id' id='$site_id' value='$site_id'>$site_name</option>";
+			$out .= "<option id='$site_id' value='$site_id'>$site_name</option>";
 		}
 		$out .= "</select>";
 		
@@ -813,6 +832,24 @@ mysql_select_db("cs440team2", $link);
 		//echo " -- NO MATCHES<br />";
 		return -1;
 	}
+	function getVolunteerSelect() {
+		$cn = $this->connect();
+		$sql_query = "SELECT ID, last_name, first_name FROM Volunteer_Registration ORDER BY last_name";
+		
+		$result = $cn->query($sql_query);
+		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not fetch volunteer data!");
+		$cn->close();
+		
+		$out = "<select name='ID'>";
+		while ($row = mysqli_fetch_assoc($result)) {
+			extract($row);
+			$out .= "<option name='$ID' value='$ID'>$last_name, $first_name</option>";
+		}
+		
+		$out .= "</select>";
+		
+		return $out;
+	}
 
 	/**
 	 *	Log in an Administrator or Volunteer.
@@ -871,16 +908,17 @@ mysql_select_db("cs440team2", $link);
 	 *
 	 */
 	function getUsers() {	
-		$out = "<select name='site_id' >";
 		$cn = $this->connect();
 		//Clean input
 		$uStr = $cn->real_escape_string($uStr);
 		$admin_sql = "SELECT admin_id, name FROM Users";
 		$Users_result = $cn->query($admin_sql);
-		while($Row = $Users_result->fetch_assoc()){
+		$out = "<select name='user_info' >";
+		while($Row = mysqli_fetch_assoc($Users_result)){
 			extract($Row);
 			$out .= "<option username='$admin_id' name='$name'>$admin_id, $name</option>";
 		}
+		
 		$out .= "</select>";
 		$cn->close();
 		return $out;
@@ -893,12 +931,52 @@ mysql_select_db("cs440team2", $link);
 	*
 	*/
 	function addUserPermissions($siteID,$uStr){
-		$siteID = ' ' . $siteID;
-		$cn = $this->connect();
-		$uStr = $cn->real_escape_string($uStr);
-		$admin_sql = "UPDATE Users Set Site = CONCAT(Site,-$siteID) WHERE admin_id = \"$uStr\"";
-		$permission_result = $cn->query($admin_sql);
-		$cn->close();
+		if (!in_array($siteID,$this->getUserPermissions($uStr))){
+			$siteID = ' ' . $siteID;
+			$cn = $this->connect();
+			$uStr = $cn->real_escape_string($uStr);
+			
+			$admin_sql = "UPDATE Users Set Site = CONCAT(Site,-$siteID) WHERE admin_id = \"$uStr\"";
+			$permission_result = $cn->query($admin_sql);
+			$cn->close();
+			if ($permission_result){
+				$out = "Succesfully added permission to " . $uStr. ".";
+			}
+			else{$out = "ERROR: Did not add permission to ". $uStr . ".";}
+		}
+		else{
+			$out = $uStr. " already has permission for that site.";
+			}
+		echo $out;
+		return 0;
+	}
+	
+	/**
+	*
+	* Adds a site permission to a user in the User table.
+	*
+	*/
+	function deleteUserPermissions($siteID,$uStr){
+		if (in_array($siteID,$this->getUserPermissions($uStr))){
+			$siteID = ' ' . $siteID;
+			$cn = $this->connect();
+			$uStr = $cn->real_escape_string($uStr);
+			$str = "'" .$siteID;
+			$str[1] = "-";
+			$admin_sql = "UPDATE Users Set Site = replace(Site, ".$str."','') WHERE admin_id = '".$uStr."'";
+			$permission_result = $cn->query($admin_sql);
+			$cn->close();
+			if ($permission_result){
+				$out = "Succesfully removed permission for " . $uStr. ".";
+			}
+			
+			else{
+				$out = "ERROR: Did not remove permission for ". $uStr . ".";}
+		}
+		else{
+			$out = $uStr. " does not have permission for that site.";
+			}
+		echo $out;
 		return 0;
 	}
 	

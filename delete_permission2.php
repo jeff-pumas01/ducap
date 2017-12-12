@@ -31,13 +31,13 @@
 <center>
 	<!-- Content -->
 	<div class = "container header">
-			<h2>Add user permission</h2>
+			<h2>Remove user permission</h2>
 			<br/>
 	</div>
 	<div class="container volunteer">
 		<?php
 			// Verify that all information in the form is correct.
-			$db->{'addUserPermissions'}($_POST['site_id'],$_SESSION['username']);
+			$db->{'deleteUserPermissions'}($_POST['site_id'],$_SESSION['username']);
 		?>
 		<br /><br /><a href='admin_cp.php'>Back</a>
 	</div> 

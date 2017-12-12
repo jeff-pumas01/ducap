@@ -36,12 +36,12 @@
 </div>
 
 <!-- Form to change a users permissions. -->
-<form action = "add_permission2.php" method = "POST">
+<form action = "delete_permission2.php" method = "POST">
 	<div class = "container volunteer">
 
-		<h3><b>Add user permissions</b></h3>
+		<h3><b>Remove user permissions</b></h3>
 		
-		<p>Select a site to add:</p>
+		<p>Select a site to remove permission:</p>
 		
 		<div class="row">
 			
@@ -55,7 +55,7 @@
 		</div>
 		
 		<br />
-		<button class = "btn btn-sm btn-primary btn-block" type = "submit" name = "submission">Add permission</button>
+		<button class = "btn btn-sm btn-primary btn-block" type = "submit" name = "submission">Remove permission</button>
 	</div>
 	
 	

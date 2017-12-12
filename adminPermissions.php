@@ -40,7 +40,7 @@
 <form action = "add_permission1.php" method = "POST">
 	<div class = "container volunteer">
 
-		<h3><b>Change user permissions</b></h3>
+		<h3><b>Add permission</b></h3>
 		
 		<p>Select a user:</p>
 		
@@ -61,12 +61,12 @@
 		</div>
 	
 	</div>
-</form>	
+</form>
 <!-- Form to delete permissions. -->
-<form action = "delete_permission.php" method = "POST">
+<form action = "delete_permission1.php" method = "POST">
 	<div class = "container volunteer">
 
-		<h3><b>Change user permissions</b></h3>
+		<h3><b>Remove user permission</b></h3>
 		
 		<p>Select a user:</p>
 		
@@ -88,6 +88,7 @@
 	
 	</div>
 </form>	
+
 
 
 <?php
