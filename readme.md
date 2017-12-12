@@ -1,6 +1,6 @@
  ## What this website is about:
  
- This website is the website for a nonprofit organization for underprivilaged children
+ This website is the website for a nonprofit organization for underprivileged children
  and afterschool programs.  It allows volunteers to sign up and manage children and events.
  
   ## How to log into the database:
