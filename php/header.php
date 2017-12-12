@@ -97,7 +97,7 @@
 
 					<u2 class="nav navbar-nav navbar-right">
 						<li <?=echoActiveClassIfRequestMatches("login")?>><a href="login.php">Login</a></li>
-						<li <?=echoActiveClassIfRequestMatches("signup")?>><a href="signup.php">Register</a></li>
+					
 					</u2>
 				</div>
 			<?php }?>
