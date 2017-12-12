@@ -1,7 +1,7 @@
 <?php
 
 	/*
-		This program deletes the data for the participant.
+		This program deletes the data for the Volunteer.
 	*/
 	
 	include 'php/classes/DB.class.php';

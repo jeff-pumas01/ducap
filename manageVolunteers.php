@@ -40,7 +40,7 @@
 <iframe src='printVolunteer.php' frameborder='0' width='100%' height='500' allowtransparency='true' align="middle"></iframe>
 <br />
 <br />
-<!-- Form to remove a Participant. -->
+<!-- Form to remove a Volunteer. -->
 <form action = "deleteVolunteer.php" method = "POST">
 	<div class = "container volunteer">
 
@@ -53,7 +53,7 @@
 			<div class="col-md-8 form-group">
 				
 				<?php
-					// Get a select list of participant names.
+					// Get a select list of Volunteer names.
 					echo $db->{'getVolunteerSelect'}();
 				?>
 				

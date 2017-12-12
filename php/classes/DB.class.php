@@ -406,7 +406,7 @@ mysql_select_db("cs440team2", $link);
 	function deleteVolunteer($id) {
 		$cn = $this->connect();
 		
-		// Delete related rows in other tables (Guardianship, Attendance).
+		// Delete related rows in other tables .
 		$sql_query = "delete from Volunteer_Registration where ID=$id";
 		$result = mysqli_query($cn, $sql_query) or die ("Error: Could not delete volunteer record!");
 		
@@ -1869,11 +1869,11 @@ mysql_select_db("cs440team2", $link);
 				// Build query string based on the desired action.
 			if ($action == "insert") {
 				
-				// Search Participants table first to make sure Participant is not already registered!
+				// Search Participants table first to make sure Volunteer is not already registered!
 				if ($this->getVolunteer_RegistrationID($good_data['last_name'], $good_data['first_name'], $good_data['auth_ssn']) == -1) {
 					$qryStr = "INSERT INTO Volunteer_Registration (";
 					
-					// Add fields from form if they match up with Participant fields.
+					// Add fields from form if they match up with Volunteer fields.
 					foreach ($good_data as $field => $value) {
 						if (array_key_exists($field, $labels_par))
 							$qryStr .= "$field,";
@@ -1906,7 +1906,7 @@ mysql_select_db("cs440team2", $link);
 				
 					$conn->close();
 					$stmt->close();//close the statement
-					//$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not add new Participant!");
+					//$result = mysqli_query($conn, $qryStr) or die ("ERROR: Could not add new Volunteer!");
 					//$conn->close();
 					
 					if ($result)
@@ -1920,7 +1920,7 @@ mysql_select_db("cs440team2", $link);
 			}
 			else if ($action == "update") {
 				
-				// Build query string to update row in Participants table.
+				// Build query string to update row in Volunteer table.
 				$qryStr = "UPDATE Volunteer_Registration SET";
 				foreach ($good_data as $field => $value) {
 					
@@ -1960,7 +1960,7 @@ mysql_select_db("cs440team2", $link);
 		}
 		echo $out;
 		
-		// Return participant ID or -1 if there was an error.
+		// Return Volunteer ID or -1 if there was an error.
 		return $this->getVolunteer_RegistrationID($good_data['last_name'], $good_data['first_name'], $good_data['auth_ssn']);
 	
 	
