@@ -1,0 +1,62 @@
+
+
+
+To register volunteers :
+1. Go to main site
+2. Click Volunteer Registration
+3. Fill out form and submit
+
+
+To register  a child (Participant) :
+1. Go to main site
+2. Click Child Registration
+3. Fill out form and submit
+
+To view sites and events :
+1. Go to main site
+2. Click Sites and Events
+
+
+To attendance :
+1. Go to main site
+2. Click Admin Login
+3. Login
+4. Click on Attendance
+5. Use website features
+
+
+To Manage Sites :
+1. Go to main site
+2. Click Admin Login
+3. Login
+4. Click on Manage Site
+5. Use website features
+
+To Manage Events :
+1. Go to main site
+2. Click Admin Login
+3. Login
+4. Click on Manage Events
+5. Use website features
+
+To Manage Participant :
+1. Go to main site
+2. Click Admin Login
+3. Login
+4. Click on Manage Participant
+5. Use website features
+
+To Manage Volunteer :
+1. Go to main site
+2. Click Admin Login
+3. Login
+4. Click on Manage Volunteer
+5. Use website features
+
+To take Manage Permissions :
+1. Go to main site
+2. Click Admin Login
+3. Login
+4. Click on Manage Permissions
+5. Use website features
+
