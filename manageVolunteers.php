@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Manage Volunteers Test</title>
+	<title>Manage Volunteers</title>
 </head>
 
 <body>
