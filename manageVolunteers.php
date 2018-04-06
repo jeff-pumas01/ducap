@@ -44,7 +44,7 @@
 <form action = "deleteVolunteer.php" method = "POST">
 	<div class = "container volunteer">
 
-		<h3><b>Remove a Volunteer</b></h3>
+		<h3><b>Remove a Volunteer Test</b></h3>
 		
 		<p>Select a volunteer to remove:</p>
 		
