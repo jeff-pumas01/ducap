@@ -1,16 +1,12 @@
 <html>
 <head>
-	<title>Manage Volunteers</title>
+	<title>Manage Volunteers Test</title>
 </head>
 
 <body>
 
 <?php
 
-	/**
-	 *	This program allows the user to add a new site,
-	 *	choose a site to update, or remove a site.
-	 */
 	 
 	session_start();
 	
