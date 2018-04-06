@@ -17,7 +17,7 @@
 
 <!-- Content -->
 <div class = "container header">
-	<center><h2>Administrator Control Panel Test</h2></center>
+	<center><h2>Administrator Control Panel</h2></center>
 	<br/>
 </div>
 
